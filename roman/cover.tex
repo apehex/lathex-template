@@ -1,0 +1,75 @@
+%----------------------------------------------------------------------------------------
+%   TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\pagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+
+%%%%%%%%%%%%%%%%%%%% Layers %%%%%%%%%%%%%%%%%%%%%%%%
+\pgfdeclarelayer{bg}    % declare background layer
+\pgfdeclarelayer{fg}    % declare background layer
+\pgfsetlayers{bg,main,fg}  % set the order of the layers (main is the standard layer)
+
+%%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%
+\fill[ocre] (current page.south west) rectangle (current page.north east);
+
+
+%%%%%%%%%%%%%%%%%%%% Background Polygon %%%%%%%%%%%%%%%%%%%%
+
+% top left
+\foreach \i in {0.5,...,22}
+{
+    \node[rounded corners,ocre!60,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.north west)+(2.5,0)$) {} ;
+}
+
+% bottom left
+\foreach \i in {2.5,...,22}
+{
+    \node[rounded corners,ocre!60,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.west)+(2.5,-5)$) {} ;
+}
+
+% center right
+\foreach \i in {0.5,...,22}
+{
+    \node[rounded corners,ocre!90,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.north east)+(0,-9.5)$) {} ;
+}
+
+% bottom right
+\foreach \i in {21,...,14}
+{
+    \node[ocre!85,rounded corners,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.south east)+(-0.2,-0.45)$) {} ;
+}
+\node[rounded corners,fill=ocre!70,text=ocre,regular polygon,regular polygon sides=6, minimum size=14cm,inner sep=0,ultra thick] at ($(current page.south east)+(-0.2,-0.45)$) {};
+\node[rounded corners,fill=ocre,text=ocre,regular polygon,regular polygon sides=6, minimum size=10cm,inner sep=0,ultra thick] at ($(current page.south east)+(-0.2,-0.45)$) {};
+\begin{pgfonlayer}{fg}
+\foreach \i in {10,...,4}
+{
+    \node[ocre!85,rounded corners,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.south east)+(-0.2,-0.45)$) {} ;
+}
+\end{pgfonlayer}
+
+
+%%%%%%%%%%%%%%%%%%%% Title of the Report %%%%%%%%%%%%%%%%%%%% 
+\node[left,black,minimum width=0.625*\paperwidth,minimum height=3cm, rounded corners,text=white,rotate=-60] at ($(current page.center)+(4.4,-4.4)$)
+{
+{\Huge \sffamily \bfseries \textsc{\TITLE}}
+};
+
+%%%%%%%%%%%%%%%%%%%% Subtitle %%%%%%%%%%%%%%%%%%%% 
+\node[left,black,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners,text=white,rotate=-60] at ($(current page.center)+(4,-6)$)
+{
+{\Large \sffamily \textsc{\SUBTITLE}}
+};
+
+%%%%%%%%%%%%%%%%%%%% Author Name %%%%%%%%%%%%%%%%%%%% 
+\node[left,align=right,black,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners,text=ocre,rotate=60] at ($(current page.center)+(9,-7)$)
+{
+{\Large \sffamily\bfseries \textsc{\AUTHOR}}\\[0.4cm]
+{\Large \sffamily\bfseries \textsc{\DATE}}
+};
+
+%%%%%%%%%%%%%%%%%%%% Year %%%%%%%%%%%%%%%%%%%% 
+\node[rounded corners,fill=ocre!70,text=ocre,regular polygon,regular polygon sides=6, minimum size=2.5cm,inner sep=0,ultra thick] at ($(current page.west)+(2.5,-5)$) {\LARGE \sffamily\bfseries \YEAR};
+
+\end{tikzpicture}

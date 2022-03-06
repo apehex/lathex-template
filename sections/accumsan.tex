@@ -1,0 +1,45 @@
+\section{Phasellus tristique} \label{sec:phasellus-tristique}
+
+Lacus ac turpis semper fringilla. Mauris fermentum varius neque, vel congue
+elit tempus quis. Aliquam a nunc in nunc consectetur hendrerit ut quis felis. 
+
+Quisque id dui magna. Curabitur posuere nisl at magna vehicula aliquam \ref{fig:duis}.
+Duis et suscipit felis. Mauris non justo quis diam gravida placerat condimentum
+ut sapien. Praesent imperdiet libero id est tincidunt ullamcorper.
+
+\begin{figure}[ht]
+\begin{tikzpicture}[node distance = 3cm, auto]
+    \node [block]                       (duis)      {Duis};
+    \node [block, above of = duis]      (sed)       {Sed};
+    \node [block, right of = duis]      (mauris)    {Mauris};
+    \node [block, right of = mauris]    (semper)    {Semper};
+    \node [block, right of = semper]    (congue)    {Congue};
+    \node [block, right of = congue]    (aenean)    {Aenean};
+    \node [block, right of = aenean]    (varius)    {Varius};
+    \node [block, below of = varius]    (laoreet)   {Laoreet};
+    \node [block, below of = laoreet]   (sodales)   {Sodales};
+    \node [block, below of = sodales]   (lorem)     {Lorem};
+    \node [block, below of = lorem]     (ipsum)     {Ipsum};
+
+    \path [line] (mauris) -- (duis) ;
+    \path [line] (mauris) |- (sed);
+    
+    \path [line] (semper) -- (mauris);
+    \path [line] (semper) |- (sed);
+    
+    \path [line] (congue) -- (semper);
+    \path [line] (congue) |- (sed);
+    
+    \path [line] (aenean) -- (congue);
+    \path [line] (aenean) |- (sed);
+    
+    \path [line] (varius) -- (aenean);
+    
+    \path [line] (laoreet) -| (aenean);
+    
+    \path [line] (sodales) -| (aenean);
+    
+    \path [line] (lorem) -| (aenean);
+\end{tikzpicture}
+\caption{Maecenas hendrerit congue faucibus} \label{fig:duis}
+\end{figure}

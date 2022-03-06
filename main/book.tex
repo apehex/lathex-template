@@ -1,0 +1,86 @@
+% =======================================================================================
+%                               PAQUETS ET CONFIGURATION
+% =======================================================================================
+
+\documentclass[11pt,fleqn,oneside]{book} % Default font size and left-justified equations
+
+% =======================================================================================
+
+\input{template/structure} % Commands and appearance of the template
+
+\addbibresource{bibliography/references.bib} % BibTeX bibliography file
+
+% =======================================================================================
+
+\begin{document}
+
+\input{template/context} % Global settings
+
+% =======================================================================================
+%TODO
+
+% =======================================================================================
+%\usechapterimagefalse
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+% =======================================================================================
+%                                   INTRODUCTION
+% =======================================================================================
+\input{roman/cover}
+%----------------------------------------------------------------------------------------
+\chapterimage{images/headers/snowy-belt.jpg}
+\input{roman/table-of-contents}
+
+% =======================================================================================
+%                                   PART I
+% =======================================================================================
+\part{Lorem ipsum}
+\chapterimage{images/headers/blueprint.jpg}
+%----------------------------------------------------------------------------------------
+\newpage
+\chapter{Lorem} \label{ch:lorem}
+\input{sections/phasellus}
+%----------------------------------------------------------------------------------------
+\newpage
+\chapter{Ipsum}\label{ch:ipsum}
+\input{sections/quam}
+
+% =======================================================================================
+%                                   PART II
+% =======================================================================================
+\part{Dolor sit amet}
+\chapterimage{images/headers/grinding.jpg}
+%----------------------------------------------------------------------------------------
+\newpage
+\chapter{Hendrerit sapien} \label{ch:hendrerit}
+\input{sections/dolor}
+\newpage
+\input{sections/accumsan}
+
+% =======================================================================================
+%                                   ANNEXES
+% =======================================================================================
+\renewcommand{\thechapter}{\Alph{chapter}}
+\renewcommand{\thesection}{\Alph{chapter}.\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{chapter}.\Roman{section}.\alph{subsection}}
+\setcounter{chapter}{0}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+%----------------------------------------------------------------------------------------
+\part{Appendices}
+\chapterimage{images/headers/stocks.jpg}
+%----------------------------------------------------------------------------------------
+\newpage
+\chapter{Vestibulum commodo} \label{ch:commodo}
+\input{appendices/consectetur}
+%----------------------------------------------------------------------------------------
+\newpage
+\chapter{Etiam facilisis} \label{ch:etiam}
+\input{appendices/adipiscing}
+%----------------------------------------------------------------------------------------
+\listoffigures
+\listoftables
+%----------------------------------------------------------------------------------------
+\newpage\printbibliography[title = {Aliquam}]
+
+\end{document}
