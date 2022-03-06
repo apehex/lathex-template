@@ -9,3 +9,9 @@
 
 # bibliography
 *.bbl
+
+# figures
+*.lof
+
+# tables
+*.lot
