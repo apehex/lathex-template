@@ -15,3 +15,7 @@
 
 # tables
 *.lot
+
+# makeindex
+*.ilg
+*.ind
