@@ -43,6 +43,20 @@ The project is coded using a simple and intuitive structure presented below:
    |-- template/              # The actual template definition, independent from the document it presents
 ```
 
+## TODO
+
+[ ] chapter in the left margin
+[ ] bigger titles
+[ ] invert colors in cover page
+[ ] visually encapsulate section areas (borders)
+[ ] split Latex theme
+[ ] define the cover page theme in the template
+[ ] add client + version in the cover page
+[ ] Solidity syntax highlighting
+[ ] demo each theme element on a lorem ipsum book
+[ ] dark theme
+[ ] add an option to switch the dark theme on/off
+
 ## Credits
 
 ### Legrand Orange Book
@@ -67,7 +81,7 @@ Most of the template is built upon the [Legrand Orange template][[legrand-orange
 %
 % Compiling this template:
 % This template uses biber for its bibliography and makeindex for its index.
-% When you first open the template, compile it from the command line with the 
+% When you first open the template, compile it from the command line with the
 % commands below to make sure your LaTeX distribution is configured correctly:
 %
 % 1) pdflatex main
@@ -76,7 +90,7 @@ Most of the template is built upon the [Legrand Orange template][[legrand-orange
 % 4) pdflatex main x 2
 %
 % After this, when you wish to update the bibliography/index use the appropriate
-% command above and make sure to compile with pdflatex several times 
+% command above and make sure to compile with pdflatex several times
 % afterwards to propagate your changes to the document.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
