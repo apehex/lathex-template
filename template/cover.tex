@@ -1,0 +1,21 @@
+\newcommand{\drawHexagon}[5]{
+    % #1 - position
+    % #2 - colors
+    % #3 - size
+    % #4 - rotation
+    % #5 - text
+    \node[rounded corners, #2, regular polygon, regular polygon sides=6, minimum size=#3, rotate=#4, inner sep=0, ultra thick] at (#1) {
+        {\sffamily \bfseries #5}
+    }
+}
+
+\newcommand{\drawText}[5]{
+    % #1 - position
+    % #2 - colors
+    % #3 - height
+    % #4 - rotation
+    % #5 - text
+    \node[left, black, #2, minimum width=0.625*\paperwidth, minimum height=#3, rounded corners, rotate=#4] at (#1){
+        {\sffamily \bfseries #5}
+    }
+}

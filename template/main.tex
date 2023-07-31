@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% By Apehex
+%
+% Built upon the The Legrand Orange Book by:
+% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   VARIOUS REQUIRED PACKAGES AND CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm,headsep=10pt,a4paper]{geometry} % Page margins
+
+\usepackage{graphicx} % Required for including pictures
+\graphicspath{{images/}} % Specifies the directory where pictures are stored
+
+\usepackage{tikz} % Required for drawing custom shapes
+\usetikzlibrary{fit, shapes, arrows, positioning, calc, shapes.geometric}
+
+\usepackage[english]{babel} % French language/hyphenation
+
+\usepackage{enumitem} % Customize lists
+
+\usepackage{booktabs} % Required for nicer horizontal rules in tables
+
+\usepackage{xcolor} % Required for specifying colors by name
+
+\usepackage{pdflscape} % Allows to rotate pages in landscape
+
+%----------------------------------------------------------------------------------------
+%   FONTS
+%----------------------------------------------------------------------------------------
+
+\usepackage{avant} % Use the Avantgarde font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+%----------------------------------------------------------------------------------------
+%   HEADERS
+%----------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr} % Required for header and footer configuration
+
+%----------------------------------------------------------------------------------------
+%   MATHS
+%----------------------------------------------------------------------------------------
+
+\usepackage{amsmath}
+
+%----------------------------------------------------------------------------------------
+%   LINKS
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage[all]{hypcap} % moves the ref jumping points to the top of images (instead of the caption)
+
+%----------------------------------------------------------------------------------------
+%   CODE SNIPPETS
+%----------------------------------------------------------------------------------------
+
+\usepackage{listings}
+
+%----------------------------------------------------------------------------------------
+%   BIBLIOGRAPHY AND INDEX
+%----------------------------------------------------------------------------------------
+
+\usepackage[style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,autolang=other,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+
+\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
+\usepackage{makeidx} % Required to make an index
+\makeindex % Tells LaTeX to create the files required for indexing
+
+%----------------------------------------------------------------------------------------
+%   TEMPLATE
+%----------------------------------------------------------------------------------------
+
+\input{template/colors}
+\input{template/cover}
+\input{template/toc}
+\input{template/headers}
+\input{template/titles}
+\input{template/text}
+\input{template/links}
+\input{template/lists}
+\input{template/boxes}
+\input{template/figures}
