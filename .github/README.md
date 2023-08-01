@@ -61,40 +61,9 @@ The project is coded using a simple and intuitive structure presented below:
 
 ### Legrand Orange Book
 
-Most of the template is built upon the [Legrand Orange template][[legrand-orange-book]]:
+The template started from the [Legrand Orange template][[legrand-orange-book]].
 
-```
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The Legrand Orange Book
-% LaTeX Template
-% Version 3.1 (February 18, 2022)
-%
-% This template originates from:
-% https://www.LaTeXTemplates.com
-%
-% Authors:
-% Vel (vel@latextemplates.com)
-% Mathias Legrand (legrand.mathias@gmail.com)
-%
-% License:
-% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
-%
-% Compiling this template:
-% This template uses biber for its bibliography and makeindex for its index.
-% When you first open the template, compile it from the command line with the
-% commands below to make sure your LaTeX distribution is configured correctly:
-%
-% 1) pdflatex main
-% 2) makeindex main.idx -s indexstyle.ist
-% 3) biber main
-% 4) pdflatex main x 2
-%
-% After this, when you wish to update the bibliography/index use the appropriate
-% command above and make sure to compile with pdflatex several times
-% afterwards to propagate your changes to the document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-```
+The syntax highlighting for Solidity has been made by [Sergei Tikhomirov][solidity-syntax-highlighting]
 
 ### Latexdraw.com
 
@@ -112,3 +81,4 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 [latexdraw]: https://latexdraw.com/tikz-cover-pages-gallery/
 [legrand-orange-book]: https://www.latextemplates.com/template/legrand-orange-book
+[solidity-syntax-highlighting]: https://github.com/s-tikhomirov/solidity-latex-highlighting
