@@ -1,10 +1,12 @@
+\makeatletter
+
 %----------------------------------------------------------------------------------------
 %   MAIN TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
 
-\usepackage{titletoc} % Required for manipulating the table of contents
+\renewcommand\tableofcontents{\@starttoc{toc}} % removes the title above
 
-\contentsmargin{0cm} % Removes the default margin
+\contentsmargin{0cm} % removes the default margin
 
 % Part text styling
 \titlecontents{part}[0cm]
@@ -76,3 +78,5 @@
 {}
 {}
 {}
+
+\makeatother

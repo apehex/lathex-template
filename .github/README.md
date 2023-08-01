@@ -56,6 +56,7 @@ The project is coded using a simple and intuitive structure presented below:
 [ ] demo each theme element on a lorem ipsum book
 [ ] dark theme
 [ ] add an option to switch the dark theme on/off
+[ ] modern font: larger + sans
 
 ## Credits
 
