@@ -9,26 +9,39 @@
 \contentsmargin{0cm} % removes the default margin
 
 % Part text styling
-\titlecontents{part}[0cm]
-{\addvspace{20pt}\centering\large\bfseries}
-{}
-{}
-{}
+\renewcommand*\l@part[2]{%
+\ifnum \c@tocdepth >-2
+  \addpenalty{-\@highpenalty}%
+  \vskip 0em
+  \begingroup
+    \parindent \z@ \rightskip \@pnumwidth
+    \leavevmode\colorbox{orange}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax%
+      \strut\color{white}\bfseries\sffamily\MakeUppercase{#1}%
+      \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
+    \penalty\@highpenalty
+  \endgroup
+\fi}
 
 % Chapter text styling
 \titlecontents{chapter}[1.25cm] % Indentation
 {\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
-{\color{ocre!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{ocre}} % Chapter number
-{\color{ocre}}  
-{\color{ocre!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+{\color{orange!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{orange}} % Chapter number
+{\color{orange}}  
+{\color{orange!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
-\titlecontents{section}[1.25cm] % Indentation
-{\addvspace{3pt}\sffamily\bfseries} % Spacing and font options for sections
-{\contentslabel[\thecontentslabel]{1.25cm}} % Section number
+\titlecontents{section}[4em]
+{\sffamily}
+{\color{orange}\contentslabel{2.3em}\normalcolor}
 {}
-{\hfill\color{black}\thecontentspage} % Page number
-[]
+{\titlerule*[1000pc]{.}\contentspage\\\hspace*{-3em}\vspace*{2pt}
+\color{white}\rule{\dimexpr\textwidth-20pt\relax}{1pt}}
+% \titlecontents{section}[1.25cm] % Indentation
+% {\addvspace{3pt}\sffamily\bfseries} % Spacing and font options for sections
+% {\contentslabel[\thecontentslabel]{1.25cm}} % Section number
+% {}
+% {\hfill\color{black}\thecontentspage} % Page number
+% []
 
 % Subsection text styling
 \titlecontents{subsection}[1.25cm] % Indentation
@@ -38,7 +51,10 @@
 {\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 []
 
-% List of figures
+%----------------------------------------------------------------------------------------
+%   LIST OF FIGURES
+%----------------------------------------------------------------------------------------
+
 \titlecontents{figure}[0em]
 {\addvspace{-5pt}\sffamily}
 {\thecontentslabel\hspace*{1em}}
@@ -46,7 +62,10 @@
 {\ \titlerule*[.5pc]{.}\;\thecontentspage}
 []
 
-% List of tables
+%----------------------------------------------------------------------------------------
+%   LIST OF TABLES
+%----------------------------------------------------------------------------------------
+
 \titlecontents{table}[0em]
 {\addvspace{-5pt}\sffamily}
 {\thecontentslabel\hspace*{1em}}
@@ -58,25 +77,25 @@
 %   MINI TABLE OF CONTENTS IN PART HEADS
 %----------------------------------------------------------------------------------------
 
-% Chapter text styling
-\titlecontents{lchapter}[0em] % Indenting
-{\addvspace{15pt}\large\sffamily\bfseries} % Spacing and font options for chapters
-{\color{ocre}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{ocre}} % Chapter number
-{}  
-{\color{ocre}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+% % Chapter text styling
+% \titlecontents{lchapter}[0em] % Indenting
+% {\addvspace{15pt}\large\sffamily\bfseries} % Spacing and font options for chapters
+% {\color{orange}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{orange}} % Chapter number
+% {}  
+% {\color{orange}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
-% Section text styling
-\titlecontents{lsection}[0em] % Indenting
-{\sffamily\small} % Spacing and font options for sections
-{\contentslabel[\thecontentslabel]{1.25cm}} % Section number
-{}
-{}
+% % Section text styling
+% \titlecontents{lsection}[0em] % Indenting
+% {\sffamily\small} % Spacing and font options for sections
+% {\contentslabel[\thecontentslabel]{1.25cm}} % Section number
+% {}
+% {}
 
-% Subsection text styling
-\titlecontents{lsubsection}[.5em] % Indentation
-{\normalfont\footnotesize\sffamily} % Font settings
-{}
-{}
-{}
+% % Subsection text styling
+% \titlecontents{lsubsection}[.5em] % Indentation
+% {\normalfont\footnotesize\sffamily} % Font settings
+% {}
+% {}
+% {}
 
 \makeatother

@@ -2,8 +2,6 @@
 %   THEOREM STYLES
 %----------------------------------------------------------------------------------------
 
-\usepackage{amsmath,amsfonts,amssymb,amsthm} % For math equations, theorems, symbols, etc
-
 \newcommand{\intoo}[2]{\mathopen{]}#1\,;#2\mathclose{[}}
 \newcommand{\ud}{\mathop{\mathrm{{}d}}\mathopen{}}
 \newcommand{\intff}[2]{\mathopen{[}#1\,;#2\mathclose{]}}
@@ -86,7 +84,7 @@
 \makeatother
 
 % Defines the theorem text style for each type of theorem to one of the three styles above
-\newcounter{dummy} 
+\newcounter{dummy}
 \numberwithin{dummy}{section}
 \theoremstyle{ocrenumbox}
 \newtheorem{theoremeT}[dummy]{Theorem}
@@ -111,8 +109,6 @@
 %   DEFINITION OF COLORED BOXES
 %----------------------------------------------------------------------------------------
 
-\RequirePackage[framemethod=default]{mdframed} % Required for creating the theorem, definition, exercise and corollary boxes
-
 % Theorem box
 \newmdenv[skipabove=7pt,
 skipbelow=7pt,
@@ -125,7 +121,7 @@ leftmargin=0cm,
 rightmargin=0cm,
 innerbottommargin=5pt]{tBox}
 
-% Exercise box    
+% Exercise box
 \newmdenv[skipabove=7pt,
 skipbelow=7pt,
 rightline=false,
@@ -140,7 +136,7 @@ innertopmargin=5pt,
 innerbottommargin=5pt,
 leftmargin=0cm,
 rightmargin=0cm,
-linewidth=4pt]{eBox}    
+linewidth=4pt]{eBox}
 
 % Definition box
 \newmdenv[skipabove=7pt,
@@ -156,7 +152,7 @@ innertopmargin=0pt,
 leftmargin=0cm,
 rightmargin=0cm,
 linewidth=4pt,
-innerbottommargin=0pt]{dBox}    
+innerbottommargin=0pt]{dBox}
 
 % Corollary box
 \newmdenv[skipabove=7pt,
@@ -176,11 +172,11 @@ linewidth=4pt,
 innerbottommargin=5pt]{cBox}
 
 % Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
-\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}   
+\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
 \newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
-\newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}  
+\newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}
 \newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}
-\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}        
+\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}
 \newenvironment{highlight}{\begin{eBox}\begin{highlightT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{highlightT}\end{eBox}}
 \newenvironment{lowlight}{\begin{eBox}\begin{lowlightT}}{\hfill{\color{black}\tiny\ensuremath{\blacksquare}}\end{lowlightT}\end{eBox}}
 

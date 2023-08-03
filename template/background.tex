@@ -1,0 +1,20 @@
+\backgroundsetup{
+  scale=1,
+  color=orange,
+  opacity=1,
+  angle=0,
+  position=current page.south west,
+  vshift=48mm,
+  hshift=16mm, % Adjust the distance from the left edge of the page
+  contents={%
+    \tikz{
+      % \fill[orange] (0,0) rectangle (6mm,16mm); % bottom bar, 6mm wide, 16mm tall
+      \ifbackgroundbarvisible
+        \fill[orange] (0,\paperheight) rectangle (8mm,-\paperheight); % bar width 6mm
+      \fi
+      \ifbackgroundtitlevisible
+        \node[rotate=90, white, font=\huge\bfseries\sffamily, anchor=south] at (8mm, 0mm) {\currentparttitle};
+      \fi
+    }
+  }
+}

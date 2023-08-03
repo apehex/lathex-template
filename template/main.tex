@@ -14,13 +14,13 @@
 %   VARIOUS REQUIRED PACKAGES AND CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\usepackage[top=3cm,bottom=3cm,left=3cm,right=3cm,headsep=10pt,a4paper]{geometry} % Page margins
+\usepackage[top=2cm,bottom=2cm,left=4cm,right=2cm,headsep=10pt,a4paper]{geometry} % Page margins
 
 \usepackage{graphicx} % Required for including pictures
 \graphicspath{{images/}} % Specifies the directory where pictures are stored
 
 \usepackage{tikz} % Required for drawing custom shapes
-\usetikzlibrary{fit, shapes, arrows, positioning, calc, shapes.geometric}
+\usetikzlibrary{fit, shapes, arrows, positioning, calc, tikzmark, shapes.geometric}
 
 \usepackage[english]{babel} % French language/hyphenation
 
@@ -44,6 +44,18 @@
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 
 %----------------------------------------------------------------------------------------
+%   BACKGROUND: VERTICAL BAR ON THE LEFT
+%----------------------------------------------------------------------------------------
+
+\usepackage[all]{background}
+
+%----------------------------------------------------------------------------------------
+%   BOXES
+%----------------------------------------------------------------------------------------
+
+\usepackage[framemethod=default]{mdframed}
+
+%----------------------------------------------------------------------------------------
 %   TOC
 %----------------------------------------------------------------------------------------
 
@@ -65,7 +77,7 @@
 %   MATHS
 %----------------------------------------------------------------------------------------
 
-\usepackage{amsmath}
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % For math equations, theorems, symbols, etc
 
 %----------------------------------------------------------------------------------------
 %   LINKS
@@ -94,7 +106,7 @@
 %----------------------------------------------------------------------------------------
 %   TEMPLATE
 %----------------------------------------------------------------------------------------
-
+\input{template/global}
 \input{template/colors}
 \input{template/cover}
 \input{template/toc}
@@ -105,4 +117,5 @@
 \input{template/lists}
 \input{template/boxes}
 \input{template/figures}
+\input{template/background}
 \input{template/syntax/solidity}
