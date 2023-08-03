@@ -1,12 +1,28 @@
 \makeatletter
 
 %----------------------------------------------------------------------------------------
-%   MAIN TABLE OF CONTENTS
+%   PAGE LAYOUT
 %----------------------------------------------------------------------------------------
 
-\renewcommand\tableofcontents{\@starttoc{toc}} % removes the title above
+\renewcommand{\tableofcontents}{
+\pagestyle{empty} % No headers
+\newgeometry{left=0cm} % No left margin
+\setcounter{tocdepth}{1} % TOC depth
+\backgroundbarvisiblefalse
 
-\contentsmargin{0cm} % removes the default margin
+{
+\hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor=orange,bookmarks=true,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
+\@starttoc{toc}
+}
+
+\clearpage
+\pagestyle{fancy} % Print headers again
+\restoregeometry
+\backgroundbarvisibletrue}
+
+%----------------------------------------------------------------------------------------
+%   LINE FORMATS
+%----------------------------------------------------------------------------------------
 
 % Part text styling
 \renewcommand*\l@part[2]{%
@@ -16,40 +32,53 @@
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
     \leavevmode\colorbox{orange}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax%
-      \strut\color{white}\bfseries\sffamily\MakeUppercase{#1}%
+      \hspace*{4cm}\strut\color{white}\bfseries\sffamily\uppercase{#1}%
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
 \fi}
 
 % Chapter text styling
-\titlecontents{chapter}[1.25cm] % Indentation
-{\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
-{\color{orange!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{orange}} % Chapter number
-{\color{orange}}  
-{\color{orange!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+\renewcommand*\l@chapter[2]{%
+\ifnum \c@tocdepth >\m@ne
+  \addpenalty{-\@highpenalty}%
+  \vskip 0em
+  \begingroup
+    \parindent \z@ \rightskip \@pnumwidth
+    \leavevmode\colorbox{darkgray}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax% Additional 0.5cm padding to the right
+      \hspace*{4cm}\strut\color{white}\sffamily#1% No bold, text color changed to white
+      \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
+    \penalty\@highpenalty
+  \endgroup
+\fi}
 
 % Section text styling
-\titlecontents{section}[4em]
-{\sffamily}
-{\color{orange}\contentslabel{2.3em}\normalcolor}
-{}
-{\titlerule*[1000pc]{.}\contentspage\\\hspace*{-3em}\vspace*{2pt}
-\color{white}\rule{\dimexpr\textwidth-20pt\relax}{1pt}}
-% \titlecontents{section}[1.25cm] % Indentation
-% {\addvspace{3pt}\sffamily\bfseries} % Spacing and font options for sections
-% {\contentslabel[\thecontentslabel]{1.25cm}} % Section number
-% {}
-% {\hfill\color{black}\thecontentspage} % Page number
-% []
+\renewcommand*\l@section[2]{%
+\ifnum \c@tocdepth >\z@
+  \addpenalty{-\@highpenalty}%
+  \vskip 0em
+  \begingroup
+    \parindent \z@ \rightskip \@pnumwidth
+    \leavevmode\colorbox{darkgray}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax% Additional 0.5cm padding to the right
+      \hspace*{4cm}\strut\color{white}\sffamily#1% No bold, text color changed to white
+      \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
+    \penalty\@highpenalty
+  \endgroup
+\fi}
 
 % Subsection text styling
-\titlecontents{subsection}[1.25cm] % Indentation
-{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
-{\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
-{}
-{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
-[]
+\renewcommand*\l@subsection[2]{%
+\ifnum \c@tocdepth >1
+  \addpenalty{-\@highpenalty}%
+  \vskip 0em
+  \begingroup
+    \parindent \z@ \rightskip \@pnumwidth
+    \leavevmode\colorbox{gray!40}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax% Additional 0.5cm padding to the right
+      \hspace*{4cm}\strut\color{white}\sffamily#1% No bold, text color changed to white
+      \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
+    \penalty\@highpenalty
+  \endgroup
+\fi}
 
 %----------------------------------------------------------------------------------------
 %   LIST OF FIGURES
