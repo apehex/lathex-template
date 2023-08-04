@@ -6,15 +6,15 @@
 
 % =======================================================================================
 
-\input{../template/main} % Commands and appearance of the template
+\input{template/book/main} % Commands and appearance of the template
 
-\addbibresource{bibliography/references.bib} % BibTeX bibliography file
+\addbibresource{demo/book/bibliography/references.bib} % BibTeX bibliography file
 
 % =======================================================================================
 
 \begin{document}
 
-\input{context} % Global settings
+\input{demo/book/context} % Global settings
 
 % =======================================================================================
 
@@ -22,11 +22,12 @@
 %\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
 
 % =======================================================================================
-%                                   INTRODUCTION
+%                                   PREAMBLE
 % =======================================================================================
-\input{roman/cover}
+\coverpage{\TITLE}{\SUBTITLE}{\AUTHOR}{\DATE}{\SUBJECT}
 %----------------------------------------------------------------------------------------
-\input{roman/table-of-contents}
+\newpage
+\tableofcontents
 
 % =======================================================================================
 %                                   PART I
@@ -35,11 +36,11 @@
 %----------------------------------------------------------------------------------------
 \newpage
 \chapter{Lorem} \label{ch:lorem}
-\input{sections/phasellus}
+\input{demo/book/sections/phasellus}
 %----------------------------------------------------------------------------------------
 \newpage
 \chapter{Ipsum}\label{ch:ipsum}
-\input{sections/quam}
+\input{demo/book/sections/quam}
 
 % =======================================================================================
 %                                   PART II
@@ -48,9 +49,9 @@
 %----------------------------------------------------------------------------------------
 \newpage
 \chapter{Hendrerit sapien} \label{ch:hendrerit}
-\input{sections/dolor}
+\input{demo/book/sections/dolor}
 \newpage
-\input{sections/accumsan}
+\input{demo/book/sections/accumsan}
 
 % =======================================================================================
 %                                   ANNEXES
@@ -66,11 +67,11 @@
 %----------------------------------------------------------------------------------------
 \newpage
 \chapter{Vestibulum commodo} \label{ch:commodo}
-\input{appendices/consectetur}
+\input{demo/book/appendices/consectetur}
 %----------------------------------------------------------------------------------------
 \newpage
 \chapter{Etiam facilisis} \label{ch:etiam}
-\input{appendices/adipiscing}
+\input{demo/book/appendices/adipiscing}
 %----------------------------------------------------------------------------------------
 \listoffigures
 \listoftables
