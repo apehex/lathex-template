@@ -43,10 +43,11 @@
 \ifnum \c@tocdepth >\m@ne
   \addpenalty{-\@highpenalty}%
   \vskip 0em
+  \hspace*{4cm}\color{white}\rule{\textwidth-4.5cm}{1pt}\par
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
     \leavevmode\colorbox{black}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax% Additional 0.5cm padding to the right
-      \hspace*{4cm}\strut\color{white}\sffamily#1% No bold, text color changed to white
+      \hspace*{4cm}\strut\color{white}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -60,7 +61,7 @@
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
     \leavevmode\colorbox{black}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax% Additional 0.5cm padding to the right
-      \hspace*{4cm}\strut\color{white}\sffamily#1% No bold, text color changed to white
+      \hspace*{4cm}\strut\color{white}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -74,7 +75,7 @@
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
     \leavevmode\colorbox{gray!40}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax% Additional 0.5cm padding to the right
-      \hspace*{4cm}\strut\color{white}\sffamily#1% No bold, text color changed to white
+      \hspace*{4cm}\strut\color{white}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup

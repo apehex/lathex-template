@@ -1,21 +1,67 @@
-\newcommand{\drawHexagon}[5]{
-    % #1 - position
-    % #2 - colors
+\newcommand{\drawhexagon}[5]{
+    % #1 - text
+    % #2 - position
     % #3 - size
     % #4 - rotation
-    % #5 - text
-    \node[rounded corners, #2, regular polygon, regular polygon sides=6, minimum size=#3, rotate=#4, inner sep=0, ultra thick] at (#1) {
-        {\sffamily \bfseries #5}
+    % #5 - options
+    \node[rounded corners, inner sep=0, ultra thick, regular polygon, regular polygon sides=6, minimum size=#3, rotate=#4, #5] at (#2) {
+        {\sffamily \bfseries #1}
     }
 }
 
-\newcommand{\drawText}[5]{
-    % #1 - position
-    % #2 - colors
+\newcommand{\drawtext}[5]{
+    % #1 - text
+    % #2 - position
     % #3 - height
     % #4 - rotation
-    % #5 - text
-    \node[left, black, #2, minimum width=0.625*\paperwidth, minimum height=#3, rounded corners, rotate=#4] at (#1){
-        {\sffamily \bfseries #5}
+    % #5 - options
+    \node[left, black, rounded corners, minimum width=0.5*\paperwidth, minimum height=#3, text width=16cm, execute at begin node=\setlength{\baselineskip}{2em}, rotate=#4, #5] at (#2){
+        {\sffamily \bfseries #1}
     }
+}
+
+\newcommand{\coverpage}[5]{
+    % #1 - title
+    % #2 - subtitle
+    % #3 - author
+    % #4 - date
+    % #5 - subject
+    \pagestyle{empty}
+
+    \begin{tikzpicture}[remember picture,overlay]
+
+    %%%%%%%%%%%%%%%%%%%% Layers %%%%%%%%%%%%%%%%%%%%%%%%
+    \pgfdeclarelayer{bg}    % declare background layer
+    \pgfdeclarelayer{fg}    % declare background layer
+    \pgfsetlayers{bg,main,fg}  % set the order of the layers (main is the standard layer)
+
+    %%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%
+    \fill[black] (current page.south west) rectangle (current page.north east);
+
+    %%%%%%%%%%%%%%%%%%%% Background Polygon %%%%%%%%%%%%%%%%%%%%
+
+    % top left
+    \foreach \i in {0.5,...,20} {\drawhexagon{}{$(current page.north west)+(2.5,0)$}{\i cm}{0}{orange!60,draw};}
+
+    % bottom left
+    \foreach \i in {2.5,...,22} {\drawhexagon{}{$(current page.west)+(2.5,-5)$}{\i cm}{0}{orange!60,draw};}
+
+    % center right
+    \foreach \i in {0.5,...,22} {\drawhexagon{}{$(current page.north east)+(0,-9.5)$}{\i cm}{0}{orange!90,draw};}
+
+    % bottom right
+    \foreach \i in {21,...,2} {\drawhexagon{}{$(current page.south east)+(-0.2,-0.45)$}{\i cm}{0}{orange!85,draw};}
+
+    %%%%%%%%%%%%%%%%%%%% Title + Subtitle %%%%%%%%%%%%%%%%%%%%
+    \drawtext{\Huge\textsc{#1}\\\Large\textsc{#2}}{$(current page.center)+(3.2,-3.2)$}{3cm}{-60}{text=white,align=right};
+
+    %%%%%%%%%%%%%%%%%%%% Author Name %%%%%%%%%%%%%%%%%%%%
+    \begin{pgfonlayer}{fg}
+    \drawtext{\Large\textsc{#3}\\\Large\textsc{#4}}{$(current page.east)+(-0.5,-5)$}{2cm}{0}{text=white,anchor=east,align=right};
+    \end{pgfonlayer}
+
+    %%%%%%%%%%%%%%%%%%%% Year %%%%%%%%%%%%%%%%%%%%
+    \drawhexagon{\Large #5}{$(current page.west)+(2.5,-5)$}{2.5 cm}{0}{orange!60,draw,text=white};
+
+    \end{tikzpicture}
 }

@@ -14,7 +14,7 @@
 \titlespacing*{\chapter}{0pt}{-30pt}{20pt}
 
 \titlespacing*{\part}
-  {-1.5cm} % left
+  {-2.95cm} % left
   {8cm} % before
   {20pt} % after
 
@@ -26,35 +26,37 @@
   {\fontsize{48}{60}\selectfont\sffamily}
   {}
   {0pt}
-  {}
+  {\begin{tikzpicture}[overlay]
+    \node[anchor=base, text centered, text depth=1, text width=\paperwidth, inner sep=2cm, outer sep=0pt, minimum height=2cm, minimum width=\paperwidth, fill=black] {\parbox{\paperwidth}{}};
+  \end{tikzpicture}}
 
 \titleformat{\chapter}[hang]
   {\normalfont\huge\sffamily\bfseries}
-  {\numberinmargin{\thechapter}{30}{ocre}}
+  {\numberinmargin{\thechapter}{30}{orange}}
   {0pt}
   {}
 
 \titleformat{\section}
   {\normalfont\large\sffamily\bfseries}
-  {\numberinmargin{\thesection}{16}{ocre}}
+  {\numberinmargin{\thesection}{16}{orange}}
   {0pt}
   {}
 
 \titleformat{\subsection}
   {\normalfont\normalsize\sffamily\bfseries}
-  {\numberinmargin{\thesubsection}{12}{black}}
+  {\numberinmargin{\thesubsection}{12}{white}}
   {0pt}
   {}
 
 \titleformat{\subsubsection}
   {\normalfont\small\sffamily\bfseries}
-  {\numberinmargin{\thesubsubsection}{10}{black}}
+  {\numberinmargin{\thesubsubsection}{10}{white}}
   {0pt}
   {}
 
 \titleformat{\paragraph}
   {\normalfont\small\sffamily\bfseries}
-  {\numberinmargin{\theparagraph}{10}{black}}
+  {\numberinmargin{\theparagraph}{10}{white}}
   {0pt}
   {}
 
