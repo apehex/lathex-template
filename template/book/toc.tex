@@ -31,7 +31,7 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{orange}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax%
+    \leavevmode\colorbox{orange}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax
       \hspace*{4cm}\strut\color{white}\bfseries\sffamily\uppercase{#1}%
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
@@ -43,11 +43,11 @@
 \ifnum \c@tocdepth >\m@ne
   \addpenalty{-\@highpenalty}%
   \vskip 0em
-  \hspace*{4cm}\color{white}\rule{\textwidth-4.5cm}{1pt}\par
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{black}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax% Additional 0.5cm padding to the right
-      \hspace*{4cm}\strut\color{white}\sffamily#1
+    \hspace*{4cm}% <- push the colorbox right
+    \leavevmode\colorbox{orange}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-4cm-7pt\relax% <- adjust the width
+      \strut\color{white}\bfseries\sffamily#1 % <- remove the initial space inside the box
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -60,7 +60,7 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{black}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax% Additional 0.5cm padding to the right
+    \leavevmode\colorbox{black}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax
       \hspace*{4cm}\strut\color{white}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
@@ -74,7 +74,7 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{gray!40}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax% Additional 0.5cm padding to the right
+    \leavevmode\colorbox{gray!40}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax
       \hspace*{4cm}\strut\color{white}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
