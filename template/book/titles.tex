@@ -15,6 +15,8 @@
 
 \titlespacing*{\chapter}{0pt}{-30pt}{20pt}
 
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 %----------------------------------------------------------------------------------------
 %   TITLES
 %----------------------------------------------------------------------------------------
@@ -51,11 +53,14 @@
   {0pt}
   {}
 
-\titleformat{\paragraph}
-  {\normalfont\small\sffamily\bfseries}
-  {\numberinmargin{\theparagraph}{10}{white}}
-  {0pt}
-  {}
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{%
+  \par\vspace{3.25ex plus 1ex minus .2ex}%
+  \noindent\hspace*{-4cm}\colorbox{orange}{%
+    \hspace*{4cm}\normalfont\huge\sffamily\color{white}\uppercase{#1}
+  }%
+  \par\nobreak\vspace{1.5ex plus .2ex}%
+}
 
 %----------------------------------------------------------------------------------------
 %   SHOW / HIDE PART TITLE

@@ -2,7 +2,7 @@
 
 > A sober, hassle-free, LaTeX template for reports and books.
 
-You can preview the theme [here](https://apehex.github.io/lathex-template)
+You can preview the theme [here](./build/book.pdf)
 
 ## Usage
 
@@ -13,7 +13,7 @@ The template is demonstrated with the example document in the repository:
 git clone https://github.com/apehex/lathex-template.git && cd lathex-template/
 
 # Build
-pdflatex -output-dir build/ main/book.tex
+pdflatex --output-dir build/ main/book.tex
 makeindex build/book.idx -s indexstyle.ist
 biber main/book.tex
 pdflatex main/book.tex x 2
@@ -34,29 +34,14 @@ The project is coded using a simple and intuitive structure presented below:
    |
    |-- images/                # Assets used in the document
    |
-   |-- main/                  # The script that assembles all the parts into one document
-   |
-   |-- roman/                 # The cover and TOC
-   |
    |-- sections/              # All the individual sections
    |
    |-- template/              # The actual template definition, independent from the document it presents
+   |
+   |-- context.tex               # Optional script with the metadata (author, revision, date, etc)
+   |
+   |-- main.tex               # The script that assembles all the parts into one document
 ```
-
-## TODO
-
-[ ] chapter in the left margin
-[ ] bigger titles
-[ ] invert colors in cover page
-[ ] visually encapsulate section areas (borders)
-[ ] split Latex theme
-[ ] define the cover page theme in the template
-[ ] add client + version in the cover page
-[ ] Solidity syntax highlighting
-[ ] demo each theme element on a lorem ipsum book
-[ ] dark theme
-[ ] add an option to switch the dark theme on/off
-[ ] modern font: larger + sans
 
 ## Credits
 
@@ -68,7 +53,7 @@ The syntax highlighting for Solidity has been made by [Sergei Tikhomirov][solidi
 
 ### Latexdraw.com
 
-The cover page is built upon the templates from [Latexdraw][latexdraw].
+The cover page is built upon the templates from [Latexdraw][latexdraw-cover-pages].
 
 ## License
 
@@ -80,6 +65,6 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 ---
 
-[latexdraw]: https://latexdraw.com/tikz-cover-pages-gallery/
+[latexdraw-cover-pages]: https://latexdraw.com/tikz-cover-pages-gallery/
 [legrand-orange-book]: https://www.latextemplates.com/template/legrand-orange-book
 [solidity-syntax-highlighting]: https://github.com/s-tikhomirov/solidity-latex-highlighting

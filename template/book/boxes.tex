@@ -8,15 +8,15 @@
 \newtheorem{notation}{Notation}[chapter]
 
 % Boxed/framed environments
-\newtheoremstyle{ocrenumbox}% % Theorem style name
+\newtheoremstyle{orangenumbox}% % Theorem style name
 {0pt}% Space above
 {0pt}% Space below
 {\normalfont}% % Body font
 {}% Indent amount
-{\small\bf\sffamily\color{ocre}}% % Theorem head font
+{\small\bf\sffamily\color{orange}}% % Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
-{\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+{\small\sffamily\color{orange}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
 \thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
 \renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
 
@@ -56,29 +56,29 @@
 \renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
 
 % Non-boxed/non-framed environments
-\newtheoremstyle{ocrenum}% % Theorem style name
+\newtheoremstyle{orangenum}% % Theorem style name
 {5pt}% Space above
 {5pt}% Space below
 {\normalfont}% % Body font
 {}% Indent amount
-{\small\bf\sffamily\color{ocre}}% % Theorem head font
+{\small\bf\sffamily\color{orange}}% % Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
-{\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+{\small\sffamily\color{orange}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
 \thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---\nobreakspace#3.}} % Optional theorem note
 \renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
 \makeatother
 
 % Non-boxed/non-framed/non-numbered environments
-\newtheoremstyle{ocreplain}% % Theorem style name
+\newtheoremstyle{orangeplain}% % Theorem style name
 {5pt}% Space above
 {5pt}% Space below
 {\normalfont}% % Body font
 {}% Indent amount
-{\small\bf\sffamily\color{ocre}}% % Theorem head font
+{\small\bf\sffamily\color{orange}}% % Theorem head font
 {\;}% Punctuation after theorem head
 {0.25em}% Space after theorem head
-{\small\sffamily\color{ocre}\thmname{#1}\nobreakspace% Theorem text (e.g. Theorem 2.1)
+{\small\sffamily\color{orange}\thmname{#1}\nobreakspace% Theorem text (e.g. Theorem 2.1)
 \thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}---#3.}} % Optional theorem note
 \renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
 \makeatother
@@ -86,7 +86,7 @@
 % Defines the theorem text style for each type of theorem to one of the three styles above
 \newcounter{dummy}
 \numberwithin{dummy}{section}
-\theoremstyle{ocrenumbox}
+\theoremstyle{orangenumbox}
 \newtheorem{theoremeT}[dummy]{Theorem}
 \newtheorem{problem}{Problème}[chapter]
 \newtheorem{exerciseT}{Exercice}[chapter]
@@ -96,11 +96,11 @@
 \newtheorem{vocabulary}{Vocabulaire}[chapter]
 \newtheorem{definitionT}{Définition}[section]
 \newtheorem{corollaryT}[dummy]{Corollary}
-\theoremstyle{ocrenum}
+\theoremstyle{orangenum}
 \newtheorem{proposition}[dummy]{Proposition}
 
 % Defines the highlight style which is exactly like a theorem without the numbering / title
-\theoremstyle{ocreplain}
+\theoremstyle{orangeplain}
 \newtheorem{highlightT}{}
 \theoremstyle{blackplain}
 \newtheorem{lowlightT}{}
@@ -113,7 +113,7 @@
 \newmdenv[skipabove=7pt,
 skipbelow=7pt,
 backgroundcolor=black!5,
-linecolor=ocre,
+linecolor=orange,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
 innertopmargin=5pt,
@@ -128,8 +128,8 @@ rightline=false,
 leftline=true,
 topline=false,
 bottomline=false,
-backgroundcolor=ocre!10,
-linecolor=ocre,
+backgroundcolor=orange!10,
+linecolor=orange,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
 innertopmargin=5pt,
@@ -145,7 +145,7 @@ rightline=false,
 leftline=true,
 topline=false,
 bottomline=false,
-linecolor=ocre,
+linecolor=orange,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
 innertopmargin=0pt,
@@ -175,9 +175,9 @@ innerbottommargin=5pt]{cBox}
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}
 \newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
 \newenvironment{corollary}{\begin{cBox}\begin{corollaryT}}{\end{corollaryT}\end{cBox}}
-\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}
+\newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{orange}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}
 \newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}
-\newenvironment{highlight}{\begin{eBox}\begin{highlightT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{highlightT}\end{eBox}}
+\newenvironment{highlight}{\begin{eBox}\begin{highlightT}}{\hfill{\color{orange}\tiny\ensuremath{\blacksquare}}\end{highlightT}\end{eBox}}
 \newenvironment{lowlight}{\begin{eBox}\begin{lowlightT}}{\hfill{\color{black}\tiny\ensuremath{\blacksquare}}\end{lowlightT}\end{eBox}}
 
 %----------------------------------------------------------------------------------------
@@ -189,5 +189,5 @@ innerbottommargin=5pt]{cBox}
 \leftmargin=35pt % Indentation on the left
 \rightmargin=25pt}\item\ignorespaces % Indentation on the right
 \makebox[-2.5pt]{\begin{tikzpicture}[overlay]
-\node[draw=ocre!60,line width=1pt,circle,fill=ocre!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{ocre}{R}};\end{tikzpicture}} % Orange R in a circle
+\node[draw=orange!60,line width=1pt,circle,fill=orange!25,font=\sffamily\bfseries,inner sep=2pt,outer sep=0pt] at (-15pt,0pt){\textcolor{orange}{R}};\end{tikzpicture}} % Orange R in a circle
 \advance\baselineskip -1pt}{\end{list}\vskip5pt} % Tighter line spacing and white space after remark
