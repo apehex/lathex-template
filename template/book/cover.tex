@@ -53,7 +53,7 @@
     \foreach \i in {21,...,2} {\drawhexagon{}{$(current page.south east)+(-0.2,-0.45)$}{\i cm}{0}{orange!85,draw};}
 
     %%%%%%%%%%%%%%%%%%%% Title + Subtitle %%%%%%%%%%%%%%%%%%%%
-    \drawtext{\Huge\textsc{#1}\\\Large\textsc{#2}}{$(current page.center)+(3.2,-3.2)$}{3cm}{-60}{text=white,align=right};
+    \drawtext{\Huge\uppercase{#1}\\\Large\textsc{#2}}{$(current page.center)+(3.2,-3.2)$}{3cm}{-60}{text=white,align=right};
 
     %%%%%%%%%%%%%%%%%%%% Author Name %%%%%%%%%%%%%%%%%%%%
     \begin{pgfonlayer}{fg}

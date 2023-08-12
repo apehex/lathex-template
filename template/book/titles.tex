@@ -22,38 +22,45 @@
 %----------------------------------------------------------------------------------------
 
 \titleformat{\part}[display]
-  {\fontsize{48}{60}\selectfont\sffamily}
+  {\fontsize{48}{60}\selectfont\sffamily\color{white}}
   {}
   {0pt}
   {\begin{tikzpicture}[overlay]
     \node[anchor=base, text centered, text depth=1, text width=\paperwidth, inner sep=2cm, outer sep=0pt, minimum height=2cm, minimum width=\paperwidth, fill=black] {\parbox{\paperwidth}{}};
-  \end{tikzpicture}}
+  \end{tikzpicture}\MakeUppercase}
+
+% \renewcommand{\chapter}[1]{%
+%   \par\vspace{3.25ex plus 1ex minus .2ex}%
+%   \noindent\hspace*{-2.4cm}\colorbox{orange}{%
+%     \hspace*{2.4cm}\normalfont\huge\sffamily\color{white}\uppercase{#1}
+%   }%
+%   \par\nobreak\vspace{1.5ex plus .2ex}%
+% }
 
 \titleformat{\chapter}[hang]
-  {\normalfont\huge\sffamily\bfseries}
-  {\numberinmargin{\thechapter}{30}{orange}}
+  {\normalfont\huge\sffamily\bfseries\color{orange}}
+  {\numberinmargin{\thechapter}{24}{orange}}
   {0pt}
-  {}
+  {\MakeUppercase}
 
 \titleformat{\section}
-  {\normalfont\large\sffamily\bfseries}
+  {\normalfont\large\sffamily\bfseries\color{white}}
   {\numberinmargin{\thesection}{16}{orange}}
   {0pt}
-  {}
+  {\MakeUppercase}
 
 \titleformat{\subsection}
-  {\normalfont\normalsize\sffamily\bfseries}
+  {\normalfont\normalsize\sffamily\bfseries\color{white}}
   {\numberinmargin{\thesubsection}{12}{white}}
   {0pt}
   {}
 
 \titleformat{\subsubsection}
-  {\normalfont\small\sffamily\bfseries}
+  {\normalfont\small\sffamily\bfseries\color{white}}
   {\numberinmargin{\thesubsubsection}{10}{white}}
   {0pt}
   {}
 
-\let\oldparagraph\paragraph
 \renewcommand{\paragraph}[1]{%
   \par\vspace{3.25ex plus 1ex minus .2ex}%
   \noindent\hspace*{-4cm}\colorbox{orange}{%
