@@ -11,6 +11,7 @@
 \setcounter{tocdepth}{1} % TOC depth
 
 {
+\setlength{\parskip}{0pt}
 \hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor=orange,bookmarks=true,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
 \@starttoc{toc}
 }
@@ -31,7 +32,7 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{orange}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax
+    \leavevmode\colorbox{orange}{\vtop{\hsize=\dimexpr\textwidth\relax
       \strut\color{white}\bfseries\sffamily\uppercase{#1}%
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
@@ -42,11 +43,11 @@
 \renewcommand*\l@chapter[2]{%
 \ifnum \c@tocdepth >\m@ne
   \addpenalty{-\@highpenalty}%
-  \vskip 0em
+  \vskip 0pt
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{black}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax
-      \strut\color{orange}\bfseries\sffamily\uppercase{#1}
+    \leavevmode\colorbox{darkgray}{\vtop{\hsize=\dimexpr\textwidth\relax
+      \hspace*{4cm}\strut\color{white}\bfseries\sffamily\uppercase{#1}
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -59,8 +60,8 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{black}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax
-      \strut\color{white}\sffamily#1
+    \leavevmode\colorbox{black}{\vtop{\hsize=\dimexpr\textwidth\relax
+      \hspace*{4cm}\strut\color{white}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -73,8 +74,8 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{gray!40}{\vtop{\hsize=\dimexpr\textwidth-2\fboxsep-7pt\relax
-      \strut\color{white}\sffamily#1
+    \leavevmode\colorbox{gray!40}{\vtop{\hsize=\dimexpr\textwidth\relax
+      \hspace*{4cm}\strut\color{white}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup

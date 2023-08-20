@@ -8,7 +8,7 @@
 \newcommand*{\numberinmargin}[3]{\makebox[0pt][r]{\textcolor{#3}{\fontsize{#2}{#2}\selectfont\sffamily\bfseries#1\autodot}\hskip\marginparsep}}
 
 %----------------------------------------------------------------------------------------
-%   SPACING
+%   LAYOUT
 %----------------------------------------------------------------------------------------
 
 \titlespacing*{\part}{-2.95cm}{8cm}{20pt}
@@ -18,24 +18,42 @@
 \titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 %----------------------------------------------------------------------------------------
-%   TITLES
+%   PART PAGE
 %----------------------------------------------------------------------------------------
 
 \titleformat{\part}[display]
-  {\fontsize{48}{60}\selectfont\sffamily\color{white}}
+  {}
   {}
   {0pt}
   {\begin{tikzpicture}[overlay]
-    \node[anchor=base, text centered, text depth=1, text width=\paperwidth, inner sep=2cm, outer sep=0pt, minimum height=2cm, minimum width=\paperwidth, fill=black] {\parbox{\paperwidth}{}};
-  \end{tikzpicture}\MakeUppercase}
+    % horizontal black strip behind title
+    \node[anchor=base, text centered, text depth=1, text width=\paperwidth, inner sep=0mm, outer sep=0pt, minimum height=48mm, minimum width=\paperwidth, fill=black] {\parbox{\paperwidth}{}};
+    % introduction block below title
+    \node[anchor=north west, text depth=1, inner sep=0pt, outer sep=0pt, minimum width=\paperwidth, xshift=0cm, yshift=0cm] at (current page.west) {\currentpartintro};
+  \end{tikzpicture}
+  \fontsize{48}{60}\selectfont\sffamily\color{white}\MakeUppercase}
 
-% \renewcommand{\chapter}[1]{%
-%   \par\vspace{3.25ex plus 1ex minus .2ex}%
-%   \noindent\hspace*{-2.4cm}\colorbox{orange}{%
-%     \hspace*{2.4cm}\normalfont\huge\sffamily\color{white}\uppercase{#1}
-%   }%
-%   \par\nobreak\vspace{1.5ex plus .2ex}%
-% }
+%----------------------------------------------------------------------------------------
+%   SHOW / HIDE PART TITLE IN THE LEFT BAR
+%----------------------------------------------------------------------------------------
+
+\newif\ifbackgroundtitlevisible
+\backgroundtitlevisibletrue
+
+\newif\ifbackgroundbarvisible
+\backgroundbarvisibletrue
+
+\let\originalpart\part
+
+\renewcommand{\part}[1]{% to reference in the background => display vertically
+\setparttitle{\uppercase{#1}}
+\backgroundtitlevisiblefalse
+\originalpart{#1}
+\backgroundtitlevisibletrue}
+
+%----------------------------------------------------------------------------------------
+%   TITLES
+%----------------------------------------------------------------------------------------
 
 \titleformat{\chapter}[hang]
   {\normalfont\huge\sffamily\bfseries\color{orange}}
@@ -61,6 +79,10 @@
   {0pt}
   {}
 
+%----------------------------------------------------------------------------------------
+%   SPECIAL TITLE
+%----------------------------------------------------------------------------------------
+
 \renewcommand{\paragraph}[1]{%
   \par\vspace{3.25ex plus 1ex minus .2ex}%
   \noindent\hspace*{-4cm}\colorbox{orange}{%
@@ -68,24 +90,6 @@
   }%
   \par\nobreak\vspace{1.5ex plus .2ex}%
 }
-
-%----------------------------------------------------------------------------------------
-%   SHOW / HIDE PART TITLE
-%----------------------------------------------------------------------------------------
-
-\newif\ifbackgroundtitlevisible
-\backgroundtitlevisibletrue
-
-\newif\ifbackgroundbarvisible
-\backgroundbarvisibletrue
-
-\let\originalpart\part
-
-\renewcommand{\part}[1]{% to reference in the background => display vertically
-\setparttitle{\uppercase{#1}}
-\backgroundtitlevisiblefalse
-\originalpart{#1}
-\backgroundtitlevisibletrue}
 
 %-------------------------------------------
 

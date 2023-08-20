@@ -17,37 +17,26 @@
 \PassOptionsToPackage{table}{xcolor}
 
 %----------------------------------------------------------------------------------------
-%   VARIOUS REQUIRED PACKAGES AND CONFIGURATIONS
+%   COLORS
+%----------------------------------------------------------------------------------------
+
+\usepackage[table]{xcolor} % Required for specifying colors by name
+
+\usepackage{pagecolor} % dark theme
+
+%----------------------------------------------------------------------------------------
+%   LAYOUT
 %----------------------------------------------------------------------------------------
 
 \usepackage[top=2cm,bottom=2cm,left=4cm,right=2cm,headsep=10pt,a4paper]{geometry} % Page margins
 
-\usepackage{graphicx} % Required for including pictures
-\graphicspath{{images/}} % Specifies the directory where pictures are stored
-
-\usepackage{tikz} % Required for drawing custom shapes
-\usetikzlibrary{fit, shapes, arrows, positioning, calc, tikzmark, shapes.geometric}
-
-\usepackage[english]{babel} % French language/hyphenation
-
-\usepackage{enumitem} % Customize lists
-
-\usepackage{booktabs} % Required for nicer horizontal rules in tables
-
-\usepackage[table]{xcolor} % Required for specifying colors by name
-
 \usepackage{pdflscape} % Allows to rotate pages in landscape
-
-%----------------------------------------------------------------------------------------
-%   DARK THEME
-%----------------------------------------------------------------------------------------
-
-\usepackage{pagecolor}
 
 %----------------------------------------------------------------------------------------
 %   FONTS
 %----------------------------------------------------------------------------------------
 
+\usepackage[english]{babel} % French language/hyphenation
 \usepackage{inconsolata}
 \usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
 
@@ -100,6 +89,28 @@
 \usepackage[all]{hypcap} % moves the ref jumping points to the top of images (instead of the caption)
 
 %----------------------------------------------------------------------------------------
+%   IMAGES
+%----------------------------------------------------------------------------------------
+
+\usepackage{graphicx} % Required for including pictures
+\graphicspath{{images/}} % Specifies the directory where pictures are stored
+
+\usepackage{tikz} % Required for drawing custom shapes
+\usetikzlibrary{fit, shapes, arrows, positioning, calc, tikzmark, shapes.geometric}
+
+%----------------------------------------------------------------------------------------
+%   LISTS
+%----------------------------------------------------------------------------------------
+
+\usepackage{enumitem} % Customize lists
+
+%----------------------------------------------------------------------------------------
+%   TABLES
+%----------------------------------------------------------------------------------------
+
+\usepackage{booktabs} % Required for nicer horizontal rules in tables
+
+%----------------------------------------------------------------------------------------
 %   CAPTIONS
 %----------------------------------------------------------------------------------------
 
@@ -115,7 +126,7 @@
 %   BIBLIOGRAPHY AND INDEX
 %----------------------------------------------------------------------------------------
 
-\usepackage[style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,autolang=other,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\usepackage[style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,autolang=other,hyperref=true,abbreviate=false,backref=true,backend=bibtex]{biblatex}
 
 \usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
 \usepackage{makeidx} % Required to make an index
