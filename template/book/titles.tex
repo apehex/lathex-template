@@ -26,12 +26,12 @@
   {}
   {0pt}
   {\begin{tikzpicture}[overlay]
-    % horizontal black strip behind title
-    \node[anchor=north west, inner sep=0mm, outer sep=0pt, minimum height=48mm, minimum width=\paperwidth, xshift=0cm, yshift=2.8cm, fill=black] {\parbox{\paperwidth}{}};
+    % horizontal bg strip behind title
+    \node[anchor=north west, inner sep=0mm, outer sep=0pt, minimum height=48mm, minimum width=\paperwidth, xshift=0cm, yshift=2.8cm, fill=bg] {\parbox{\paperwidth}{}};
     % introduction block below title
     \node[anchor=north west, inner sep=0pt, outer sep=0pt, minimum height=48mm, minimum width=\paperwidth, xshift=0cm, yshift=-4cm, align=left] {\currentpartintro};
   \end{tikzpicture}
-  \fontsize{48}{60}\selectfont\sffamily\color{white}\MakeUppercase}
+  \fontsize{48}{60}\selectfont\sffamily\color{fg}\MakeUppercase}
 
 %----------------------------------------------------------------------------------------
 %   SHOW / HIDE PART TITLE IN THE LEFT BAR
@@ -56,26 +56,26 @@
 %----------------------------------------------------------------------------------------
 
 \titleformat{\chapter}[hang]
-  {\normalfont\huge\sffamily\bfseries\color{orange}}
-  {\numberinmargin{\thechapter}{24}{orange}}
+  {\normalfont\huge\sffamily\bfseries\color{fgacc}}
+  {\numberinmargin{\thechapter}{24}{fgacc}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\section}
-  {\normalfont\large\sffamily\bfseries\color{white}}
-  {\numberinmargin{\thesection}{16}{orange}}
+  {\normalfont\large\sffamily\bfseries\color{fg}}
+  {\numberinmargin{\thesection}{16}{fgacc}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\subsection}
-  {\normalfont\normalsize\sffamily\bfseries\color{white}}
-  {\numberinmargin{\thesubsection}{12}{white}}
+  {\normalfont\normalsize\sffamily\bfseries\color{fg}}
+  {\numberinmargin{\thesubsection}{12}{fg}}
   {0pt}
   {}
 
 \titleformat{\subsubsection}
-  {\normalfont\small\sffamily\bfseries\color{white}}
-  {\numberinmargin{\thesubsubsection}{10}{white}}
+  {\normalfont\small\sffamily\bfseries\color{fg}}
+  {\numberinmargin{\thesubsubsection}{10}{fg}}
   {0pt}
   {}
 
@@ -85,8 +85,8 @@
 
 \renewcommand{\paragraph}[1]{%
   \par\vspace{3.25ex plus 1ex minus .2ex}%
-  \noindent\hspace*{-4cm}\colorbox{orange}{%
-    \hspace*{4cm}\normalfont\huge\sffamily\color{white}\uppercase{#1}
+  \noindent\hspace*{-4cm}\colorbox{fgacc}{%
+    \hspace*{4cm}\normalfont\huge\sffamily\color{fg}\uppercase{#1}
   }%
   \par\nobreak\vspace{1.5ex plus .2ex}%
 }

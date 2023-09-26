@@ -21,7 +21,6 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage[table]{xcolor} % Required for specifying colors by name
-
 \usepackage{pagecolor} % dark theme
 
 %----------------------------------------------------------------------------------------
@@ -38,7 +37,7 @@
 
 \usepackage[english]{babel} % French language/hyphenation
 \usepackage{inconsolata}
-\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+\usepackage{mathptmx}
 
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage[utf8]{inputenc} % Required for including letters with accents
@@ -96,7 +95,7 @@
 \graphicspath{{images/}} % Specifies the directory where pictures are stored
 
 \usepackage{tikz} % Required for drawing custom shapes
-\usetikzlibrary{fit, shapes, arrows, positioning, calc, tikzmark, shapes.geometric}
+\usetikzlibrary{arrows, backgrounds, calc, fit, mindmap, positioning, shapes, shapes.geometric, tikzmark}
 
 %----------------------------------------------------------------------------------------
 %   LISTS
@@ -133,18 +132,21 @@
 \makeindex % Tells LaTeX to create the files required for indexing
 
 %----------------------------------------------------------------------------------------
+%   THEME
+%----------------------------------------------------------------------------------------
+\input{template/themes}
+
+%----------------------------------------------------------------------------------------
 %   TEMPLATE
 %----------------------------------------------------------------------------------------
 \input{template/book/global}
 \input{template/book/fonts}
-\input{template/book/colors}
-\input{template/book/dark}
 \input{template/book/cover}
+\input{template/book/links}
 \input{template/book/toc}
 \input{template/book/headers}
 \input{template/book/titles}
 \input{template/book/text}
-\input{template/book/links}
 \input{template/book/lists}
 \input{template/book/boxes}
 \input{template/book/figures}

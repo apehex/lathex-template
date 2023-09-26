@@ -1,10 +1,10 @@
-\DeclareCaptionFont{white}{\color{white}}
-\DeclareCaptionFont{orange}{\color{orange}}
-\DeclareCaptionFormat{listing}{\colorbox{black}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1#2#3}}}
+\DeclareCaptionFont{fg}{\color{fg}}
+\DeclareCaptionFont{fgacc}{\color{fgacc}}
+\DeclareCaptionFormat{listing}{\colorbox{border}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{##1##2##3}}}
 \captionsetup[lstlisting]{
   format=listing,
-  labelfont=orange,
-  textfont=white,
+  labelfont=fgacc,
+  textfont=fg,
   singlelinecheck=false,
   margin=0pt,
   font={bf,footnotesize}

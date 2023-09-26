@@ -4,36 +4,62 @@
 \tikzstyle{title} = [
     minimum width=3cm,
     draw=none,
-    text=green,
-    font=\bf,
-    inner sep=0pt]
-\tikzstyle{container} = [
-    rectangle,
-    draw=green!60,
-    very thick,
-    dashed,
-    text=green,
-    inner sep=1cm]
-\tikzstyle{block} = [
-    rectangle,
-    minimum height=4em,
-    fill=blue!5,
-    draw=blue!60,
-    rounded corners,
-    very thick,
-    text width=5em,
-    font=\bf,
-    text centered]
-\tikzstyle{decision} = [
-    diamond,
-    draw=red!60,
-    fill=red!5,
-    very thick,
-    text centered,
-    text width=5em,
+    text=fg,
     font=\bf,
     inner sep=0pt]
 \tikzstyle{line} = [
-    draw,
+    draw=border,
     -latex',
     very thick]
+\tikzstyle{arrow} = [
+    ->,
+    >=stealth,
+    draw=border,
+    very thick]
+\tikzstyle{label} = [
+    text centered,
+    text=fg,
+    very thick]
+\tikzstyle{startstop} = [
+    rectangle,
+    rounded corners,
+    text centered,
+    draw=border,
+    fill=bg,
+    text=fg,
+    very thick,
+    inner sep=2mm]
+\tikzstyle{io} = [
+    trapezium,
+    trapezium left angle=70,
+    trapezium right angle=110,
+    text centered,
+    draw=border,
+    fill=bg,
+    text=fg,
+    very thick,
+    inner sep=2mm]
+\tikzstyle{container} = [
+    rectangle,
+    draw=border,
+    dashed,
+    very thick,
+    text=fg,
+    inner sep=4mm]
+\tikzstyle{block} = [
+    rectangle,
+    text centered,
+    draw=border,
+    fill=bg,
+    text=fg,
+    very thick,
+    inner sep=2mm]
+\tikzstyle{decision} = [
+    diamond,
+    aspect=2,
+    text centered,
+    draw=border,
+    fill=bg,
+    text=fg,
+    very thick,
+    inner sep=2mm]

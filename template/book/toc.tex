@@ -12,7 +12,7 @@
 
 {
 \setlength{\parskip}{0pt}
-\hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor=orange,bookmarks=true,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
+\hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=true,breaklinks=true,urlcolor=fgacc,bookmarks=true,bookmarksopen=false,pdftitle={\TITLE},pdfauthor={\AUTHOR},pdfsubject={\SUBJECT}}
 \@starttoc{toc}
 }
 
@@ -32,8 +32,8 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{orange}{\vtop{\hsize=\dimexpr\textwidth\relax
-      \strut\color{white}\bfseries\sffamily\uppercase{#1}%
+    \leavevmode\colorbox{fgacc}{\vtop{\hsize=\dimexpr\textwidth\relax
+      \strut\color{fg}\bfseries\sffamily\uppercase{#1}%
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -46,8 +46,8 @@
   \vskip 0pt
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{darkgray}{\vtop{\hsize=\dimexpr\textwidth\relax
-      \hspace*{4cm}\strut\color{white}\bfseries\sffamily\uppercase{#1}
+    \leavevmode\colorbox{bgalt}{\vtop{\hsize=\dimexpr\textwidth\relax
+      \hspace*{4cm}\strut\color{fg}\bfseries\sffamily\uppercase{#1}
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -60,8 +60,8 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{black}{\vtop{\hsize=\dimexpr\textwidth\relax
-      \hspace*{4cm}\strut\color{white}\sffamily#1
+    \leavevmode\colorbox{bg}{\vtop{\hsize=\dimexpr\textwidth\relax
+      \hspace*{4cm}\strut\color{fg}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -74,8 +74,8 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{gray!40}{\vtop{\hsize=\dimexpr\textwidth\relax
-      \hspace*{4cm}\strut\color{white}\sffamily#1
+    \leavevmode\colorbox{bg}{\vtop{\hsize=\dimexpr\textwidth\relax
+      \hspace*{4cm}\strut\color{fg}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -110,9 +110,9 @@
 % % Chapter text styling
 % \titlecontents{lchapter}[0em] % Indenting
 % {\addvspace{15pt}\large\sffamily\bfseries} % Spacing and font options for chapters
-% {\color{orange}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{orange}} % Chapter number
+% {\color{fgacc}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{fgacc}} % Chapter number
 % {}  
-% {\color{orange}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+% {\color{fgacc}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % % Section text styling
 % \titlecontents{lsection}[0em] % Indenting
