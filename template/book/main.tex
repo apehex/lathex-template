@@ -11,146 +11,52 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
-%   SOLVE CONFLICTS
+%   GENERIC
 %----------------------------------------------------------------------------------------
 
-\PassOptionsToPackage{table}{xcolor}
+% THEMES ----------------------------------------------------------------------
+\input{template/generic/themes}
+% GEOMETRY --------------------------------------------------------------------
+\input{template/generic/geometry}
+% PAGE LAYOUT -----------------------------------------------------------------
+\input{template/generic/page}
+% FONTS -----------------------------------------------------------------------
+\input{template/generic/fonts}
+% TITLES ----------------------------------------------------------------------
+\input{template/generic/titles}
+% MATH ------------------------------------------------------------------------
+\input{template/generic/math}
+% LINKS -----------------------------------------------------------------------
+\input{template/generic/links}
+% LISTS -----------------------------------------------------------------------
+\input{template/generic/lists}
+% CODE ------------------------------------------------------------------------
+\input{template/generic/syntax}
+% HEADERS ---------------------------------------------------------------------
+\input{template/generic/headers}
+% BOXES -----------------------------------------------------------------------
+\input{template/generic/boxes}
+% CAPTIONS --------------------------------------------------------------------
+\input{template/generic/captions}
+% ILLUSTRATIONS ---------------------------------------------------------------
+\input{template/generic/images}
+\input{template/generic/figures}
+% TABLES ----------------------------------------------------------------------
+\input{template/generic/tables}
 
 %----------------------------------------------------------------------------------------
-%   COLORS
+%   BOOK
 %----------------------------------------------------------------------------------------
 
-\usepackage[table]{xcolor} % Required for specifying colors by name
-\usepackage{pagecolor} % dark theme
-
-%----------------------------------------------------------------------------------------
-%   LAYOUT
-%----------------------------------------------------------------------------------------
-
-\usepackage[top=2cm,bottom=2cm,left=4cm,right=2cm,headsep=10pt,a4paper]{geometry} % Page margins
-
-\usepackage{pdflscape} % Allows to rotate pages in landscape
-
-%----------------------------------------------------------------------------------------
-%   FONTS
-%----------------------------------------------------------------------------------------
-
-\usepackage[english]{babel} % French language/hyphenation
-\usepackage{inconsolata}
-\usepackage{mathptmx}
-
-\usepackage{microtype} % Slightly tweak font spacing for aesthetics
-\usepackage[utf8]{inputenc} % Required for including letters with accents
-\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
-
-%----------------------------------------------------------------------------------------
-%   BACKGROUND: VERTICAL BAR ON THE LEFT
-%----------------------------------------------------------------------------------------
-
-\usepackage[all]{background}
-
-%----------------------------------------------------------------------------------------
-%   BOXES
-%----------------------------------------------------------------------------------------
-
-\usepackage[framemethod=default]{mdframed}
-
-%----------------------------------------------------------------------------------------
-%   TOC
-%----------------------------------------------------------------------------------------
-
-\usepackage{titletoc} % Required for manipulating the table of contents
-
-%----------------------------------------------------------------------------------------
-%   HEADERS
-%----------------------------------------------------------------------------------------
-
-\usepackage{fancyhdr} % Required for header and footer configuration
-
-%----------------------------------------------------------------------------------------
-%   TITLES
-%----------------------------------------------------------------------------------------
-
-\usepackage{titlesec}
-
-%----------------------------------------------------------------------------------------
-%   MATHS
-%----------------------------------------------------------------------------------------
-
-\usepackage{amsmath,amsfonts,amssymb,amsthm} % For math equations, theorems, symbols, etc
-
-%----------------------------------------------------------------------------------------
-%   LINKS
-%----------------------------------------------------------------------------------------
-
-\usepackage{hyperref}
-\usepackage{bookmark}
-\usepackage[all]{hypcap} % moves the ref jumping points to the top of images (instead of the caption)
-
-%----------------------------------------------------------------------------------------
-%   IMAGES
-%----------------------------------------------------------------------------------------
-
-\usepackage{graphicx} % Required for including pictures
-\graphicspath{{images/}} % Specifies the directory where pictures are stored
-
-\usepackage{tikz} % Required for drawing custom shapes
-\usetikzlibrary{arrows, backgrounds, calc, fit, mindmap, positioning, shapes, shapes.geometric, tikzmark}
-
-%----------------------------------------------------------------------------------------
-%   LISTS
-%----------------------------------------------------------------------------------------
-
-\usepackage{enumitem} % Customize lists
-
-%----------------------------------------------------------------------------------------
-%   TABLES
-%----------------------------------------------------------------------------------------
-
-\usepackage{booktabs} % Required for nicer horizontal rules in tables
-
-%----------------------------------------------------------------------------------------
-%   CAPTIONS
-%----------------------------------------------------------------------------------------
-
-\usepackage{caption}
-
-%----------------------------------------------------------------------------------------
-%   CODE SNIPPETS
-%----------------------------------------------------------------------------------------
-
-\usepackage{listings}
-
-%----------------------------------------------------------------------------------------
-%   BIBLIOGRAPHY AND INDEX
-%----------------------------------------------------------------------------------------
-
-\usepackage[style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,autolang=other,hyperref=true,abbreviate=false,backref=true,backend=bibtex]{biblatex}
-
-\usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
-\usepackage{makeidx} % Required to make an index
-\makeindex % Tells LaTeX to create the files required for indexing
-
-%----------------------------------------------------------------------------------------
-%   THEME
-%----------------------------------------------------------------------------------------
-\input{template/themes}
-
-%----------------------------------------------------------------------------------------
-%   TEMPLATE
-%----------------------------------------------------------------------------------------
-\input{template/book/global}
-\input{template/book/fonts}
-\input{template/book/cover}
-\input{template/book/links}
-\input{template/book/toc}
-\input{template/book/headers}
+% PAGE LAYOUT -----------------------------------------------------------------
+\input{template/book/page}
+% TITLES ----------------------------------------------------------------------
 \input{template/book/titles}
-\input{template/book/text}
-\input{template/book/lists}
-\input{template/book/boxes}
-\input{template/book/figures}
-\input{template/book/tables}
-\input{template/book/captions}
+% COVER -----------------------------------------------------------------------
+\input{template/book/cover}
+% TOC -------------------------------------------------------------------------
+\input{template/book/toc}
+% BACKGROUND ------------------------------------------------------------------
 \input{template/book/background}
-\input{template/syntax/solidity}
+% BIBLIOGRAPHY ----------------------------------------------------------------
+\input{template/book/bibliography}

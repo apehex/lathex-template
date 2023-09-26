@@ -1,11 +1,13 @@
-\makeatletter
+\usepackage{titlesec}
 
 %----------------------------------------------------------------------------------------
-%   SECTION NUMBERING IN THE MARGIN
+%   SET TEXT FOR THE PART PAGE
 %----------------------------------------------------------------------------------------
 
-\newcommand{\autodot}{.} % separate title numbers with dots
-\newcommand*{\numberinmargin}[3]{\makebox[0pt][r]{\textcolor{#3}{\fontsize{#2}{#2}\selectfont\sffamily\bfseries#1\autodot}\hskip\marginparsep}}
+\newcommand{\currentparttitle}{}
+\newcommand{\currentpartintro}{}
+\newcommand{\setparttitle}[1]{\renewcommand{\currentparttitle}{#1}}
+\newcommand{\setpartintro}[1]{\renewcommand{\currentpartintro}{#1}}
 
 %----------------------------------------------------------------------------------------
 %   LAYOUT
@@ -13,12 +15,8 @@
 
 \titlespacing*{\part}{-3cm}{9cm}{20pt}
 
-\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
-
-\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
 %----------------------------------------------------------------------------------------
-%   PART PAGE
+%   FORMAT
 %----------------------------------------------------------------------------------------
 
 \titleformat{\part}[display]
@@ -33,64 +31,10 @@
   \end{tikzpicture}
   \fontsize{48}{60}\selectfont\sffamily\color{fg}\MakeUppercase}
 
-%----------------------------------------------------------------------------------------
-%   SHOW / HIDE PART TITLE IN THE LEFT BAR
-%----------------------------------------------------------------------------------------
-
-\newif\ifbackgroundtitlevisible
-\backgroundtitlevisibletrue
-
-\newif\ifbackgroundbarvisible
-\backgroundbarvisibletrue
-
 \let\originalpart\part
 
-\renewcommand{\part}[1]{% to reference in the background => display vertically
+\renewcommand{\part}[1]{% to reference the title in the left bar in the margin
 \setparttitle{\uppercase{#1}}
 \backgroundtitlevisiblefalse
 \originalpart{#1}
 \backgroundtitlevisibletrue}
-
-%----------------------------------------------------------------------------------------
-%   TITLES
-%----------------------------------------------------------------------------------------
-
-\titleformat{\chapter}[hang]
-  {\normalfont\huge\sffamily\bfseries\color{fgacc}}
-  {\numberinmargin{\thechapter}{24}{fgacc}}
-  {0pt}
-  {\MakeUppercase}
-
-\titleformat{\section}
-  {\normalfont\large\sffamily\bfseries\color{fg}}
-  {\numberinmargin{\thesection}{16}{fgacc}}
-  {0pt}
-  {\MakeUppercase}
-
-\titleformat{\subsection}
-  {\normalfont\normalsize\sffamily\bfseries\color{fg}}
-  {\numberinmargin{\thesubsection}{12}{fg}}
-  {0pt}
-  {}
-
-\titleformat{\subsubsection}
-  {\normalfont\small\sffamily\bfseries\color{fg}}
-  {\numberinmargin{\thesubsubsection}{10}{fg}}
-  {0pt}
-  {}
-
-%----------------------------------------------------------------------------------------
-%   SPECIAL TITLE
-%----------------------------------------------------------------------------------------
-
-\renewcommand{\paragraph}[1]{%
-  \par\vspace{3.25ex plus 1ex minus .2ex}%
-  \noindent\hspace*{-4cm}\colorbox{fgacc}{%
-    \hspace*{4cm}\normalfont\huge\sffamily\color{fg}\uppercase{#1}
-  }%
-  \par\nobreak\vspace{1.5ex plus .2ex}%
-}
-
-%-------------------------------------------
-
-\makeatother
