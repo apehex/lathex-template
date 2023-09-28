@@ -1,0 +1,56 @@
+%----------------------------------------------------------------------------------------
+%   GEOMETRY
+%----------------------------------------------------------------------------------------
+
+\newcommand{\drawfortalogo}[7]{
+    % #1 - Ox
+    % #2 - Oy
+    % #3 - R, radius of the outer circle including the vertexes
+    % #4 - Alpha, the angle between consecutive vertexes on a branch (eg. the angular width)
+    % #5 - Beta, the curvatur angle, as a deviation from the direct line between nodes
+    % #6 - Theta, the tilt angle
+    % #7 - Styling options
+    % \draw[dotted]   \pentagonvertex{#1}{#2}{0.4*#3}{-36}{0} --
+    %                 \pentagonvertex{#1}{#2}{0.4*#3}{-36}{1} --
+    %                 \pentagonvertex{#1}{#2}{0.4*#3}{-36}{2} --
+    %                 \pentagonvertex{#1}{#2}{0.4*#3}{-36}{3} --
+    %                 \pentagonvertex{#1}{#2}{0.4*#3}{-36}{4} -- cycle;
+
+    % \draw[dotted, draw=blue]    \pentagonvertex{#1}{#2}{#3}{-0.5*#4}{0} --
+    %                     \pentagonvertex{#1}{#2}{#3}{-0.5*#4}{1} --
+    %                     \pentagonvertex{#1}{#2}{#3}{-0.5*#4}{2} --
+    %                     \pentagonvertex{#1}{#2}{#3}{-0.5*#4}{3} --
+    %                     \pentagonvertex{#1}{#2}{#3}{-0.5*#4}{4} -- cycle;
+
+    % \draw[dotted, draw=red]     \pentagonvertex{#1}{#2}{#3}{0.5*#4}{0} --
+    %                     \pentagonvertex{#1}{#2}{#3}{0.5*#4}{1} --
+    %                     \pentagonvertex{#1}{#2}{#3}{0.5*#4}{2} --
+    %                     \pentagonvertex{#1}{#2}{#3}{0.5*#4}{3} --
+    %                     \pentagonvertex{#1}{#2}{#3}{0.5*#4}{4} -- cycle;
+
+    \foreach \i [evaluate=\i as \j using {int(mod(\i+1,5))},
+                evaluate=\i as \Aout using {#6 + 90 + #5 + \i*72},
+                evaluate=\i as \Bin using {#6 - 90 - #5 + \i*72},
+                evaluate=\i as \Bout using {#6 + 180 + #5 + \i*72},
+                evaluate=\i as \Cin using {#6 - #5 + \i*72},
+                evaluate=\i as \Cout using {#6 + 72 + #5 + \i*72},
+                evaluate=\i as \Din using {#6 + 252 - #5 + \i*72}
+               ] in {0,1,2,3,4} {
+        \path let \p1 = \pentagonvertex{#1}{#2}{#3}{#6-0.5*#4}{\i},
+                  \p2 = \pentagonvertex{#1}{#2}{#3}{#6+0.5*#4}{\i},
+                  \p3 = \pentagonvertex{#1}{#2}{0.4*#3}{#6+36}{\i},
+                  \p4 = \pentagonvertex{#1}{#2}{#3}{#6-0.5*#4}{\j}
+              in coordinate (A) at (\p1)
+                 coordinate (B) at (\p2)
+                 coordinate (C) at (\p3)
+                 coordinate (D) at (\p4);
+        
+        \draw[#7] (A) to[out=\Aout,in=\Bin] (B) 
+                  to[out=\Bout,in=\Cin] (C) 
+                  to[out=\Cout,in=\Din] (D);
+    }
+}
+
+%----------------------------------------------------------------------------------------
+%   NODE TYPES
+%----------------------------------------------------------------------------------------
