@@ -16,7 +16,7 @@
 
 \backgroundsetup{
   scale=1,
-  color=borderacc,
+  color=bgacc,
   opacity=1,
   angle=0,
   position=current page.south west,
@@ -24,12 +24,12 @@
   hshift=16mm, % Adjust the distance from the left edge of the page
   contents={%
     \tikz{
-      % \fill[borderacc] (0,0) rectangle (6mm,16mm); % bottom bar, 6mm wide, 16mm tall
+      % \fill[bgacc] (0,0) rectangle (6mm,16mm); % bottom bar, 6mm wide, 16mm tall
       \ifbackgroundbarvisible
-        \fill[borderacc] (0,\paperheight) rectangle (8mm,-\paperheight); % bar width 6mm
+        \fill[bgacc] (0,\paperheight) rectangle (8mm,-\paperheight); % bar width 6mm
       \fi
       \ifbackgroundtitlevisible
-        \node[rotate=90, fg, font=\huge\bfseries\sffamily, anchor=west] at (4mm, 16mm) {\currentparttitle};
+        \node[rotate=90, fgacc, font=\huge\bfseries\sffamily, anchor=west] at (4mm, 16mm) {\currentparttitle};
       \fi
     }
   }

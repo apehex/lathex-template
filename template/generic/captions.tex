@@ -5,16 +5,16 @@
 %----------------------------------------------------------------------------------------
 
 \DeclareCaptionFont{fg}{\color{fg}}
-\DeclareCaptionFont{fgacc}{\color{fgacc}}
+\DeclareCaptionFont{accent}{\color{accent}}
 
 %----------------------------------------------------------------------------------------
 %   CODE: LSTLISTING
 %----------------------------------------------------------------------------------------
 
-\DeclareCaptionFormat{listing}{\colorbox{border}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{##1##2##3}}}
+\DeclareCaptionFormat{listing}{\colorbox{border}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1#2#3}}}
 \captionsetup[lstlisting]{
   format=listing,
-  labelfont=fgacc,
+  labelfont=accent,
   textfont=fg,
   labelformat=empty,
   listformat=empty,

@@ -1,25 +1,3 @@
-\newcommand{\drawhexagon}[5]{
-    % #1 - text
-    % #2 - position
-    % #3 - size
-    % #4 - rotation
-    % #5 - options
-    \node[rounded corners, inner sep=0, ultra thick, regular polygon, regular polygon sides=6, minimum size=#3, rotate=#4, #5] at (#2) {
-        {\sffamily \bfseries #1}
-    }
-}
-
-\newcommand{\drawtext}[5]{
-    % #1 - text
-    % #2 - position
-    % #3 - height
-    % #4 - rotation
-    % #5 - options
-    \node[left, bg, rounded corners, minimum width=0.5*\paperwidth, minimum height=#3, text width=16cm, execute at begin node=\setlength{\baselineskip}{2em}, rotate=#4, #5] at (#2){
-        {\sffamily \bfseries #1}
-    }
-}
-
 \newcommand{\coverpage}[5]{
     % #1 - title
     % #2 - subtitle
@@ -27,6 +5,7 @@
     % #4 - date
     % #5 - subject
     \pagestyle{empty}
+    \newgeometry{left=0cm,top=0cm,right=0cm,bottom=0cm}
 
     \begin{tikzpicture}[remember picture,overlay]
 
@@ -64,4 +43,5 @@
     \drawhexagon{\Large #5}{$(current page.west)+(2.5,-5)$}{2.5 cm}{0}{accent!60,draw,text=fg};
 
     \end{tikzpicture}
+    \restoregeometry
 }

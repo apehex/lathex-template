@@ -20,14 +20,14 @@
 %----------------------------------------------------------------------------------------
 
 \titleformat{\chapter}[hang]
-  {\normalfont\huge\sffamily\bfseries\color{fgacc}}
-  {\numberinmargin{\thechapter}{24}{fgacc}}
+  {\normalfont\huge\sffamily\bfseries\color{accent}}
+  {\numberinmargin{\thechapter}{24}{accent}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\section}
   {\normalfont\large\sffamily\bfseries\color{fg}}
-  {\numberinmargin{\thesection}{16}{fgacc}}
+  {\numberinmargin{\thesection}{16}{accent}}
   {0pt}
   {\MakeUppercase}
 
@@ -49,8 +49,8 @@
 
 \renewcommand{\paragraph}[1]{%
   \par\vspace{3.25ex plus 1ex minus .2ex}%
-  \noindent\hspace*{-4cm}\colorbox{fgacc}{%
-    \hspace*{4cm}\normalfont\huge\sffamily\color{fg}\uppercase{#1}
+  \noindent\hspace*{-4cm}\colorbox{bgacc}{%
+    \hspace*{4cm}\normalfont\huge\sffamily\color{fgacc}\uppercase{#1}
   }%
   \par\nobreak\vspace{1.5ex plus .2ex}%
 }
