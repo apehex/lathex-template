@@ -1,6 +1,7 @@
 # build files
 *.aux
 *.bcf
+*.bib
 *.idx
 *.log
 *.ptc
