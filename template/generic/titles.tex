@@ -5,7 +5,7 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\autodot}{.} % separate title numbers with dots
-\newcommand*{\numberinmargin}[3]{\makebox[0pt][r]{\textcolor{#3}{\fontsize{#2}{#2}\selectfont\headingfontfamily\bfseries#1\autodot}\hskip\marginparsep}}
+\newcommand*{\numberinmargin}[3]{\makebox[0pt][r]{\textcolor{#3}{\fontsize{#2}{#2}\selectfont\headingfontfamily\bfseries\selectfont#1\autodot}\hskip\marginparsep}}
 
 %----------------------------------------------------------------------------------------
 %   LAYOUT
@@ -20,25 +20,25 @@
 %----------------------------------------------------------------------------------------
 
 \titleformat{\chapter}[hang]
-  {\normalfont\huge\headingfontfamily\bfseries\color{accent}}
+  {\normalfont\huge\headingfontfamily\bfseries\selectfont\color{accent}}
   {\numberinmargin{\thechapter}{24}{accent}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\section}
-  {\normalfont\large\headingfontfamily\bfseries\color{fg}}
+  {\normalfont\large\headingfontfamily\bfseries\selectfont\color{fg}}
   {\numberinmargin{\thesection}{16}{accent}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\subsection}
-  {\normalfont\normalsize\headingfontfamily\bfseries\color{fg}}
+  {\normalfont\normalsize\headingfontfamily\bfseries\selectfont\color{fg}}
   {\numberinmargin{\thesubsection}{12}{fg}}
   {0pt}
   {}
 
 \titleformat{\subsubsection}
-  {\normalfont\small\headingfontfamily\bfseries\color{fg}}
+  {\normalfont\small\headingfontfamily\bfseries\selectfont\color{fg}}
   {\numberinmargin{\thesubsubsection}{10}{fg}}
   {0pt}
   {}
@@ -50,7 +50,7 @@
 \renewcommand{\paragraph}[1]{%
   \par\vspace{3.25ex plus 1ex minus .2ex}%
   \noindent\hspace*{-4cm}\colorbox{bgacc}{%
-    \hspace*{4cm}\normalfont\huge\headingfontfamily\color{fgacc}\uppercase{#1}
+    \hspace*{4cm}\normalfont\huge\headingfontfamily\selectfont\color{fgacc}\uppercase{#1}
   }%
   \par\nobreak\vspace{1.5ex plus .2ex}%
 }

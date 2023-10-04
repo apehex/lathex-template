@@ -32,15 +32,15 @@
     \foreach \i in {21,...,2} {\drawhexagon{}{$(current page.south east)+(-0.2,-0.45)$}{\i cm}{0}{accent!85,draw};}
 
     %%%%%%%%%%%%%%%%%%%% Title + Subtitle %%%%%%%%%%%%%%%%%%%%
-    \drawtext{\Huge\uppercase{#1}\\\Large\textsc{#2}}{$(current page.center)+(3.2,-3.2)$}{3cm}{-60}{text=fg,align=right};
+    \drawtext{\Huge\textsc{\textbf{#1}}\\\Large\textsc{#2}}{$(current page.center)+(3.2,-3.2)$}{3cm}{-60}{text=fg,align=right,font=\headingfontfamily};
 
     %%%%%%%%%%%%%%%%%%%% Author Name %%%%%%%%%%%%%%%%%%%%
     \begin{pgfonlayer}{fg}
-    \drawtext{\Large\textsc{#3}\\\Large\textsc{#4}}{$(current page.east)+(-0.5,-5.2)$}{2cm}{0}{text=fg,anchor=east,align=right};
+    \drawtext{\Large\textsc{#3}\\\Large\textsc{#4}}{$(current page.east)+(-0.5,-5.2)$}{2cm}{0}{text=fg,anchor=east,align=right,font=\headingfontfamily};
     \end{pgfonlayer}
 
     %%%%%%%%%%%%%%%%%%%% Year %%%%%%%%%%%%%%%%%%%%
-    \drawhexagon{\Large #5}{$(current page.west)+(2.5,-5)$}{2.5 cm}{0}{accent!60,draw,text=fg};
+    \drawhexagon{\Large #5}{$(current page.west)+(2.5,-5)$}{2.5 cm}{0}{accent!60,draw,text=fg,font=\headingfontfamily};
 
     \end{tikzpicture}
     \restoregeometry

@@ -11,9 +11,7 @@
     % #3 - size
     % #4 - rotation
     % #5 - options
-    \node[rounded corners, inner sep=0, ultra thick, regular polygon, regular polygon sides=6, minimum size=#3, rotate=#4, #5] at (#2) {
-        {\sffamily \bfseries #1}
-    }
+    \node[rounded corners, inner sep=0, ultra thick, regular polygon, regular polygon sides=6, minimum size=#3, rotate=#4, #5] at (#2) {#1}
 }
 
 \newcommand{\drawtext}[5]{
@@ -22,9 +20,7 @@
     % #3 - height
     % #4 - rotation
     % #5 - options
-    \node[left, bg, rounded corners, minimum width=0.5*\paperwidth, minimum height=#3, text width=16cm, rotate=#4, #5] at (#2){
-        {\sffamily \bfseries #1}
-    }
+    \node[left, bg, rounded corners, minimum width=\paperwidth, minimum height=#3, text width=\paperwidth, rotate=#4, #5] at (#2){#1}
 }
 
 \newcommand\pentagonvertex[5]{

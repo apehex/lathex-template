@@ -3,10 +3,10 @@
     Ligatures=TeX,
     Scale=MatchUppercase,
     Style=Alternate,
-    UprightFont = *Black.ttf,
-    ItalicFont = *BlackItalic.ttf,
+    UprightFont = *Regular.ttf,
     BoldFont = *Bold.ttf,
-    BoldItalicFont = *BoldItalic.ttf
-]{NeueHaasDisplay}
+    % ItalicFont = *Italic.ttf,
+    % BoldItalicFont = *BoldItalic.ttf
+]{NeueHaasText}
 
-\DeclareTextFontCommand{\neuehaasfontfamily}{\headingfontfamily} % alias the ff for headings with Neue Haas
+\let\headingfontfamily\neuehaasfontfamily % alias the ff for headings with Neue Haas

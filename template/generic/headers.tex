@@ -4,7 +4,24 @@
 %   PAGE HEADERS
 %----------------------------------------------------------------------------------------
 
-\pagestyle{fancy}
-\fancyhf{} % Clear all headers and footers
-\renewcommand{\headrulewidth}{0pt} % Remove horizontal line in the header
-\fancyfoot[C]{\thepage} % Page number centered at the bottom
+\fancypagestyle{plain}{%
+    % Clear all headers and footers
+    \fancyhf{}
+
+    % Remove horizontal line in the header
+    \renewcommand{\headrulewidth}{0pt}
+
+    % Page number centered at the bottom
+    \fancyfoot[C]{\thepage}
+}
+
+\fancypagestyle{fancy}{%
+    % Clear all headers and footers
+    \fancyhf{}
+
+    % Remove horizontal line in the header
+    \renewcommand{\headrulewidth}{0pt}
+
+    % Page number centered at the bottom
+    \fancyfoot[C]{\thepage}
+}

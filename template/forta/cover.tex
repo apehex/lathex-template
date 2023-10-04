@@ -39,11 +39,11 @@
 \begin{pgfonlayer}{fg}
     % TITLE
     \drawtext%
-    {\uppercase{\textbf{#1}}}%
+    {\textsc{#1}}%
     {$(current page.east)+(-2,-2)$}%
     {2cm}%
     {0}%
-    {anchor=east,text=fg,align=right,font=\fontsize{48}{16}};
+    {anchor=east,text=fg,align=right,font=\fontsize{48}{16}\headingfontfamily\bfseries};
 
     % SUBTITLE
     \drawtext%
@@ -51,15 +51,15 @@
     {$(current page.east)+(-2,-4)$}%
     {2cm}%
     {0}%
-    {anchor=east,text=fg,align=right,font=\fontsize{16}{16}};
+    {anchor=east,text=fg,align=right,font=\fontsize{16}{16}\headingfontfamily};
 
     % AUTHOR + DATE + SUBJECT
     \drawtext%
-    {{\color{fgalt}Prepared by: }\textsc{#3}\\{\color{fgalt}Date: }\textsc{#4}\\{\color{fgalt}Visit: }\textsc{#5}}%
+    {{\color{fgalt}Prepared by: }\textsc{\textbf{#3}}\\{\color{fgalt}Date: }\textsc{\textbf{#4}}\\{\color{fgalt}Visit: }\textsc{\textbf{#5}}}%
     {$(current page.south east)+(-2,2)$}%
     {6cm}%
     {0}%
-    {anchor=east,text=fg,align=right,font=\fontsize{12}{12}};
+    {anchor=east,text=fg,align=right,font=\fontsize{12}{12}\headingfontfamily};
 \end{pgfonlayer}
 
 % RESET -----------------------------------------------------------------------
