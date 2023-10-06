@@ -14,7 +14,25 @@ sapien nec, viverra mattis neque. Nunc vel commodo nunc, eget cursus ex.
 \item{Nunc quam arcu, fermentum non dapibus condimentum, condimentum eget nunc.}
 \end{enumerate}
 
+\subsection{Euismod sodales}
+
 \begin{remark}
-Integer nisl mauris, tempus id massa at, faucibus tempus diam.\\
-Vivamus elit odio, mattis ac magna eu, semper lacinia mauris.
+\lipsum[2]
 \end{remark}
+
+\subsection{Pellentesque a nulla}
+
+\begin{lstlisting}[language=Solidity]
+contract KingOfTheHill is Ownable {
+    address public owner; // different from the owner in Ownable
+
+    function () public payable {
+        if(msg.value > jackpot) owner = msg.sender; // local owner
+        jackpot += msg.value;
+    }
+    function takeAll () public onlyOwner { // contract creator
+        msg.sender.transfer(this.balance);
+        jackpot = 0;
+    }
+}
+\end{lstlisting}
