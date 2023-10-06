@@ -2,12 +2,14 @@
 
 > A sober, hassle-free, LaTeX template for reports and books.
 
-You can preview the template:
+You can preview the template on a [real world report][forta-evasion-report].
 
-- in [dark mode][demo-dark]
-- in [light mode][demo-light]
-- with a [Forta theme][demo-forta]
-- on a [real world report][forta-evasion-report]
+## Preview
+
+| Dark Theme                                       | Light Theme                                         | Forta Theme                                         |
+| :----------------------------------------------: | :-------------------------------------------------: | :-------------------------------------------------: |
+| [![Dark title page][demo-dark-title]][demo-dark] | [![Light title page][demo-light-title]][demo-light] | [![Forta title page][demo-forta-title]][demo-forta] |
+| [![Dark page][demo-dark-page]][demo-dark]        | [![Light page][demo-light-page]][demo-light]        | [![Forta page][demo-forta-page]][demo-forta]        |
 
 ## Usage
 
@@ -29,7 +31,7 @@ The only difference will be in the fonts for the `Forta` theme: it imports `ttf`
 
 ## Template structure
 
-The project is coded using a simple and intuitive structure presented below:
+The project has the following tree:
 
 ```bash
 < PROJECT ROOT >
@@ -77,6 +79,12 @@ This work is licensed under the GNU [aGPL v3](LICENSE).
 [demo-dark]: ../build/dark.pdf
 [demo-forta]: ../build/forta.pdf
 [demo-light]: ../build/light.pdf
+[demo-dark-page]: ../images/dark-page.png
+[demo-forta-page]: ../images/forta-page.png
+[demo-light-page]: ../images/light-page.png
+[demo-dark-title]: ../images/dark-title.png
+[demo-forta-title]: ../images/forta-title.png
+[demo-light-title]: ../images/light-title.png
 [forta-evasion-report]: https://github.com/apehex/web3-evasion-techniques/blob/main/report/forta.pdf
 [latexdraw-cover-pages]: https://latexdraw.com/tikz-cover-pages-gallery/
 [legrand-orange-book]: https://www.latextemplates.com/template/legrand-orange-book

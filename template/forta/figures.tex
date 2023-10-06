@@ -2,6 +2,141 @@
 %   GEOMETRY
 %----------------------------------------------------------------------------------------
 
+\newcommand{\angletilta}[2]{
+    % #1 - Alpha, the angle between consecutive vertexes on a branch (eg. the angular width)
+    % #2 - Theta, the tilt angle
+    {#2 - 0.5*#1}
+}
+
+\newcommand{\angleouta}[3]{
+    % #1 - Beta, the curvatur angle, as a deviation from the direct line between nodes
+    % #2 - Theta, the tilt angle
+    % #3 - Index
+    {#2 + 90 + #1 + #3*72}
+}
+
+\newcommand{\angleina}[3]{
+    % #1 - Beta, the curvatur angle, as a deviation from the direct line between nodes
+    % #2 - Theta, the tilt angle
+    % #3 - Index
+    {#2 + 180 - #1 + #3*72}
+}
+
+\newcommand{\angletiltb}[2]{
+    % #1 - Alpha, the angle between consecutive vertexes on a branch (eg. the angular width)
+    % #2 - Theta, the tilt angle
+    {#2 + 0.5*#1}
+}
+
+\newcommand{\angleinb}[3]{
+    % #1 - Beta, the curvatur angle, as a deviation from the direct line between nodes
+    % #2 - Theta, the tilt angle
+    % #3 - Index
+    {#2 - 90 - #1 + #3*72}
+}
+
+\newcommand{\angleoutb}[3]{
+    % #1 - Beta, the curvatur angle, as a deviation from the direct line between nodes
+    % #2 - Theta, the tilt angle
+    % #3 - Index
+    {#2 + 180 + #1 + #3*72}
+}
+
+\newcommand{\angletiltc}[1]{
+    % #1 - Theta, the tilt angle
+    {#1 + 36}
+}
+
+\newcommand{\angleinc}[3]{
+    % #1 - Beta, the curvatur angle, as a deviation from the direct line between nodes
+    % #2 - Theta, the tilt angle
+    % #3 - Index
+    {#2 - #1 + #3*72}
+}
+
+\newcommand{\angleoutc}[3]{
+    % #1 - Beta, the curvatur angle, as a deviation from the direct line between nodes
+    % #2 - Theta, the tilt angle
+    % #3 - Index
+    {#2 + 72 + #1 + #3*72}
+}
+
+\newcommand{\radiusc}[1]{
+    % #1 - R, radius of the outer circle including the vertexes
+    {0.4*#1}
+}
+
+\newcommand{\vertexa}[7]{
+    % #1 - Ox
+    % #2 - Oy
+    % #3 - R, radius of the outer circle including the vertexes
+    % #4 - Alpha, the angle between consecutive vertexes on a branch (eg. the angular width)
+    % #5 - Beta, the curvature angle, as a deviation from the direct line between nodes
+    % #6 - Theta, the tilt angle
+    % #7 - Index
+    \coordinate (A#7) at (\pentagonvertex{#1}{#2}{#3}{\angletilta{#4}{#6}}{#7});
+}
+
+\newcommand{\vertexb}[7]{
+    % #1 - Ox
+    % #2 - Oy
+    % #3 - R, radius of the outer circle including the vertexes
+    % #4 - Alpha, the angle between consecutive vertexes on a branch (eg. the angular width)
+    % #5 - Beta, the curvature angle, as a deviation from the direct line between nodes
+    % #6 - Theta, the tilt angle
+    % #7 - Index
+    \coordinate (B#7) at (\pentagonvertex{#1}{#2}{#3}{\angletiltb{#4}{#6}}{#7});
+}
+
+\newcommand{\vertexc}[7]{
+    % #1 - Ox
+    % #2 - Oy
+    % #3 - R, radius of the outer circle including the vertexes
+    % #4 - Alpha, the angle between consecutive vertexes on a branch (eg. the angular width)
+    % #5 - Beta, the curvature angle, as a deviation from the direct line between nodes
+    % #6 - Theta, the tilt angle
+    % #7 - Index
+    \coordinate (C#7) at (\pentagonvertex{#1}{#2}{\radiusc{#3}}{\angletiltc{#6}}{#7});
+}
+
+\newcommand{\drawfortalogotest}[7]{
+    % #1 - Ox
+    % #2 - Oy
+    % #3 - R, radius of the outer circle including the vertexes
+    % #4 - Alpha, the angle between consecutive vertexes on a branch (eg. the angular width)
+    % #5 - Beta, the curvatur angle, as a deviation from the direct line between nodes
+    % #6 - Theta, the tilt angle
+    % #7 - Styling options
+    \vertexa{#1}{#2}{#3}{#4}{#5}{#6}{0}
+    \vertexb{#1}{#2}{#3}{#4}{#5}{#6}{0}
+    \vertexb{#1}{#2}{#3}{#4}{#5}{#6}{1}
+    \vertexb{#1}{#2}{#3}{#4}{#5}{#6}{2}
+    \vertexb{#1}{#2}{#3}{#4}{#5}{#6}{3}
+    \vertexb{#1}{#2}{#3}{#4}{#5}{#6}{4}
+    \vertexc{#1}{#2}{#3}{#4}{#5}{#6}{0}
+    \vertexc{#1}{#2}{#3}{#4}{#5}{#6}{1}
+    \vertexc{#1}{#2}{#3}{#4}{#5}{#6}{2}
+    \vertexc{#1}{#2}{#3}{#4}{#5}{#6}{3}
+    \vertexc{#1}{#2}{#3}{#4}{#5}{#6}{4}
+
+    \draw[#7] (A0)%
+    to[out=\angleouta{#5}{#6}{0},in=\angleinb{#5}{#6}{0}] (B0)%
+    to[out=\angleoutb{#5}{#6}{0},in=\angleinc{#5}{#6}{0}] (C0)%
+    to[out=\angleoutc{#5}{#6}{0},in=\angleina{#5}{#6}{1}] (A1)%
+    to[out=\angleouta{#5}{#6}{1},in=\angleinb{#5}{#6}{1}] (B1)%
+    to[out=\angleoutb{#5}{#6}{1},in=\angleinc{#5}{#6}{1}] (C1)%
+    to[out=\angleoutc{#5}{#6}{1},in=\angleina{#5}{#6}{2}] (A2)%
+    to[out=\angleouta{#5}{#6}{2},in=\angleinb{#5}{#6}{2}] (B2)%
+    to[out=\angleoutb{#5}{#6}{2},in=\angleinc{#5}{#6}{2}] (C2)%
+    to[out=\angleoutc{#5}{#6}{2},in=\angleina{#5}{#6}{3}] (A3)%
+    to[out=\angleouta{#5}{#6}{3},in=\angleinb{#5}{#6}{3}] (B3)%
+    to[out=\angleoutb{#5}{#6}{3},in=\angleinc{#5}{#6}{3}] (C3)%
+    to[out=\angleoutc{#5}{#6}{3},in=\angleina{#5}{#6}{4}] (A4)%
+    to[out=\angleouta{#5}{#6}{4},in=\angleinb{#5}{#6}{4}] (B4)%
+    to[out=\angleoutb{#5}{#6}{4},in=\angleinc{#5}{#6}{4}] (C4)%
+    to[out=\angleoutc{#5}{#6}{4},in=\angleina{#5}{#6}{0}] (A0);
+}
+
 \newcommand{\drawfortalogo}[7]{
     % #1 - Ox
     % #2 - Oy
