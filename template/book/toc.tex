@@ -87,23 +87,34 @@
 %   LIST OF FIGURES
 %----------------------------------------------------------------------------------------
 
-\titlecontents{figure}[0em]
-{\addvspace{-5pt}\sffamily}
-{\thecontentslabel\hspace*{1em}}
+\hypersetup{linkcolor=fg}
+
+\renewcommand\listfigurename{\paragraph{List of Figures}}
+
+\titlecontents{figure}[2em]
 {}
-{\ \titlerule*[.5pc]{.}\;\thecontentspage}
-[]
+{\contentslabel{3em}}
+{\hspace*{-3em}}
+{\titlerule*{\ }\contentspage}
+
+\pretocmd{\listoffigures}{\begin{outline}[4em]}{}{}
+\apptocmd{\listoffigures}{\end{outline}}{}{}
 
 %----------------------------------------------------------------------------------------
 %   LIST OF TABLES
 %----------------------------------------------------------------------------------------
 
-\titlecontents{table}[0em]
-{\addvspace{-5pt}\sffamily}
-{\thecontentslabel\hspace*{1em}}
+\renewcommand\listtablename{\paragraph{List of Tables}}
+
+\titlecontents{table}[2em]
 {}
-{\ \titlerule*[.5pc]{.}\;\thecontentspage}
-[]
+{\contentslabel{3em}}
+{\hspace*{-3em}}
+{\titlerule*{\ }\contentspage}
+
+\pretocmd{\listoftables}{\begin{outline}[4em]}{}{}
+\apptocmd{\listoftables}{\end{outline}}{}{}
+
 
 %----------------------------------------------------------------------------------------
 %   MINI TABLE OF CONTENTS IN PART HEADS

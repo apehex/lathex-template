@@ -33,13 +33,13 @@
 %   OUTLINE ENVIRONMENT
 %----------------------------------------------------------------------------------------
 
-\newtcolorbox{outline}{
+\newtcolorbox{outline}[1][4pt]{
   enhanced,
   colback=bg,
   colframe=bg, % To essentially hide the frame, but we will draw the corners manually
   coltext=fg,
   boxrule=0pt,
-  boxsep=4pt,
+  boxsep=#1,
   arc=0pt,
   outer arc=0pt,
   overlay={
