@@ -1,10 +1,6 @@
-\usepackage[utf8]{inputenc} % accents
-\usepackage[T1]{fontenc} % 8-bit encoding that has 256 glyphs
 \usepackage{fontspec} % import new fonts
-
 \usepackage[english]{babel}
-\usepackage{inconsolata}
-\usepackage{mathptmx}
+% \usepackage[scaled]{beramono}
 
 %----------------------------------------------------------------------------------------
 %   SPACING
@@ -13,13 +9,14 @@
 \usepackage{microtype} % tweak font spacing for aesthetics
 
 %----------------------------------------------------------------------------------------
-%   FAMILY
+%   FAMILY DEFAULTS
 %----------------------------------------------------------------------------------------
 
+\setmonofont{DejaVu Sans Mono}
 \renewcommand*\familydefault{\ttdefault}
 
 %----------------------------------------------------------------------------------------
 %   HEADINGS
 %----------------------------------------------------------------------------------------
 
-\newfontfamily\headingfontfamily{inconsolata}
+\newfontfamily\headingfontfamily{\ttdefault}
