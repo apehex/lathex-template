@@ -1,22 +1,35 @@
 \usepackage{fontspec} % import new fonts
 \usepackage[english]{babel}
-% \usepackage[scaled]{beramono}
 
 %----------------------------------------------------------------------------------------
 %   SPACING
 %----------------------------------------------------------------------------------------
 
-\usepackage{microtype} % tweak font spacing for aesthetics
+\usepackage{microtype}
+
+%----------------------------------------------------------------------------------------
+%   ADD BOLD + ITALIC
+%----------------------------------------------------------------------------------------
+
+\newfontfamily\inconsolatafontfamily[
+    Path=template/generic/fonts/inconsolata/,
+    Ligatures=TeX,
+    Scale=MatchUppercase,
+    UprightFont = *.otf,
+    BoldFont = *-Bold.otf,
+    ItalicFont = *-Italic.otf,
+    BoldItalicFont = *-BoldItalic.otf
+]{Inconsolata-LGC}
 
 %----------------------------------------------------------------------------------------
 %   FAMILY DEFAULTS
 %----------------------------------------------------------------------------------------
 
-\setmonofont{DejaVu Sans Mono}
-\renewcommand*\familydefault{\ttdefault}
+% \setmonofont{\inconsolatafontfamily}
+% \renewcommand*{\familydefault}{\ttdefault}
 
 %----------------------------------------------------------------------------------------
 %   HEADINGS
 %----------------------------------------------------------------------------------------
 
-\newfontfamily\headingfontfamily{\ttdefault}
+\let\headingfontfamily\inconsolatafontfamily
