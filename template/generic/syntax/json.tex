@@ -1,0 +1,24 @@
+\definecolor{string}{rgb}{0.64,0.08,0.08}
+
+\lstdefinelanguage{Json}{
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{gray}\hookrightarrow\space}},
+    breakatwhitespace=true,
+    upquote=true,
+    morestring=[b]",
+    stringstyle=\color{string},
+    literate=
+     *{0}{{{\color{teal}0}}}{1}
+      {1}{{{\color{teal}1}}}{1}
+      {2}{{{\color{teal}2}}}{1}
+      {3}{{{\color{teal}3}}}{1}
+      {4}{{{\color{teal}4}}}{1}
+      {5}{{{\color{teal}5}}}{1}
+      {6}{{{\color{teal}6}}}{1}
+      {7}{{{\color{teal}7}}}{1}
+      {8}{{{\color{teal}8}}}{1}
+      {9}{{{\color{teal}9}}}{1}
+      {\{}{{{\color{blue}{\{}}}}{1}
+      {\}}{{{\color{blue}{\}}}}}{1}
+      {[}{{{\color{blue}{[}}}}{1}
+      {]}{{{\color{blue}{]}}}}{1},
+}

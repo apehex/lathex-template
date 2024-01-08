@@ -1,0 +1,51 @@
+\begin{lstlisting}[language=Solidity]
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/IERC20.sol
+interface IERC20 {
+    function totalSupply() external view returns (uint);
+
+    function balanceOf(address account) external view returns (uint);
+
+    function transfer(address recipient, uint amount) external returns (bool);
+
+    function allowance(address owner, address spender) external view returns (uint);
+
+    function approve(address spender, uint amount) external returns (bool);
+
+    function transferFrom(
+        address sender,
+        address recipient,
+        uint amount
+    ) external returns (bool);
+
+    event Transfer(address indexed from, address indexed to, uint value);
+    event Approval(address indexed owner, address indexed spender, uint value);
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Json]
+{
+    "blockHash": "0xfff25d13f3e37982e6a380771a52ea79d60d4592fb13f24a157a96bd48cb823a",
+    "blockNumber": "0x011367d1",
+    "from": "0x7d9bc45a9abda926a7ce63f78759dbfa9ed72e26",
+    "gas": "0x01724b",
+    "gasPrice": "0x030305bec8",
+    "maxFeePerGas": "0x03f6b8baa1",
+    "maxPriorityFeePerGas": "0x05f5e100",
+    "hash": "0xe0a98402cb9b9536b4b308458ba46f23d41a51dfd6ee4102c118230a44529cbd",
+    "input": "0xa9059cbb000000000000000000000000e897c0f9443785f8d4f0fa6e...",
+    "nonce": "0x17",
+    "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "transactionIndex": "0xd5",
+    "value": "0x00",
+    "type": "0x02",
+    "accessList": "0x",
+    "chainId": "0x01",
+    "v": "0x01",
+    "r": "0x66ffefa83e6ce55d11ee5d9eb5e0534b9b8579d2e354f8ea72d8f91250fc5893",
+    "s": "0x328dc78a37989de1c52bd4b5f24c1a7f9796981e6eb8ac520a5945b06888fef4",
+    "yParity": "0x01"
+}
+\end{lstlisting}
