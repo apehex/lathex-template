@@ -57,7 +57,7 @@ The project has the following tree:
 
 ## Credits
 
-The syntax highlighting for Solidity has been made by [Sergei Tikhomirov][solidity-syntax-highlighting]
+The syntax highlighting for Solidity has been made by [Sergei Tikhomirov][solidity-syntax-highlighting].
 
 The rest of the template is original work entirely.
 Still it has roots in the popular LaTeX scripts mentioned below.
