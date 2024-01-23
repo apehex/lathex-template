@@ -1,8 +1,11 @@
+\backgroundtitlevisiblefalse
+
+\begin{fullwidth}
 \begin{lstlisting}[language=Solidity]
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-// https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/IERC20.sol
+// github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/IERC20.sol
 interface IERC20 {
     function totalSupply() external view returns (uint);
 
@@ -24,7 +27,9 @@ interface IERC20 {
     event Approval(address indexed owner, address indexed spender, uint value);
 }
 \end{lstlisting}
+\end{fullwidth}
 
+\begin{fullwidth}
 \begin{lstlisting}[language=Json]
 {
     "blockHash": "0xfff25d13f3e37982e6a380771a52ea79d60d4592fb13f24a157a96bd48cb823a",
@@ -49,3 +54,4 @@ interface IERC20 {
     "yParity": "0x01"
 }
 \end{lstlisting}
+\end{fullwidth}
