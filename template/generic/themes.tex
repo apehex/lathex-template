@@ -77,4 +77,46 @@
 \renewcommand{\textbf}[1]{\oldtextbf{\color{fg}##1}}
 }
 
-\togglethemedark
+%----------------------------------------------------------------------------------------
+%   GRAYSCALE THEME
+%----------------------------------------------------------------------------------------
+\newcommand{\togglethemegrayscale}{
+%----------------------------------------------------------------------------------------
+\colorlet{accent}{white}
+\colorlet{fg}{white}
+\colorlet{fgalt}{lightgray}
+\colorlet{fgacc}{black}
+\colorlet{bg}{black}
+\colorlet{bgalt}{darkgray}
+\colorlet{bgacc}{white}
+\colorlet{border}{white}
+\colorlet{borderalt}{lightgray}
+\colorlet{borderacc}{white}
+%----------------------------------------------------------------------------------------
+\pagecolor{bg}
+\color{fgalt}
+\renewcommand{\textbf}[1]{\oldtextbf{\color{fg}##1}}
+}
+
+%----------------------------------------------------------------------------------------
+%   GRAYSCALE THEME
+%----------------------------------------------------------------------------------------
+\newcommand{\togglethemeapehex}{
+%----------------------------------------------------------------------------------------
+\colorlet{accent}{cyan}
+\colorlet{fg}{white}
+\colorlet{fgalt}{lightgray}
+\colorlet{fgacc}{black}
+\colorlet{bg}{black}
+\colorlet{bgalt}{darkgray}
+\colorlet{bgacc}{white}
+\colorlet{border}{white}
+\colorlet{borderalt}{lightgray}
+\colorlet{borderacc}{white}
+%----------------------------------------------------------------------------------------
+\pagecolor{bg}
+\color{fgalt}
+\renewcommand{\textbf}[1]{\oldtextbf{\color{fg}##1}}
+}
+
+\togglethemegrayscale
