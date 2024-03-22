@@ -20,10 +20,10 @@ The template is demonstrated with the example document in the repository:
 git clone https://github.com/apehex/lathex-template.git && cd lathex-template/
 
 # Build
-lualatex --output-dir build/ main/book.tex
+lualatex --output-dir build/ demo/book/dark.tex
 makeindex build/book.idx -s indexstyle.ist
-biber main/book.tex
-lualatex --output-dir build/ main/book.tex
+biber demo/book/dark.tex
+lualatex --output-dir build/ demo/book/dark.tex
 ```
 
 The recommended compilers are `lualatex` and `xetex`, though `pdflatex` will mostly work too.
