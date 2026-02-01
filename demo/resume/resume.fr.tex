@@ -1,20 +1,39 @@
 %----------------------------------------------------------------------------------------
-%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%   CLASS
 %----------------------------------------------------------------------------------------
 
-\documentclass[9pt]{resume} % Default font size, values from 8-12pt are recommended
-\usepackage{multicol}
-\setlength{\columnsep}{0mm}
-%----------------------------------------------------------------------------------------
-\usepackage{lipsum}
+\documentclass[9pt]{extarticle}
 
+%----------------------------------------------------------------------------------------
+%   TEMPLATE
+%----------------------------------------------------------------------------------------
+
+\input{template/resume/main}
+
+%----------------------------------------------------------------------------------------
+%   THEME
+%----------------------------------------------------------------------------------------
+
+\pagestyle{empty} % No headers or footers
+\togglethemelight % black on white
+
+%----------------------------------------------------------------------------------------
+%   MAIN
+%----------------------------------------------------------------------------------------
 
 \begin{document}
+
+%----------------------------------------------------------------------------------------
+%   BACKGROUND
+%----------------------------------------------------------------------------------------
+
+\resumestripe
 
 %----------------------------------------------------------------------------------------
 %   URLs
 %----------------------------------------------------------------------------------------
 
+\newcommand{\contacthuggingface}{huggingface.co/apehex}
 \newcommand{\contactgithub}{github.com/apehex}
 \newcommand{\contactlocation}{France, Terre}
 \newcommand{\contactmail}{ape.hex@domain.com}
@@ -24,9 +43,11 @@
 
 \newcommand{\urlgithubctf}{https://\contactgithub}
 \newcommand{\urlgithubprofile}{https://\contactgithub}
-\newcommand{\urlhuggingfaceprofile}{https://huggingface.co/apehex}
-\newcommand{\urlhuggingfacearticlediffusion}{https://huggingface.co/apehex} % todo
-\newcommand{\urlhuggingfacearticletokenization}{https://huggingface.co/blog/apehex/this-title-is-already-tokenized}
+\newcommand{\urlhuggingfaceprofile}{https://\contacthuggingface}
+\newcommand{\urlhuggingfacearticlediffusion}{https://huggingface.co/blog/apehex/image-diffusion-on-text}
+\newcommand{\urlhuggingfacearticlelayers}{https://huggingface.co/blog/apehex/this-title-is-already-tokenized}
+\newcommand{\urlhuggingfacearticletokenization}{https://huggingface.co/blog/apehex/tokenization-is-a-dead-weight}
+\newcommand{\urlfortareport}{https://www.forta.org/blog/flipping-the-script}
 \newcommand{\urlmailaddress}{mailto:\contactmail}
 \newcommand{\urlphonenumber}{tel:\contactphone}
 
@@ -51,224 +72,106 @@
     \icon{Github}{11}{\href{\urlgithubprofile}{\contactgithub}}\\
 \end{minipage}
 
-
 %----------------------------------------------------------------------------------------
 %   INTRODUCTION, SKILLS AND TECHNOLOGIES
 %----------------------------------------------------------------------------------------
 
 \begin{minipage}[t]{0.46\textwidth}
-    \cvsect{Profile}\\
+    \begin{horizontalsection}{Profile}
     Curieux, avec une attirance pour les défis techniques.
+    \end{horizontalsection}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.465\textwidth}
-    \cvsect{Objectif}\\
-    Intégration de l'intelligence artificielle aux circuits.
+    \begin{horizontalsection}{Orientation}
+    Rétro-ingénierie et interprétation de modèles boîte-noire.
+    \end{horizontalsection}
 \end{minipage}
-
-%----------------------------------------------------------------------------------------
-%   Projects
-%----------------------------------------------------------------------------------------
-
-% \cvsect{Projects}
-% \begin{entrylist}
-%     \entry
-%         {Technology}
-%         {My project 1}
-%         {github.com link}
-%         {%Dummy text
-%         \lipsum[1][1-3]}
-%     \entry
-%         {Technology}
-%         {My project 2}
-%         {github.com link}
-%         {%Dummy text
-%         \lipsum[1][1-3]}
-%     \entry
-%         {Technology}
-%         {My project 3}
-%         {github.com link}
-%         {%Dummy text
-%         \lipsum[1][1-3]}
-%     \entry
-%         {Technology}
-%         {My project 4}
-%         {github.com link}
-%         {%Dummy text
-%         \lipsum[1][1-3]}
-% \end{entrylist}
 
 %----------------------------------------------------------------------------------------
 %   EXPERIENCE
 %----------------------------------------------------------------------------------------
 
-\cvsect{Expérience}
-\begin{entrylist}
-\entry
-    {1/2024 -- actuel}
-    {\textbf{Chercheur en Apprentissage Machine}}
-    {Indépendant}
-    {\vspace{-10pt}
-    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        \item création des couches \textbf{\href{\urlhuggingfacearticletokenization}{composite embedding}} et \textbf{\href{\urlhuggingfacearticletokenization}{binary prediction}}, surpassant la tokenisation.
-        \item développement de modèles binaires, égalant l'état de l'art de la (dé)compilation de code solidity.
-        \item unification des modèles génératifs de language et d'image: \textbf{\href{\urlhuggingfacearticlediffusion}{byte level, latent diffusion of language}}.
-    \end{itemize}}
-\entry
-    {1/2015 -- actuel}
-    {\textbf{Contributeur Open Source}}
-    {Indépendant}
-    {\vspace{-10pt}
-    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        \item participation aux projets que j'utilise, dernièrement : \textbf{\href{\urlgithubprofile}{Keras, Transformers, Unsloth, Meta BLT}}, etc.
-        \item développement et partage de divers \textbf{\href{\urlhuggingfaceprofile}{articles, modèles, datasets}}, \textbf{\href{\urlgithubprofile}{outils, patrons web et LaTeX}}.
-    \end{itemize}}
-\entry
-    {7/2023 -- 1/2024}
-    {\textbf{Chercheur en Sécurité Web3}}
-    {Forta Network}
-    {\vspace{-10pt}
-    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        \item état de l'art des techniques émergentes utilisées par des acteurs malveillants sur la blockchain.
-        \item développement de bots pour inspecter en continu les transactions et détecter les tentatives de hack.
-    \end{itemize}}
-\entry
-    {4/2023 -- 6/2023}
-    {\textbf{Développeur Web3}}
-    {DIAdata et Reserve-Protocol}
-    {\vspace{-10pt}
-    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        \item intégration de Reserve-Protocol avec d'autres protocoles tout en garantissant la surcollatéralisation.
-        \item développement d'un daemon pour surveiller la santé et la précision des oracles pour DIAdata.
-    \end{itemize}}
-\entry
-    {3/2020 -- 12/2021}
-    {\textbf{Bounty Hunter}}
-    {Indépendant}
-    {\vspace{-10pt}
-    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        \item identification et résolution de vulnérabilités dans diverses applications mobiles et sites web.
-    \end{itemize}}
-\entry
-    {1/2017 -- 12/2022}
-    {\textbf{Développeur Fullstack Web2}}
-    {Indépendant}
-    {\vspace{-10pt}
-    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        \item transformation de savoir d'experts en outils, liant calcul technique et gestion.
-        \item modernisation d'applications existantes avec des interfaces web et optimisations par IA.
-    \end{itemize}}
-\entry
-    {9/2013 -- 12/2016}
-    {\textbf{Consultant}}
-    {C3-Expert}
-    {\vspace{-10pt}
-    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        \item réalisation d'études techniques et simulations pour des clients tels qu'Arcelor, Koniambo Nickel, etc.
-        \item amélioration des outils, avec des calculs techniques plus précis et pragmatiques.
-    \end{itemize}}
-\entry
-    {1/2011 -- 6/2011}
-    {\textbf{Stage}}
-    {Total}
-    {\vspace{-10pt}
-    \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt, leftmargin=-1pt]
-        \item documentation, débogage et amélioration d'un outil d'optimisation des mélanges d'hydrocarbures.
-    \end{itemize}}
-\end{entrylist}
+\begin{horizontalsection}{Expérience}
+
+\sectionentry{\textbf{Chercheur En Apprentissage Machine} --- Indépendant}{1/2024 -- actuel}{
+    \entryline{traduction des directions latentes en leur antécédents textuels, pour contourner les gardes-fous et tester l'alignement, avec psAI-ops.}
+    \entryline{expérimentations avec les \href{\urlhuggingfaceprofile}{modèle binaires}:: décompilation, transactions blockchain, art ASCII, diffusion textuelle, etc.}
+    \entryline{prototypage d'un processus de diffusion latent opérant au niveau binaire, \href{\urlhuggingfacearticlediffusion}{unifiant la génération d'image et de langage}.}
+    \entryline{création des couches \href{\urlhuggingfacearticlelayers}{composite embedding} et \href{\urlhuggingfacearticlelayers}{binary prediction layers}:}
+    \entryline{répondant aux \href{\urlhuggingfacearticletokenization}{modes de défaillance de la tokenisation}.}
+    \entryline{réduisant le nombre de paramètres tout en \textbf{augmentant la taille du contexte}.}}
+
+\sectionentry{\textbf{Contributeur Open Source} --- Indépendant}{1/2015 -- actuel}{
+    \entryline{participation (PRs / issues) aux projets que j'utilise: \href{\urlgithubprofile}{Keras, Transformers, Unsloth, Meta BLT}, etc.}
+    \entryline{développement et partage de divers \href{\urlhuggingfaceprofile}{articles, modèles, datasets}, \href{\urlgithubprofile}{outils, patrons web et LaTeX}.}}
+
+\sectionentry{\textbf{Chercheur En Cyber-sécurité} --- Forta Network}{7/2023 -- 1/2024}{
+    \entryline{\href{\urlfortareport}{état de l'art des techniques émergentes d'offuscation} utilisées par des acteurs malveillants sur la blockchain.}
+    \entryline{développement de bots pour inspecter en continu les transactions et détecter les tentatives de hack.}}
+
+\sectionentry{\textbf{Développeur De Protocoles} --- DIAdata \& Reserve Protocol}{4/2023 -- 6/2023}{
+    \entryline{intégration de Reserve-Protocol avec d'autres protocoles tout en garantissant la sur-collatéralisation.}
+    \entryline{développement d'un daemon pour surveiller la santé et la précision des oracles pour DIAdata.}}
+
+\sectionentry{\textbf{Chercher De Bug Bounty} --- Indépendant}{3/2020 -- 12/2021}{
+    \entryline{identification et résolution de vulnérabilités dans diverses applications mobiles et sites web.}}
+
+\sectionentry{\textbf{Développeur Fullstack} --- Indépendant}{1/2017 -- 12/2022}{
+    \entryline{transformation de savoirs d'expert en outils, liant calcul technique et gestion.}
+    \entryline{modernisation d'applications existantes avec des interfaces web et optimisations par IA.}}
+
+\sectionentry{\textbf{Consultant} --- C3-Expert}{9/2013 -- 12/2016}{
+    \entryline{réalisation d'études techniques et simulations pour des clients tels qu'Arcelor, Koniambo Nickel, etc.}
+    \entryline{amélioration des outils, avec des calculs techniques plus précis et pragmatiques.}}
+
+\sectionentry{\textbf{Stage} --- Total}{1/2011 -- 6/2011}{
+    \entryline{documentation, débogage et amélioration d'un outil d'optimisation des mélanges d'hydrocarbures.}}
+
+\end{horizontalsection}
 
 %----------------------------------------------------------------------------------------
 %   EDUCATION
 %----------------------------------------------------------------------------------------
 
-\cvsect{Formation}
-\begin{entrylist}
-    \entry
-        {1/2023 - 03/2023}
-        {\textbf{Web3 Training}}
-        {OpenZeppelin and CTFs}
-        {Perfectionnement en participant à des compétitions comme Ethernaut et Damn-Vulnerable-DEFI.}
-    \entry
-        {3/2020 - 10/2021}
-        {\textbf{Cybersecurity Training}}
-        {Cybrary and Coursera}
-        {Formation approfondie en cybersécurité, incluant des CTFs (\textbf{\href{\urlgithubctf}{Hackerbox, Pentesterlab, OverTheWire}}).}
-    \entry
-        {7/2015 - 08/2015}
-        {\textbf{Formations en Apprentissage Machine}}
-        {Coursera and Udemy}
-        {Cours intensifs en apprentissage machine (Coursera, Udemy) et projets sur les modèles génératifs.}
-    \entry
-        {9/2008 - 10/2012}
-        {\textbf{Diplôme d'Ingénieur}}
-        {\'{E}cole Centrale de Lyon}
-        {Spécialisation en business development et data mining.}
-\end{entrylist}
+\begin{horizontalsection}{Education}
+
+\sectionentry{\textbf{Formations Sur La Blockchain} --- OpenZeppelin + CTFs}{1/2023 -- 03/2023}{
+    \entryline{Perfectionnement en participant à des compétitions comme Ethernaut et Damn-Vulnerable-DEFI.}}
+
+\sectionentry{\textbf{Formations En Cybersécurité} --- Cybrary + Coursera}{3/2020 -- 10/2021}{
+    \entryline{Formation approfondie en cybersécurité, incluant de nombreux CTFs (\href{\urlgithubctf}{Hackerbox, Pentesterlab, OverTheWire}).}}
+
+% \sectionentry{\textbf{Formations En Apprentissage Machine} --- Coursera + Udemy}{7/2015 -- 8/2015}{
+%     \entryline{Cours intensifs en apprentissage machine (Coursera, Udemy) et projets sur les modèles génératifs.}}
+
+\sectionentry{\textbf{Diplôme d'Ingénieur} --- Ecole Centrale de Lyon}{9/2008 -- 10/2012}{
+    \entryline{Spécialisation en business development et data mining.}}
+
+\end{horizontalsection}
 
 %----------------------------------------------------------------------------------------
 %   Skills & Hobbies
 %----------------------------------------------------------------------------------------
 
 \begin{minipage}[t]{0.48\textwidth}
-    \cvsect{Compétences}
-    \begin{entrylist}[]
-    \entry
-        {ML}
-        {Tensorflow, Keras, Pytorch, etc.}
-        {}
-        {}
-    \entry
-        {Bureau}
-        {LaTeX, LibreOffice, Excel, etc.}
-        {}
-        {}
-    \entry
-        {Science}
-        {Octave, Matlab, SciPy, SymPy, etc.}
-        {}
-        {}
-    \entry
-        {Scripting}
-        {Python, Node, Shell, etc.}
-        {}
-        {}
-    \entry
-        {Web}
-        {HTML, CSS, JS, Jekyll, BurpSuite, etc.}
-        {}
-        {}
-    % \entry
-    %     {Web3}
-    %     {Solidity, EVM assembly.}
-    %     {}
-    %     {}
-    \end{entrylist}
+    \begin{horizontalsection}{Compétences}
+    \skillentry{ML}{Tensorflow/Keras, PyTorch, ONNX, etc.}
+    \skillentry{Sciences}{Octave, Matlab, SciPy, SymPy, etc.}
+    \skillentry{Progr.}{Python, Node, Shell, Solidity, HTML/CSS/JS, etc.}
+    \skillentry{Sécurité}{Burp Suite, Nmap, Ghidra, Foundry, etc.}
+    % \skillentry{Office}{LaTeX, LibreOffice, Excel, etc.}
+    % \skillentry{Blockchain}{Solidity, Foundry, EVM assembly.}
+    \end{horizontalsection}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
-    \cvsect{Loisirs}
-    \begin{entrylist}[]
-    \entry
-        {Jeux}
-        {Jeux de société et jeux vidéos.}
-        {}
-        {}
-    \entry
-        {Science}
-        {Informatique quantique, maths, SF.}
-        {}
-        {}
-    \entry
-        {Sports}
-        {Escalade, alpinisme.}
-        {}
-        {}
-    \entry
-        {Tech}
-        {\href{\urlgithubctf}{CTFs}, notamment forensics et cryptography.}
-        {}
-        {}
-    \end{entrylist}
+    \begin{horizontalsection}{Hobbies}
+    \skillentry{Jeux}{Jeux de société et jeux vidéos.}
+    \skillentry{Sciences}{Maths, science-fiction.}
+    \skillentry{Sports}{Escalade, alpinisme, rando-vélo.}
+    \skillentry{Tech}{\href{\urlgithubctf}{CTFs}, notamment forensics et cryptography.}
+    \end{horizontalsection}
 \end{minipage}
 
 %----------------------------------------------------------------------------------------
