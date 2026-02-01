@@ -1,0 +1,40 @@
+% CoNFIG %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\entrysep}
+\setlength{\entrysep}{0.60\baselineskip}
+
+% HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\entryheader}[2]{%
+    {\textbf{\textcolor{ink}{#1}}\hfill{\footnotesize\textcolor{muted}{#2}}}\par
+}
+
+% BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\entrybody}[1]{%
+    {\setlength{\parskip}{0pt}\setlength{\parindent}{0pt}#1}%
+}
+
+% ENTRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\sectionentry}[3]{%
+    \par\noindent
+    \entryheader{#1}{#2}%
+    \entrybody{#3}%
+    \vspace{\entrysep}%
+}
+
+% LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\entrylinesep}{0.22\baselineskip}
+\newcommand{\entryline}[1]{%
+    {\footnotesize\textcolor{ink}{#1}}\par\vspace{\entrylinesep}%
+}
+
+% SINGLE LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\skillentry}[2]{%
+    \par\noindent
+    {\footnotesize\textbf{\textcolor{ink}{#1}}\hspace{0.75em}\textcolor{ink}{#2}}\par
+    \vspace{0.30\baselineskip}%
+}

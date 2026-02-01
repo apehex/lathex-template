@@ -1,0 +1,57 @@
+% CONFIG %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\sectionmargin}
+\newlength{\sectionpadding}
+\newlength{\sectiontitlewidth}
+\newlength{\sectiontitleheight}
+\newlength{\sectionbodyheight}
+
+\setlength{\sectionmargin}{0.9\baselineskip}
+\setlength{\sectionpadding}{0.9em}
+\setlength{\sectiontitlewidth}{0.8em}
+
+% HORIZONTAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{horizontalsection}[1]{%
+    \par\vspace{\sectionmargin}%
+    {\small\textcolor{accent}{\MakeUppercase{\textbf{#1}}}}%
+    \hspace{6pt}%
+    {\color{rule}\leaders\hrule height 1pt\hfill\kern0pt}%
+    \par\vspace{\sectionpadding}%
+}{}
+
+% VERTICAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newsavebox{\sectionbodybox}
+\newsavebox{\sectiontitlebox}
+
+\newenvironment{verticalsection}[1]{%
+    \par\vspace{\sectionmargin}%
+    % Store the whole box with the vertical title
+    \sbox{\sectiontitlebox}{\rotatebox{90}{\small\textcolor{accent}{\MakeUppercase{\textbf{#1}}}}}%
+    % Capture body into a box
+    \begin{lrbox}{\sectionbodybox}%
+        \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
+}{%
+        \end{minipage}%
+    \end{lrbox}%
+    % Measure body height
+    \setlength{\sectionbodyheight}{\dimexpr\ht\sectionbodybox+\dp\sectionbodybox\relax}%
+    \setlength{\sectiontitleheight}{\dimexpr\ht\sectiontitlebox+\dp\sectiontitlebox\relax}%
+    % Typeset header (left) + body (right)
+    \noindent
+    \begin{minipage}[t][\sectionbodyheight][t]{\sectiontitlewidth}%
+        \raggedleft%
+        % Vertical rule runs from top down to just above title
+        \vspace{-0.7em}%
+        \hfill{\color{rule}\rule{1pt}{\dimexpr\sectionbodyheight-\sectiontitleheight-1.6em\relax}}%
+        \par\vspace{0.4em}%
+        % Title at bottom, vertical, in accent
+        \hfill\usebox{\sectiontitlebox}%
+    \end{minipage}%
+    \hspace{\sectionpadding}%
+    \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
+        \usebox{\sectionbodybox}%
+    \end{minipage}%
+    \par
+}

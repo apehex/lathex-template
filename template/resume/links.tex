@@ -1,0 +1,6 @@
+\usepackage[hidelinks]{hyperref} % hide the default boxes around links
+
+% BOLD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\textbf{#2}}}

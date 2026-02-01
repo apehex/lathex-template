@@ -1,0 +1,17 @@
+\usepackage{fontawesome}
+
+% CENTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\vcenteredhbox}[1]{% content
+    \begingroup%
+        \setbox0=\hbox{#1}\parbox{\wd0}{\box0}%
+    \endgroup%
+}
+
+% ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\icon}[3]{% icon name, box size, text
+    \vcenteredhbox{\colorbox{white}{\makebox(#2, #2){\textcolor{black}{\Large\csname fa#1\endcsname}}}}% Icon and box
+    \hspace{0.1cm}% Whitespace
+    \vcenteredhbox{\textcolor{black}{#3}}% Text
+}
