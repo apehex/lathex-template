@@ -1,179 +1,44 @@
-%----------------------------------------------------------------------------------------
-%   CLASS
-%----------------------------------------------------------------------------------------
+% CLASS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[9pt]{extarticle}
 
-%----------------------------------------------------------------------------------------
-%   TEMPLATE
-%----------------------------------------------------------------------------------------
+% META %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{demo/resume/metadata/context.fr}
+
+% TEMPLATE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{template/resume/main}
 
-%----------------------------------------------------------------------------------------
-%   THEME
-%----------------------------------------------------------------------------------------
+% THEME %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagestyle{empty} % No headers or footers
 \togglethemelight % black on white
 
-%----------------------------------------------------------------------------------------
-%   MAIN
-%----------------------------------------------------------------------------------------
+% MAIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%   BACKGROUND
-%----------------------------------------------------------------------------------------
+% BACKGROUND %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \resumestripe
 
-%----------------------------------------------------------------------------------------
-%   URLs
-%----------------------------------------------------------------------------------------
+% TOP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\contacthuggingface}{huggingface.co/apehex}
-\newcommand{\contactgithub}{github.com/apehex}
-\newcommand{\contactlocation}{France, Terre}
-\newcommand{\contactmail}{ape.hex@domain.com}
-\newcommand{\contactname}{Ape Hex}
-\newcommand{\contactphone}{+01 234-567-890}
-\newcommand{\contactqualification}{Développeur Fullstack $\sim$ Ingénieur}
+\input{demo/resume/sections/header.fr}
+\input{demo/resume/sections/profile.fr}
 
-\newcommand{\urlgithubctf}{https://\contactgithub}
-\newcommand{\urlgithubprofile}{https://\contactgithub}
-\newcommand{\urlhuggingfaceprofile}{https://\contacthuggingface}
-\newcommand{\urlhuggingfacearticlediffusion}{https://huggingface.co/blog/apehex/image-diffusion-on-text}
-\newcommand{\urlhuggingfacearticlelayers}{https://huggingface.co/blog/apehex/this-title-is-already-tokenized}
-\newcommand{\urlhuggingfacearticletokenization}{https://huggingface.co/blog/apehex/tokenization-is-a-dead-weight}
-\newcommand{\urlfortareport}{https://www.forta.org/blog/flipping-the-script}
-\newcommand{\urlmailaddress}{mailto:\contactmail}
-\newcommand{\urlphonenumber}{tel:\contactphone}
+% MID %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%   TITLE AND CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
+\input{demo/resume/sections/experience.fr}
+\input{demo/resume/sections/education.fr}
 
-\begin{minipage}[t]{0.5\textwidth}
-    \vspace{-\baselineskip} % Required for vertically aligning minipages
-    {\fontsize{16}{20} \textcolor{black}{\textbf{\MakeUppercase{\contactname}}}}\\\\
-    {\Large \contactqualification}
-\end{minipage}
+% BOT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{demo/resume/sections/skills.fr}
 \hfill
-\begin{minipage}[t]{0.2\textwidth}
-    \vspace{-\baselineskip}
-    \icon{Phone}{11}{\href{\urlphonenumber}{\contactphone}}\\
-    \icon{MapMarker}{11}{\contactlocation}\\
-\end{minipage}
-\begin{minipage}[t]{0.27\textwidth}
-    \vspace{-\baselineskip}
-    \icon{Envelope}{11}{\href{\urlmailaddress}{\contactmail}}\\
-    \icon{Github}{11}{\href{\urlgithubprofile}{\contactgithub}}\\
-\end{minipage}
+\input{demo/resume/sections/hobbies.fr}
 
-%----------------------------------------------------------------------------------------
-%   INTRODUCTION, SKILLS AND TECHNOLOGIES
-%----------------------------------------------------------------------------------------
-
-\begin{minipage}[t]{0.46\textwidth}
-    \begin{horizontalsection}{Profile}
-    Curieux, avec une attirance pour les défis techniques.
-    \end{horizontalsection}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.465\textwidth}
-    \begin{horizontalsection}{Orientation}
-    Rétro-ingénierie et interprétation de modèles boîte-noire.
-    \end{horizontalsection}
-\end{minipage}
-
-%----------------------------------------------------------------------------------------
-%   EXPERIENCE
-%----------------------------------------------------------------------------------------
-
-\begin{horizontalsection}{Expérience}
-
-\sectionentry{\textbf{Chercheur En Apprentissage Machine} --- Indépendant}{1/2024 -- actuel}{
-    \entryline{traduction des directions latentes en leur antécédents textuels, pour contourner les gardes-fous et tester l'alignement, avec psAI-ops.}
-    \entryline{expérimentations avec les \href{\urlhuggingfaceprofile}{modèle binaires}:: décompilation, transactions blockchain, art ASCII, diffusion textuelle, etc.}
-    \entryline{prototypage d'un processus de diffusion latent opérant au niveau binaire, \href{\urlhuggingfacearticlediffusion}{unifiant la génération d'image et de langage}.}
-    \entryline{création des couches \href{\urlhuggingfacearticlelayers}{composite embedding} et \href{\urlhuggingfacearticlelayers}{binary prediction layers}:}
-    \entryline{répondant aux \href{\urlhuggingfacearticletokenization}{modes de défaillance de la tokenisation}.}
-    \entryline{réduisant le nombre de paramètres tout en \textbf{augmentant la taille du contexte}.}}
-
-\sectionentry{\textbf{Contributeur Open Source} --- Indépendant}{1/2015 -- actuel}{
-    \entryline{participation (PRs / issues) aux projets que j'utilise: \href{\urlgithubprofile}{Keras, Transformers, Unsloth, Meta BLT}, etc.}
-    \entryline{développement et partage de divers \href{\urlhuggingfaceprofile}{articles, modèles, datasets}, \href{\urlgithubprofile}{outils, patrons web et LaTeX}.}}
-
-\sectionentry{\textbf{Chercheur En Cyber-sécurité} --- Forta Network}{7/2023 -- 1/2024}{
-    \entryline{\href{\urlfortareport}{état de l'art des techniques émergentes d'offuscation} utilisées par des acteurs malveillants sur la blockchain.}
-    \entryline{développement de bots pour inspecter en continu les transactions et détecter les tentatives de hack.}}
-
-\sectionentry{\textbf{Développeur De Protocoles} --- DIAdata \& Reserve Protocol}{4/2023 -- 6/2023}{
-    \entryline{intégration de Reserve-Protocol avec d'autres protocoles tout en garantissant la sur-collatéralisation.}
-    \entryline{développement d'un daemon pour surveiller la santé et la précision des oracles pour DIAdata.}}
-
-\sectionentry{\textbf{Chercher De Bug Bounty} --- Indépendant}{3/2020 -- 12/2021}{
-    \entryline{identification et résolution de vulnérabilités dans diverses applications mobiles et sites web.}}
-
-\sectionentry{\textbf{Développeur Fullstack} --- Indépendant}{1/2017 -- 12/2022}{
-    \entryline{transformation de savoirs d'expert en outils, liant calcul technique et gestion.}
-    \entryline{modernisation d'applications existantes avec des interfaces web et optimisations par IA.}}
-
-\sectionentry{\textbf{Consultant} --- C3-Expert}{9/2013 -- 12/2016}{
-    \entryline{réalisation d'études techniques et simulations pour des clients tels qu'Arcelor, Koniambo Nickel, etc.}
-    \entryline{amélioration des outils, avec des calculs techniques plus précis et pragmatiques.}}
-
-\sectionentry{\textbf{Stage} --- Total}{1/2011 -- 6/2011}{
-    \entryline{documentation, débogage et amélioration d'un outil d'optimisation des mélanges d'hydrocarbures.}}
-
-\end{horizontalsection}
-
-%----------------------------------------------------------------------------------------
-%   EDUCATION
-%----------------------------------------------------------------------------------------
-
-\begin{horizontalsection}{Education}
-
-\sectionentry{\textbf{Formations Sur La Blockchain} --- OpenZeppelin + CTFs}{1/2023 -- 03/2023}{
-    \entryline{Perfectionnement en participant à des compétitions comme Ethernaut et Damn-Vulnerable-DEFI.}}
-
-\sectionentry{\textbf{Formations En Cybersécurité} --- Cybrary + Coursera}{3/2020 -- 10/2021}{
-    \entryline{Formation approfondie en cybersécurité, incluant de nombreux CTFs (\href{\urlgithubctf}{Hackerbox, Pentesterlab, OverTheWire}).}}
-
-% \sectionentry{\textbf{Formations En Apprentissage Machine} --- Coursera + Udemy}{7/2015 -- 8/2015}{
-%     \entryline{Cours intensifs en apprentissage machine (Coursera, Udemy) et projets sur les modèles génératifs.}}
-
-\sectionentry{\textbf{Diplôme d'Ingénieur} --- Ecole Centrale de Lyon}{9/2008 -- 10/2012}{
-    \entryline{Spécialisation en business development et data mining.}}
-
-\end{horizontalsection}
-
-%----------------------------------------------------------------------------------------
-%   Skills & Hobbies
-%----------------------------------------------------------------------------------------
-
-\begin{minipage}[t]{0.48\textwidth}
-    \begin{horizontalsection}{Compétences}
-    \skillentry{ML}{Tensorflow/Keras, PyTorch, ONNX, etc.}
-    \skillentry{Sciences}{Octave, Matlab, SciPy, SymPy, etc.}
-    \skillentry{Progr.}{Python, Node, Shell, Solidity, HTML/CSS/JS, etc.}
-    \skillentry{Sécurité}{Burp Suite, Nmap, Ghidra, Foundry, etc.}
-    % \skillentry{Office}{LaTeX, LibreOffice, Excel, etc.}
-    % \skillentry{Blockchain}{Solidity, Foundry, EVM assembly.}
-    \end{horizontalsection}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\textwidth}
-    \begin{horizontalsection}{Hobbies}
-    \skillentry{Jeux}{Jeux de société et jeux vidéos.}
-    \skillentry{Sciences}{Maths, science-fiction.}
-    \skillentry{Sports}{Escalade, alpinisme, rando-vélo.}
-    \skillentry{Tech}{\href{\urlgithubctf}{CTFs}, notamment forensics et cryptography.}
-    \end{horizontalsection}
-\end{minipage}
-
-%----------------------------------------------------------------------------------------
+% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
