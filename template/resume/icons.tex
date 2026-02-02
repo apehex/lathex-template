@@ -2,12 +2,12 @@
 
 % ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\icon}[1]{%
-  \makebox[1.1em][c]{\textcolor{ink}{\csname fa#1\endcsname}}%
+\newcommand{\icon}[2][ink]{%
+  \makebox[1.1em][c]{\textcolor{#1}{\csname fa#2\endcsname}}%
 }
 
 % LABEL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\iconlabel}[2]{%
-  \icon{#1}\hspace{0.6em}#2%
+\newcommand{\iconlabel}[3][ink]{%
+  \icon[#1]{#2}\hspace{0.6em}#3%
 }
