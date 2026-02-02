@@ -1,18 +1,30 @@
 \usepackage{geometry}
+\usepackage{paracol}
 
 % PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \geometry{
     paper=a4paper, % paper size
-    top=1.4cm, % top margin
-    bottom=1.4cm, % bottom margin
-    left=1.4cm, % left margin
-    right=1.4cm, % right margin
-    headheight=0.75cm, % header height
-    footskip=1cm, % space from the bottom margin to the baseline of the footer
-    headsep=0.5cm, % space from the top margin to the baseline of the header
+    top=0cm, % top margin
+    bottom=0cm, % bottom margin
+    left=0cm, % left margin
+    right=0cm, % right margin
+    headheight=0cm, % header height
+    footskip=0cm, % space from the bottom margin to the baseline of the footer
+    headsep=0cm, % space from the top margin to the baseline of the header
     %showframe, % show how the type blocks are set on the page
 }
+
+% COLUMNS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\columnratio{0.34,0.66}
+
+\setlength{\columnsep}{1.2em}
+\setlength{\columnseprule}{0.4pt}
+\colseprulecolor{rule}
+
+\newcommand{\leftcol}{\switchcolumn[0]*} % star for top alignment
+\newcommand{\rightcol}{\switchcolumn[1]*}
 
 % PARAGRAPHS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

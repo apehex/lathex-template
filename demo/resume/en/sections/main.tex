@@ -4,12 +4,22 @@
 
 \resumestripe
 
-% TOP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COLUMNS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{paracol}{2}
+
+% LEFT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftcol
 
 \input{demo/resume/en/sections/header}
 \input{demo/resume/en/sections/profile}
+\input{demo/resume/en/sections/skills}
+\input{demo/resume/en/sections/hobbies}
 
-% MID %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RIGHT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rightcol
 
 \input{demo/resume/en/sections/machine}
 \input{demo/resume/en/sections/security}
@@ -17,12 +27,8 @@
 \input{demo/resume/en/sections/engineering}
 % \input{demo/resume/en/sections/writing}
 
-% BOT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\input{demo/resume/en/sections/skills}
-\hfill
-\input{demo/resume/en/sections/hobbies}
-
 % END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{paracol}
 
 \end{document}
