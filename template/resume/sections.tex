@@ -10,11 +10,17 @@
 \setlength{\sectionpadding}{0.9em}
 \setlength{\sectiontitlewidth}{0.8em}
 
+% TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\sectiontitletext}[2][accent]{%
+    \textcolor{#1}{\MakeUppercase{\textbf{#2}}}% \small
+}
+
 % HORIZONTAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{horizontalsection}[1]{%
+\newenvironment{horizontalsection}[2][accent]{%
     \par\vspace{\sectionmargin}%
-    {\small\textcolor{accent}{\MakeUppercase{\textbf{#1}}}}%
+    \sectiontitletext[#1]{#2}
     \hspace{6pt}%
     {\color{rule}\leaders\hrule height 1pt\hfill\kern0pt}%
     \par\vspace{\sectionpadding}%
@@ -25,10 +31,10 @@
 \newsavebox{\sectionbodybox}
 \newsavebox{\sectiontitlebox}
 
-\newenvironment{verticalsection}[1]{%
+\newenvironment{verticalsection}[2][accent]{%
     \par\vspace{\sectionmargin}%
     % Store the whole box with the vertical title
-    \sbox{\sectiontitlebox}{\rotatebox{90}{\small\textcolor{accent}{\MakeUppercase{\textbf{#1}}}}}%
+    \sbox{\sectiontitlebox}{\rotatebox{90}\sectiontitletext[#1]{#2}}%
     % Capture body into a box
     \begin{lrbox}{\sectionbodybox}%
         \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%

@@ -6,7 +6,7 @@
 % HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\entryheader}[2]{%
-    {\textbf{\textcolor{ink}{#1}}\hfill{\footnotesize\textcolor{muted}{#2}}}\par
+    {\textbf{\textcolor{ink}{#1}}\hfill{\textcolor{muted}{#2}}}\par% \footnotesize
 }
 
 % BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -28,13 +28,13 @@
 
 \newcommand{\entrylinesep}{0.22\baselineskip}
 \newcommand{\entryline}[1]{%
-    {\footnotesize\textcolor{ink}{#1}}\par\vspace{\entrylinesep}%
+    {\textcolor{ink}{#1}}\par\vspace{\entrylinesep}% \footnotesize
 }
 
 % SINGLE LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\skillentry}[2]{%
-    \par\noindent
-    {\footnotesize\textbf{\textcolor{ink}{#1}}\hspace{0.75em}\textcolor{ink}{#2}}\par
+\newcommand{\entrycolumns}[2]{%
+    \par\noindent%
+    {\textbf{\textcolor{ink}{#1}}\hspace{0.75em}\textcolor{ink}{#2}}\par% \footnotesize
     \vspace{0.30\baselineskip}%
 }
