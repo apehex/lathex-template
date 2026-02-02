@@ -30,13 +30,13 @@
 % LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\entryline}[1]{%
-    {\textcolor{ink}{#1}}\par\vspace{\entrylinesep}% \footnotesize
+    #1\par\vspace{\entrylinesep}% \footnotesize
 }
 
 % SINGLE LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\entrycolumns}[2]{%
     \par\noindent%
-    {\textbf{\textcolor{ink}{#1}}\hspace{0.75em}\textcolor{ink}{#2}}\par% \footnotesize
-    \vspace{\entrylinesep}%
+    {#1\hspace{0.6em}#2}% \footnotesize
+    \par\vspace{\entrylinesep}%
 }
