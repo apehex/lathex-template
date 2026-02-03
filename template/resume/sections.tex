@@ -10,54 +10,80 @@
 \setlength{\sectionpadding}{0.9em}
 \setlength{\sectiontitlewidth}{0.8em}
 
-% TITLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\sectiontitletext}[2][accent]{%
-    \textcolor{#1}{\MakeUppercase{\textbf{#2}}}% \small
+\newcommand{\sectionheadertitle}[2]{% title text, title color
+    \textcolor{#2}{\MakeUppercase{\textbf{#1}}}% \small
+}
+
+\newcommand{\sectionheaderrule}[1]{% rule color
+    {\color{#1}\leaders\hrule height 1pt\hfill\kern0pt}%
+}
+
+\newcommand{\sectionheadercontent}[3]{% title text, title color, rule color
+    \sectionheadertitle{#1}{#2}%
+    \hspace{6pt}%
+    \sectionheaderrule{#3}%
+}
+
+\newcommand{\sectionheaderbox}[4]{% header length, title text, title color, rule color
+  \hbox to #1{\sectionheadercontent{#2}{#3}{#4}}%
 }
 
 % HORIZONTAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{horizontalsection}[2][accent]{%
+\newenvironment{horizontalsection}[3]{% title text, title color, rule color
     \par\vspace{\sectionmargin}%
-    \sectiontitletext[#1]{#2}
-    \hspace{6pt}%
-    {\color{rule}\leaders\hrule height 1pt\hfill\kern0pt}%
+    \sectionheadercontent{#1}{#2}{#3}
     \par\vspace{\sectionpadding}%
 }{}
 
 % VERTICAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newsavebox{\sectionbodybox}
-\newsavebox{\sectiontitlebox}
-
-\newenvironment{verticalsection}[2][accent]{%
-    \par\vspace{\sectionmargin}%
-    % Store the whole box with the vertical title
-    \sbox{\sectiontitlebox}{\rotatebox{90}{\sectiontitletext[#1]{#2}}}%
-    % Capture body into a box
-    \begin{lrbox}{\sectionbodybox}%
-        \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
-}{%
-        \end{minipage}%
-    \end{lrbox}%
-    % Measure body height
-    \setlength{\sectionbodyheight}{\dimexpr\ht\sectionbodybox+\dp\sectionbodybox\relax}%
-    \setlength{\sectiontitleheight}{\dimexpr\ht\sectiontitlebox+\dp\sectiontitlebox\relax}%
-    % Typeset header (left) + body (right)
-    \noindent
-    \begin{minipage}[t][\sectionbodyheight][t]{\sectiontitlewidth}%
+\newenvironment{verticalsection}[4]{% header length, title text, title color, rule color
+    \par\vspace{\sectionmargin}\noindent%
+    \begin{minipage}[t][#1][t]{\sectiontitlewidth}%
         \raggedleft%
-        % Vertical rule runs from top down to just above title
-        \vspace{-0.7em}%
-        \hfill{\color{rule}\rule{1pt}{\dimexpr\sectionbodyheight-\sectiontitleheight-1.6em\relax}}%
-        \par\vspace{0.4em}%
-        % Title at bottom, vertical, in accent
-        \hfill\usebox{\sectiontitlebox}%
+        \vspace{0pt}\ignorespaces%
+        \hfill\rotatebox{90}{\sectionheaderbox{#1}{#2}{#3}{#4}}%
     \end{minipage}%
     \hspace{\sectionpadding}%
     \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
-        \usebox{\sectionbodybox}%
-    \end{minipage}%
-    \par
+        \vspace{0pt}\ignorespaces%
+}{%
+    \end{minipage}\par%
 }
+
+% \newsavebox{\sectionbodybox}
+% \newsavebox{\sectiontitlebox}
+
+% \newenvironment{verticalsection}[3]{%
+%     \par\vspace{\sectionmargin}%
+%     % Store the whole box with the vertical title
+%     \sbox{\sectiontitlebox}{\rotatebox{90}{\sectionheadertitle{#1}{#2}}}%
+%     % Capture body into a box
+%     \begin{lrbox}{\sectionbodybox}%
+%         \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
+% }{%
+%         \end{minipage}%
+%     \end{lrbox}%
+%     % Measure body height
+%     \setlength{\sectionbodyheight}{\dimexpr\ht\sectionbodybox+\dp\sectionbodybox\relax}%
+%     \setlength{\sectiontitleheight}{\dimexpr\ht\sectiontitlebox+\dp\sectiontitlebox\relax}%
+%     % Typeset header (left) + body (right)
+%     \noindent
+%     \begin{minipage}[t][\sectionbodyheight][t]{\sectiontitlewidth}%
+%         \raggedleft%
+%         % Vertical rule runs from top down to just above title
+%         \vspace{-0.7em}%
+%         \hfill{\color{#3}\rule{1pt}{\dimexpr\sectionbodyheight-\sectiontitleheight-1.6em\relax}}%
+%         \par\vspace{0.4em}%
+%         % Title at bottom, vertical, in accent
+%         \hfill\usebox{\sectiontitlebox}%
+%     \end{minipage}%
+%     \hspace{\sectionpadding}%
+%     \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
+%         \usebox{\sectionbodybox}%
+%     \end{minipage}%
+%     \par%
+% }
