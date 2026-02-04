@@ -3,10 +3,10 @@
 \newlength{\sectionmargin}
 \newlength{\sectionpadding}
 \newlength{\sectiontitlewidth}
-\newlength{\sectiontitleheight}
-\newlength{\sectionbodyheight}
+% \newlength{\sectiontitleheight}
+% \newlength{\sectionbodyheight}
 
-\setlength{\sectionmargin}{0.9\baselineskip}
+\setlength{\sectionmargin}{2\baselineskip}
 \setlength{\sectionpadding}{0.9em}
 \setlength{\sectiontitlewidth}{0.8em}
 
@@ -33,15 +33,16 @@
 % HORIZONTAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newenvironment{horizontalsection}[3]{% title text, title color, rule color
-    \par\vspace{\sectionmargin}%
     \sectionheadercontent{#1}{#2}{#3}
     \par\vspace{\sectionpadding}%
-}{}
+}{
+    \par\vspace{\sectionmargin}%
+}
 
 % VERTICAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newenvironment{verticalsection}[4]{% header length, title text, title color, rule color
-    \par\vspace{\sectionmargin}\noindent%
+    \par\noindent%
     \begin{minipage}[t][#1][t]{\sectiontitlewidth}%
         \raggedleft%
         \vspace{0pt}\ignorespaces%
@@ -51,7 +52,8 @@
     \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
         \vspace{0pt}\ignorespaces%
 }{%
-    \end{minipage}\par%
+    \end{minipage}%
+    \par\vspace{\sectionmargin}%
 }
 
 % \newsavebox{\sectionbodybox}
