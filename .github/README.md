@@ -76,15 +76,15 @@ This work is licensed under the GNU [aGPL v3](LICENSE).
 
 ---
 
-[demo-dark]: ../build/dark.pdf
-[demo-forta]: ../build/forta.pdf
-[demo-light]: ../build/light.pdf
-[demo-dark-page]: ../images/dark-page.png
-[demo-forta-page]: ../images/forta-page.png
-[demo-light-page]: ../images/light-page.png
-[demo-dark-title]: ../images/dark-title.png
-[demo-forta-title]: ../images/forta-title.png
-[demo-light-title]: ../images/light-title.png
+[demo-dark]: ../build/book/dark.pdf
+[demo-forta]: ../build/book/forta.pdf
+[demo-light]: ../build/book/light.pdf
+[demo-dark-page]: images/dark-page.png
+[demo-forta-page]: images/forta-page.png
+[demo-light-page]: images/light-page.png
+[demo-dark-title]: images/dark-title.png
+[demo-forta-title]: images/forta-title.png
+[demo-light-title]: images/light-title.png
 [forta-evasion-report]: https://github.com/apehex/web3-evasion-techniques/blob/main/report/forta.pdf
 [latexdraw-cover-pages]: https://latexdraw.com/tikz-cover-pages-gallery/
 [legrand-orange-book]: https://www.latextemplates.com/template/legrand-orange-book
