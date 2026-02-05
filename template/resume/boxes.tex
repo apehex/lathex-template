@@ -1,0 +1,9 @@
+% BASELINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\iconbox}[1]{% box content
+    \makebox[2ex][l]{% fixed slot width
+        \smash{% remove height/depth contribution
+            \raisebox{-0.15\height}{#1}% approximate vertical centering
+        }%
+    }%
+}
