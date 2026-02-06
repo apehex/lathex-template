@@ -3,22 +3,23 @@
 \newlength{\entrysep}
 \newlength{\entrylinesep}
 
-\setlength{\entrysep}{1.2\baselineskip}
+\setlength{\entrysep}{1.6\baselineskip}
 \setlength{\entrylinesep}{0.4\baselineskip}
 
 % HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\entryheader}[2]{%
+    \par\noindent%
     {\textcolor{ink}{#1}\hfill{\textcolor{muted}{#2}}}%
-    \par\vspace{\entrylinesep}%
+    \par%
 }
 
 % LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\entryline}[1]{%
-    \par\noindent
-    #1
-    \par\vspace{\entrylinesep}%
+    \par\noindent\addvspace{\entrylinesep}%
+    #1%
+    \par%
 }
 
 % COLUMNS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,8 +37,7 @@
 % ENTRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\sectionentry}[3]{%
-    \par\noindent
+    \par\noindent\addvspace{\entrysep}%
     \entryheader{#1}{#2}%
     \entrybody{#3}%
-    \vspace{\entrysep}%
 }

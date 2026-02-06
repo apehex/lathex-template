@@ -33,16 +33,17 @@
 % HORIZONTAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newenvironment{horizontalsection}[3]{% title text, title color, rule color
+    \par\noindent\addvspace{\sectionmargin}%
     \sectionheadercontent{#1}{#2}{#3}
     \par\vspace{\sectionpadding}%
 }{
-    \par\vspace{\sectionmargin}%
+    \par%
 }
 
 % VERTICAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newenvironment{verticalsection}[4]{% header length, title text, title color, rule color
-    \par\noindent%
+    \par\noindent\addvspace{\sectionmargin}%
     \begin{minipage}[t][#1][t]{\sectiontitlewidth}%
         \raggedleft%
         \vspace{0pt}\ignorespaces%
@@ -53,7 +54,7 @@
         \vspace{0pt}\ignorespaces%
 }{%
     \end{minipage}%
-    \par\vspace{\sectionmargin}%
+    \par%
 }
 
 % \newsavebox{\sectionbodybox}
