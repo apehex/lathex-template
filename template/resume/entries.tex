@@ -36,8 +36,18 @@
 
 % ENTRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\sectionentry}[3]{%
-    \par\noindent\addvspace{\entrysep}%
+\makeatletter
+\newcommand{\sectionentry}{\@ifstar\sectionentry@star\sectionentry@nostar}
+
+\newcommand{\sectionentry@star}[3]{%
+    \par\noindent%
     \entryheader{#1}{#2}%
     \entrybody{#3}%
 }
+
+\newcommand{\sectionentry@nostar}[3]{%
+    \par\noindent%
+    \addvspace{\entrysep}%
+    \sectionentry@star{#1}{#2}{#3}%
+}
+\makeatother
