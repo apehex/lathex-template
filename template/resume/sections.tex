@@ -3,8 +3,7 @@
 \newlength{\sectionmargin}
 \newlength{\sectionpadding}
 \newlength{\sectiontitlewidth}
-% \newlength{\sectiontitleheight}
-% \newlength{\sectionbodyheight}
+\newlength{\sectionbodyheight}
 
 \setlength{\sectionmargin}{3.2\baselineskip}
 \setlength{\sectionpadding}{0.9em}
@@ -49,17 +48,39 @@
 
 % VERTICAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{verticalsection*}[4]{% header length, title text, title color, rule color
+\newsavebox{\sectionbodybox}
+
+\newcommand{\verticalsectiontitletext}{}
+\newcommand{\verticalsectiontitlecolor}{}
+\newcommand{\verticalsectionrulecolor}{}
+
+\newenvironment{verticalsection*}[4]{%
+    % stash args for the end block
+    \def\verticalsectiontitletext{#2}%
+    \def\verticalsectiontitlecolor{#3}%
+    \def\verticalsectionrulecolor{#4}%
+    % reset the position
     \par\noindent%
-    \begin{minipage}[t][#1][t]{\sectiontitlewidth}%
+    % Capture body into a box
+    \begin{lrbox}{\sectionbodybox}%
+        \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
+}{%
+        \end{minipage}%
+    \end{lrbox}%
+    % Measure body height
+    \setlength{\sectionbodyheight}{\dimexpr\ht\sectionbodybox+\dp\sectionbodybox\relax}%
+    % Typeset header (left) + body (right)
+    \noindent
+    \begin{minipage}[t][\sectionbodyheight][t]{\sectiontitlewidth}%
         \raggedleft%
         \vspace{0pt}\ignorespaces%
-        \hfill\rotatebox{90}{\sectionheaderbox{#1}{#2}{#3}{#4}}%
+        \hfill\rotatebox{90}{\sectionheaderbox{\sectionbodyheight}{\verticalsectiontitletext}{\verticalsectiontitlecolor}{\verticalsectionrulecolor}}%
     \end{minipage}%
     \hspace{\sectionpadding}%
     \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
+        \raggedleft%
         \vspace{0pt}\ignorespaces%
-}{%
+        \usebox{\sectionbodybox}%
     \end{minipage}%
     \par%
 }
@@ -70,37 +91,3 @@
 }{%
     \end{verticalsection*}
 }
-
-% \newsavebox{\sectionbodybox}
-% \newsavebox{\sectiontitlebox}
-
-% \newenvironment{verticalsection}[3]{%
-%     \par\vspace{\sectionmargin}%
-%     % Store the whole box with the vertical title
-%     \sbox{\sectiontitlebox}{\rotatebox{90}{\sectionheadertitle{#1}{#2}}}%
-%     % Capture body into a box
-%     \begin{lrbox}{\sectionbodybox}%
-%         \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
-% }{%
-%         \end{minipage}%
-%     \end{lrbox}%
-%     % Measure body height
-%     \setlength{\sectionbodyheight}{\dimexpr\ht\sectionbodybox+\dp\sectionbodybox\relax}%
-%     \setlength{\sectiontitleheight}{\dimexpr\ht\sectiontitlebox+\dp\sectiontitlebox\relax}%
-%     % Typeset header (left) + body (right)
-%     \noindent
-%     \begin{minipage}[t][\sectionbodyheight][t]{\sectiontitlewidth}%
-%         \raggedleft%
-%         % Vertical rule runs from top down to just above title
-%         \vspace{-0.7em}%
-%         \hfill{\color{#3}\rule{1pt}{\dimexpr\sectionbodyheight-\sectiontitleheight-1.6em\relax}}%
-%         \par\vspace{0.4em}%
-%         % Title at bottom, vertical, in accent
-%         \hfill\usebox{\sectiontitlebox}%
-%     \end{minipage}%
-%     \hspace{\sectionpadding}%
-%     \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
-%         \usebox{\sectionbodybox}%
-%     \end{minipage}%
-%     \par%
-% }
