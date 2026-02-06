@@ -32,18 +32,25 @@
 
 % HORIZONTAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{horizontalsection}[3]{% title text, title color, rule color
-    \par\noindent\addvspace{\sectionmargin}%
-    \sectionheadercontent{#1}{#2}{#3}
+\newenvironment{horizontalsection*}[3]{% title text, title color, rule color
+    \par\noindent%
+    \sectionheadercontent{#1}{#2}{#3}%
     \par\vspace{\sectionpadding}%
 }{
     \par%
 }
 
+\newenvironment{horizontalsection}[3]{% title text, title color, rule color
+    \par\noindent\addvspace{\sectionmargin}%
+    \begin{horizontalsection*}{#1}{#2}{#3}%
+}{
+    \end{horizontalsection*}%
+}
+
 % VERTICAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{verticalsection}[4]{% header length, title text, title color, rule color
-    \par\noindent\addvspace{\sectionmargin}%
+\newenvironment{verticalsection*}[4]{% header length, title text, title color, rule color
+    \par\noindent%
     \begin{minipage}[t][#1][t]{\sectiontitlewidth}%
         \raggedleft%
         \vspace{0pt}\ignorespaces%
@@ -55,6 +62,13 @@
 }{%
     \end{minipage}%
     \par%
+}
+
+\newenvironment{verticalsection}[4]{%
+    \par\noindent\addvspace{\sectionmargin}%
+    \begin{verticalsection*}{#1}{#2}{#3}{#4}
+}{%
+    \end{verticalsection*}
 }
 
 % \newsavebox{\sectionbodybox}
