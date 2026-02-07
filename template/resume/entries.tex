@@ -42,18 +42,21 @@
 
 % ENTRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\sectionentry}{\@ifstar{\sectionentry@star}{\sectionentry@nostar}}
-
-\newcommand{\sectionentry@star}[3]{%
+\newenvironment{sectionentry*}[2]{%
     \par\noindent%
     \entryheader{#1}{#2}%
-    {\setlength{\parskip}{0pt}\setlength{\parindent}{0pt}#3}%
+    \bgroup%
+    \setlength{\parskip}{0pt}%
+    \setlength{\parindent}{0pt}%
+}{%
+    \egroup%
 }
 
-\newcommand{\sectionentry@nostar}[3]{%
-    \par\noindent%
-    \addvspace{\entrysep}%
-    \sectionentry@star{#1}{#2}{#3}%
+\newenvironment{sectionentry}[2]{%
+    \par\noindent\addvspace{\entrysep}%
+    \begin{sectionentry*}{#1}{#2}%
+}{%
+    \end{sectionentry*}%
 }
 
 % @ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
