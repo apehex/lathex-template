@@ -54,11 +54,11 @@
 \newcommand{\verticalsectiontitlecolor}{}
 \newcommand{\verticalsectionrulecolor}{}
 
-\newenvironment{verticalsection*}[4]{%
+\newenvironment{verticalsection*}[3]{% title text, title color, rule color
     % stash args for the end block
-    \def\verticalsectiontitletext{#2}%
-    \def\verticalsectiontitlecolor{#3}%
-    \def\verticalsectionrulecolor{#4}%
+    \def\verticalsectiontitletext{#1}%
+    \def\verticalsectiontitlecolor{#2}%
+    \def\verticalsectionrulecolor{#3}%
     % reset the position
     \par\noindent%
     % Capture body into a box
@@ -85,9 +85,9 @@
     \par%
 }
 
-\newenvironment{verticalsection}[4]{%
+\newenvironment{verticalsection}[3]{%
     \par\noindent\addvspace{\sectionmargin}%
-    \begin{verticalsection*}{#1}{#2}{#3}{#4}
+    \begin{verticalsection*}{#1}{#2}{#3}
 }{%
     \end{verticalsection*}
 }
