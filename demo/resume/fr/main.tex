@@ -12,20 +12,33 @@
 
 \leftcol
 
+\begin{minipage}[t][\textheight][t]{\linewidth}
+
 \input{demo/resume/fr/left/header}
-\input{demo/resume/fr/left/profile}
+\input{demo/resume/fr/left/contact}
+\input{demo/resume/fr/left/languages}
 \input{demo/resume/fr/left/skills}
+\vfill
 \input{demo/resume/fr/left/hobbies}
+% \input{demo/resume/fr/left/links}
+
+\end{minipage}
 
 % RIGHT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \rightcol
 
+\begin{minipage}[t][\dimexpr\textheight-\topskip][t]{\linewidth}
+
 \input{demo/resume/fr/right/machine}
 \input{demo/resume/fr/right/security}
 \input{demo/resume/fr/right/coding}
 \input{demo/resume/fr/right/engineering}
-% \input{demo/resume/fr/right/writing}
+\vfill
+\input{demo/resume/fr/right/links}
+% \input{demo/resume/fr/right/serving}
+
+\end{minipage}
 
 % END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
