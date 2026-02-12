@@ -8,14 +8,6 @@
 
 \makeatletter
 
-% HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand{\entryheader}[2]{%
-    \par\noindent%
-    {\textcolor{ink}{#1}\hfill{\textcolor{muted}{#2}}}%
-    \par%
-}
-
 % LINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\entryline}{\@ifstar{\entryline@star}{\entryline@nostar}}
@@ -26,6 +18,18 @@
 
 \newcommand{\entryline@nostar}[1]{%
     \par\noindent\addvspace{\entrylinesep}#1\par%
+}
+
+% HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\entryheader}{\@ifstar{\entryheader@star}{\entryheader@nostar}}
+
+\newcommand{\entryheader@star}[2]{% left content, right content
+    \entryline@star{\textcolor{ink}{#1}\hfill{\textcolor{muted}{#2}}}%
+}
+
+\newcommand{\entryheader@nostar}[2]{% left content, right content
+    \entryline@nostar{\textcolor{ink}{#1}\hfill{\textcolor{muted}{#2}}}%
 }
 
 % COLUMNS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,7 +48,7 @@
 
 \newenvironment{sectionentry*}[2]{%
     \par\noindent%
-    \entryheader{#1}{#2}%
+    \entryheader@star{#1}{#2}%
     \bgroup%
     \setlength{\parskip}{0pt}%
     \setlength{\parindent}{0pt}%
