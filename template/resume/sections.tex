@@ -2,12 +2,14 @@
 
 \newlength{\sectionmargin}
 \newlength{\sectionpadding}
+\newlength{\sectiontitlespace}
 \newlength{\sectiontitlewidth}
 \newlength{\sectionbodyheight}
 
 \setlength{\sectionmargin}{3.2\baselineskip}
 \setlength{\sectionpadding}{0.9em}
 \setlength{\sectiontitlewidth}{0.8em}
+\setlength{\sectiontitlespace}{6pt}
 
 % HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -19,29 +21,29 @@
     {\color{#1}\leaders\hrule height 1pt\hfill\kern0pt}%
 }
 
-\newcommand{\sectionheadercontent}[3]{% title text, title color, rule color
-    \sectionheadertitle{#1}{#2}%
-    \hspace{6pt}%
-    \sectionheaderrule{#3}%
+\newcommand{\sectionheadercontent}[4][\sectiontitlespace]{% title space, title text, title color, rule color
+    \sectionheadertitle{#2}{#3}%
+    \hspace{#1}%
+    \sectionheaderrule{#4}%
 }
 
-\newcommand{\sectionheaderbox}[4]{% header length, title text, title color, rule color
-  \hbox to #1{\sectionheadercontent{#2}{#3}{#4}}%
+\newcommand{\sectionheaderbox}[5][\sectiontitlespace]{% title space, header length, title text, title color, rule color
+  \hbox to #2{\sectionheadercontent[#1]{#3}{#4}{#5}}%
 }
 
 % HORIZONTAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{horizontalsection*}[3]{% title text, title color, rule color
+\newenvironment{horizontalsection*}[4][\sectiontitlespace]{% title space, title text, title color, rule color
     \par\noindent%
-    \sectionheadercontent{#1}{#2}{#3}%
+    \sectionheadercontent[#1]{#2}{#3}{#4}%
     \par\vspace{\sectionpadding}%
 }{
     \par%
 }
 
-\newenvironment{horizontalsection}[3]{% title text, title color, rule color
+\newenvironment{horizontalsection}[4][\sectiontitlespace]{% title space, title text, title color, rule color
     \par\noindent\addvspace{\sectionmargin}%
-    \begin{horizontalsection*}{#1}{#2}{#3}%
+    \begin{horizontalsection*}[#1]{#2}{#3}{#4}%
 }{
     \end{horizontalsection*}%
 }
@@ -50,15 +52,17 @@
 
 \newsavebox{\sectionbodybox}
 
+\newcommand{\verticalsectiontitlespace}{}
 \newcommand{\verticalsectiontitletext}{}
 \newcommand{\verticalsectiontitlecolor}{}
 \newcommand{\verticalsectionrulecolor}{}
 
-\newenvironment{verticalsection*}[3]{% title text, title color, rule color
+\newenvironment{verticalsection*}[4][\sectiontitlespace]{% title space, title text, title color, rule color
     % stash args for the end block
-    \def\verticalsectiontitletext{#1}%
-    \def\verticalsectiontitlecolor{#2}%
-    \def\verticalsectionrulecolor{#3}%
+    \def\verticalsectiontitlespace{#1}%
+    \def\verticalsectiontitletext{#2}%
+    \def\verticalsectiontitlecolor{#3}%
+    \def\verticalsectionrulecolor{#4}%
     % reset the position
     \par\noindent%
     % Capture body into a box
@@ -74,7 +78,7 @@
     \begin{minipage}[t][\sectionbodyheight][t]{\sectiontitlewidth}%
         \raggedleft%
         \vspace{0pt}\ignorespaces%
-        \hfill\rotatebox{90}{\sectionheaderbox{\sectionbodyheight}{\verticalsectiontitletext}{\verticalsectiontitlecolor}{\verticalsectionrulecolor}}%
+        \hfill\rotatebox{90}{\sectionheaderbox[\verticalsectiontitlespace]{\sectionbodyheight}{\verticalsectiontitletext}{\verticalsectiontitlecolor}{\verticalsectionrulecolor}}%
     \end{minipage}%
     \hspace{\sectionpadding}%
     \begin{minipage}[t]{\dimexpr\linewidth-\sectiontitlewidth-\sectionpadding\relax}%
@@ -85,9 +89,9 @@
     \par%
 }
 
-\newenvironment{verticalsection}[3]{%
+\newenvironment{verticalsection}[4][\sectiontitlespace]{% title space, title text, title color, rule color
     \par\noindent\addvspace{\sectionmargin}%
-    \begin{verticalsection*}{#1}{#2}{#3}
+    \begin{verticalsection*}[#1]{#2}{#3}{#4}
 }{%
     \end{verticalsection*}
 }
