@@ -6,10 +6,24 @@ You can preview the template on a [real world report][forta-evasion-report].
 
 ## Preview
 
-| Dark Theme                                       | Light Theme                                         | Forta Theme                                         |
-| :----------------------------------------------: | :-------------------------------------------------: | :-------------------------------------------------: |
-| [![Dark title page][demo-dark-title]][demo-dark] | [![Light title page][demo-light-title]][demo-light] | [![Forta title page][demo-forta-title]][demo-forta] |
-| [![Dark page][demo-dark-page]][demo-dark]        | [![Light page][demo-light-page]][demo-light]        | [![Forta page][demo-forta-page]][demo-forta]        |
+### Book
+
+| Dark Theme                                                   | Light Theme                                                     | Forta Theme                                                     |
+| :----------------------------------------------------------: | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
+| [![Dark title page][demo-book-dark-title]][demo-book-dark]   | [![Light title page][demo-book-light-title]][demo-book-light]   | [![Forta title page][demo-book-forta-title]][demo-book-forta]   |
+| [![Dark page][demo-book-dark-page]][demo-book-dark]          | [![Light page][demo-book-light-page]][demo-book-light]          | [![Forta page][demo-book-forta-page]][demo-book-forta]          |
+
+### Resume
+
+| Dark Theme                                                      | Light Theme                                                        |
+| :-------------------------------------------------------------: | :----------------------------------------------------------------: |
+| [![Dark title page][demo-resume-dark-image]][demo-resume-dark]  | [![Light title page][demo-resume-light-image]][demo-resume-light]  |
+
+### Letter
+
+| Dark Theme                                                      | Light Theme                                                        |
+| :-------------------------------------------------------------: | :----------------------------------------------------------------: |
+| [![Dark title page][demo-letter-dark-image]][demo-letter-dark]  | [![Light title page][demo-letter-light-image]][demo-letter-light]  |
 
 ## Usage
 
@@ -76,15 +90,23 @@ This work is licensed under the GNU [aGPL v3](LICENSE).
 
 ---
 
-[demo-dark]: ../build/book/dark.pdf
-[demo-forta]: ../build/book/forta.pdf
-[demo-light]: ../build/book/light.pdf
-[demo-dark-page]: images/dark-page.png
-[demo-forta-page]: images/forta-page.png
-[demo-light-page]: images/light-page.png
-[demo-dark-title]: images/dark-title.png
-[demo-forta-title]: images/forta-title.png
-[demo-light-title]: images/light-title.png
+[demo-book-dark]: ../build/book/dark.pdf
+[demo-book-forta]: ../build/book/forta.pdf
+[demo-book-light]: ../build/book/light.pdf
+[demo-book-dark-page]: images/book/dark-page.png
+[demo-book-forta-page]: images/book/forta-page.png
+[demo-book-light-page]: images/book/light-page.png
+[demo-book-dark-title]: images/book/dark-title.png
+[demo-book-forta-title]: images/book/forta-title.png
+[demo-book-light-title]: images/book/light-title.png
+[demo-letter-dark]: ../build/letter/dark.pdf
+[demo-letter-light]: ../build/letter/light.pdf
+[demo-letter-dark-image]: images/letter/dark.png
+[demo-letter-light-image]: images/letter/light.png
+[demo-resume-dark]: ../build/resume/dark.pdf
+[demo-resume-light]: ../build/resume/light.pdf
+[demo-resume-dark-image]: images/resume/dark.png
+[demo-resume-light-image]: images/resume/light.png
 [forta-evasion-report]: https://github.com/apehex/web3-evasion-techniques/blob/main/report/forta.pdf
 [latexdraw-cover-pages]: https://latexdraw.com/tikz-cover-pages-gallery/
 [legrand-orange-book]: https://www.latextemplates.com/template/legrand-orange-book
