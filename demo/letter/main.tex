@@ -1,0 +1,43 @@
+\begin{document}
+
+% BACKGROUND %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\resumestripe
+
+% COLUMNS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{paracol}{2}
+
+% LEFT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\leftcol
+
+\begin{minipage}[t][\textheight][t]{\linewidth}
+
+\input{demo/letter/left/header}
+\input{demo/letter/left/contact}
+
+\end{minipage}
+
+% RIGHT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rightcol
+
+\begin{minipage}[t][\dimexpr\textheight-\topskip][t]{\linewidth}
+
+\input{demo/letter/right/contact}
+\input{demo/letter/right/date}
+\input{demo/letter/right/greeting}
+\input{demo/letter/right/opening}
+\input{demo/letter/right/body}
+\input{demo/letter/right/closing}
+\input{demo/letter/right/signoff}
+\input{demo/letter/right/signature}
+
+\end{minipage}
+
+% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{paracol}
+
+\end{document}
