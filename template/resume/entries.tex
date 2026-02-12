@@ -24,12 +24,12 @@
 
 \newcommand{\entryheader}{\@ifstar{\entryheader@star}{\entryheader@nostar}}
 
-\newcommand{\entryheader@star}[2]{% left content, right content
-    \entryline@star{\textcolor{ink}{#1}\hfill{\textcolor{muted}{#2}}}%
+\newcommand{\entryheader@star}[3][muted]{% left content, right content
+    \entryline@star{#2\hfill{\textcolor{#1}{#3}}}%
 }
 
-\newcommand{\entryheader@nostar}[2]{% left content, right content
-    \entryline@nostar{\textcolor{ink}{#1}\hfill{\textcolor{muted}{#2}}}%
+\newcommand{\entryheader@nostar}[3][muted]{% left content, right content
+    \entryline@nostar{#2\hfill{\textcolor{#1}{#3}}}%
 }
 
 % COLUMNS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -46,9 +46,9 @@
 
 % ENTRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newenvironment{sectionentry*}[2]{%
+\newenvironment{sectionentry*}[3][muted]{%
     \par\noindent%
-    \entryheader@star{#1}{#2}%
+    \entryheader@star[#1]{#2}{#3}%
     \bgroup%
     \setlength{\parskip}{0pt}%
     \setlength{\parindent}{0pt}%
@@ -56,9 +56,9 @@
     \egroup%
 }
 
-\newenvironment{sectionentry}[2]{%
+\newenvironment{sectionentry}[3][muted]{%
     \par\noindent\addvspace{\entrysep}%
-    \begin{sectionentry*}{#1}{#2}%
+    \begin{sectionentry*}[#1]{#2}{#3}%
 }{%
     \end{sectionentry*}%
 }
