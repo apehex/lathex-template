@@ -20,3 +20,6 @@
 # makeindex
 *.ilg
 *.ind
+
+# temp files
+.tests
