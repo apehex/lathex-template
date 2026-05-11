@@ -1,4 +1,4 @@
-\usepackage[all]{background}
+\usepackage{eso-pic}
 
 %----------------------------------------------------------------------------------------
 %   SHOW / HIDE PART TITLE IN THE LEFT BAR
@@ -14,23 +14,17 @@
 %   CONFIGURE LEFT BAR
 %----------------------------------------------------------------------------------------
 
-\backgroundsetup{
-  scale=1,
-  color=bgacc,
-  opacity=1,
-  angle=0,
-  position=current page.south west,
-  vshift=0mm,
-  hshift=16mm, % Adjust the distance from the left edge of the page
-  contents={%
-    \tikz{
-      % \fill[bgacc] (0,0) rectangle (6mm,16mm); % bottom bar, 6mm wide, 16mm tall
-      \ifbackgroundbarvisible
-        \fill[bgacc] (0,\paperheight) rectangle (8mm,-\paperheight); % bar width 6mm
-      \fi
-      \ifbackgroundtitlevisible
-        \node[rotate=90, fgacc, font=\huge\bfseries\headingfontfamily, anchor=west] at (4mm, 16mm) {\currentparttitle};
-      \fi
-    }
-  }
+\newcommand{\leftbarcontents}{%
+  \ifbackgroundbarvisible
+    \fill[bgacc] (current page.south west) rectangle ([xshift=8mm]current page.north west);
+  \fi
+  \ifbackgroundtitlevisible
+    \node[rotate=90, fgacc, font=\huge\bfseries\headingfontfamily, anchor=west] at ([xshift=4mm,yshift=16mm]current page.south west) {\currentparttitle};
+  \fi
+}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \leftbarcontents
+  \end{tikzpicture}%
 }
