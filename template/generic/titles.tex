@@ -9,8 +9,8 @@
 \newlength{\titlenumberoffsetother}
 \setlength{\titlenumberoffsetchapter}{-16mm}
 \setlength{\titlenumberoffsetother}{-9mm}
-\newcommand{\titlenumberfontsize}{14}
-\newcommand*{\numberinmargin}[2]{\makebox[0pt][l]{\hspace*{#2}\textcolor{fg}{\fontsize{\titlenumberfontsize}{\titlenumberfontsize}\selectfont\headingfontfamily\bfseries\selectfont#1\autodot}}}
+\newcommand{\titlenumberfontsizept}{14}
+\newcommand*{\numberinmargin}[3]{\makebox[0pt][l]{\hspace*{#2}\textcolor{#3}{\fontsize{\titlenumberfontsizept}{\titlenumberfontsizept}\selectfont\headingfontfamily\bfseries\selectfont#1\autodot}}}
 
 %----------------------------------------------------------------------------------------
 %   LAYOUT
@@ -26,25 +26,25 @@
 
 \titleformat{\chapter}[hang]
   {\normalfont\huge\headingfontfamily\bfseries\selectfont\color{accent}}
-  {\numberinmargin{\thechapter}{\titlenumberoffsetchapter}}
+  {\numberinmargin{\thechapter}{\titlenumberoffsetchapter}{fg}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\section}
   {\normalfont\large\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\numberinmargin{\thesection}{\titlenumberoffsetother}}
+  {\numberinmargin{\thesection}{\titlenumberoffsetother}{fg}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\subsection}
   {\normalfont\normalsize\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\numberinmargin{\thesubsection}{\titlenumberoffsetother}}
+  {\numberinmargin{\thesubsection}{\titlenumberoffsetother}{fg}}
   {0pt}
   {}
 
 \titleformat{\subsubsection}
   {\normalfont\small\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\numberinmargin{\thesubsubsection}{\titlenumberoffsetother}}
+  {\numberinmargin{\thesubsubsection}{\titlenumberoffsetother}{fg}}
   {0pt}
   {}
 
