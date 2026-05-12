@@ -9,15 +9,15 @@
 \newlength{\titlenumberminoroffset}
 \setlength{\titlenumbermajoroffset}{-16mm}
 \setlength{\titlenumberminoroffset}{-11mm}
-\newcommand{\titlenumberfontsizept}{14}
+\newcommand{\titlenumberfontsize}{14}
 \makeatletter
-\newcommand*{\formatheadnumber}[1]{\textcolor{fg}{\fontsize{\titlenumberfontsizept}{\titlenumberfontsizept}\selectfont\headingfontfamily\bfseries\selectfont#1}}
+\newcommand*{\formatheadnumber}[1]{\textcolor{fg}{\fontsize{\titlenumberfontsize}{\titlenumberfontsize}\selectfont\headingfontfamily\bfseries\selectfont#1}}
 \newcommand*{\splitheadnumber}[1]{\expandafter\splitheadnumberparts#1.\@nil}
 \def\splitheadnumberparts#1.#2\@nil{%
   \makebox[0pt][l]{\hspace*{\titlenumbermajoroffset}\formatheadnumber{#1\autodot}}%
   \if\relax\detokenize{#2}\relax
   \else
-    \makebox[0pt][l]{\hspace*{\titlenumberminoroffset}\formatheadnumber{#2\autodot}}%
+    \makebox[0pt][l]{\hspace*{\titlenumberminoroffset}\formatheadnumber{#2}}%
   \fi
 }
 \makeatother
