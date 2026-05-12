@@ -5,7 +5,12 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\autodot}{.} % separate title numbers with dots
-\newcommand*{\numberinmargin}[3]{\makebox[0pt][r]{\textcolor{#3}{\fontsize{#2}{#2}\selectfont\headingfontfamily\bfseries\selectfont#1\autodot}\hskip\marginparsep}}
+\newlength{\titlenumberoffsetchapter}
+\newlength{\titlenumberoffsetother}
+\setlength{\titlenumberoffsetchapter}{-16mm}
+\setlength{\titlenumberoffsetother}{-9mm}
+\newcommand{\titlenumberfontsize}{14}
+\newcommand*{\numberinmargin}[2]{\makebox[0pt][l]{\hspace*{#2}\textcolor{fg}{\fontsize{\titlenumberfontsize}{\titlenumberfontsize}\selectfont\headingfontfamily\bfseries\selectfont#1\autodot}}}
 
 %----------------------------------------------------------------------------------------
 %   LAYOUT
@@ -21,25 +26,25 @@
 
 \titleformat{\chapter}[hang]
   {\normalfont\huge\headingfontfamily\bfseries\selectfont\color{accent}}
-  {\numberinmargin{\thechapter}{24}{accent}}
+  {\numberinmargin{\thechapter}{\titlenumberoffsetchapter}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\section}
   {\normalfont\large\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\numberinmargin{\thesection}{16}{accent}}
+  {\numberinmargin{\thesection}{\titlenumberoffsetother}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\subsection}
   {\normalfont\normalsize\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\numberinmargin{\thesubsection}{12}{fg}}
+  {\numberinmargin{\thesubsection}{\titlenumberoffsetother}}
   {0pt}
   {}
 
 \titleformat{\subsubsection}
   {\normalfont\small\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\numberinmargin{\thesubsubsection}{10}{fg}}
+  {\numberinmargin{\thesubsubsection}{\titlenumberoffsetother}}
   {0pt}
   {}
 
