@@ -10,6 +10,7 @@
 \setlength{\titlenumbermajoroffset}{-16mm}
 \setlength{\titlenumberminoroffset}{-11mm}
 \newcommand{\titlenumberfontsize}{14}
+\makeatletter
 \newcommand*{\formatheadnumber}[1]{\textcolor{fg}{\fontsize{\titlenumberfontsize}{\titlenumberfontsize}\selectfont\headingfontfamily\bfseries\selectfont#1}}
 \newcommand*{\majorheadnumber}[1]{%
   \makebox[0pt][l]{\hspace*{\titlenumbermajoroffset}\formatheadnumber{#1\autodot}}%
@@ -20,10 +21,15 @@
     \makebox[0pt][l]{\hspace*{\titlenumberminoroffset}\formatheadnumber{#1}}%
   \fi
 }
-\newcommand*{\splitheadnumber}[2]{%
+\newcommand*{\splitheadnumber}[1]{%
+  \edef\headnumberexpanded{#1}%
+  \expandafter\splitheadnumberparts\headnumberexpanded.\@nil
+}
+\def\splitheadnumberparts#1.#2\@nil{%
   \majorheadnumber{#1}%
   \minorheadnumber{#2}%
 }
+\makeatother
 
 %----------------------------------------------------------------------------------------
 %   LAYOUT
@@ -39,25 +45,25 @@
 
 \titleformat{\chapter}[hang]
   {\normalfont\huge\headingfontfamily\bfseries\selectfont\color{accent}}
-  {\splitheadnumber{\thechapter}{}}
+  {\splitheadnumber{\thechapter}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\section}
   {\normalfont\large\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\splitheadnumber{\thechapter}{\arabic{section}\autodot}}
+  {\splitheadnumber{\thesection}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\subsection}
   {\normalfont\normalsize\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\splitheadnumber{\thechapter}{\arabic{section}\autodot\arabic{subsection}\autodot}}
+  {\splitheadnumber{\thesubsection}}
   {0pt}
   {}
 
 \titleformat{\subsubsection}
   {\normalfont\small\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\splitheadnumber{\thechapter}{\arabic{section}\autodot\arabic{subsection}\autodot\arabic{subsubsection}\autodot}}
+  {\splitheadnumber{\thesubsubsection}}
   {0pt}
   {}
 
