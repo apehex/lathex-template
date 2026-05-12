@@ -5,12 +5,22 @@
 %----------------------------------------------------------------------------------------
 
 \newcommand{\autodot}{.} % separate title numbers with dots
-\newlength{\titlenumberoffsetchapter}
-\newlength{\titlenumberoffsetother}
-\setlength{\titlenumberoffsetchapter}{-16mm}
-\setlength{\titlenumberoffsetother}{-9mm}
+\newlength{\titlenumbermajoroffset}
+\newlength{\titlenumberminoroffset}
+\setlength{\titlenumbermajoroffset}{-16mm}
+\setlength{\titlenumberminoroffset}{-11mm}
 \newcommand{\titlenumberfontsizept}{14}
-\newcommand*{\numberinmargin}[3]{\makebox[0pt][l]{\hspace*{#2}\textcolor{#3}{\fontsize{\titlenumberfontsizept}{\titlenumberfontsizept}\selectfont\headingfontfamily\bfseries\selectfont#1\autodot}}}
+\makeatletter
+\newcommand*{\formatheadnumber}[1]{\textcolor{fg}{\fontsize{\titlenumberfontsizept}{\titlenumberfontsizept}\selectfont\headingfontfamily\bfseries\selectfont#1}}
+\newcommand*{\splitheadnumber}[1]{\expandafter\splitheadnumberparts#1.\@nil}
+\def\splitheadnumberparts#1.#2\@nil{%
+  \makebox[0pt][l]{\hspace*{\titlenumbermajoroffset}\formatheadnumber{#1\autodot}}%
+  \if\relax\detokenize{#2}\relax
+  \else
+    \makebox[0pt][l]{\hspace*{\titlenumberminoroffset}\formatheadnumber{#2\autodot}}%
+  \fi
+}
+\makeatother
 
 %----------------------------------------------------------------------------------------
 %   LAYOUT
@@ -26,25 +36,25 @@
 
 \titleformat{\chapter}[hang]
   {\normalfont\huge\headingfontfamily\bfseries\selectfont\color{accent}}
-  {\numberinmargin{\thechapter}{\titlenumberoffsetchapter}{fg}}
+  {\splitheadnumber{\thechapter}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\section}
   {\normalfont\large\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\numberinmargin{\thesection}{\titlenumberoffsetother}{fg}}
+  {\splitheadnumber{\thesection}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\subsection}
   {\normalfont\normalsize\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\numberinmargin{\thesubsection}{\titlenumberoffsetother}{fg}}
+  {\splitheadnumber{\thesubsection}}
   {0pt}
   {}
 
 \titleformat{\subsubsection}
   {\normalfont\small\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\numberinmargin{\thesubsubsection}{\titlenumberoffsetother}{fg}}
+  {\splitheadnumber{\thesubsubsection}}
   {0pt}
   {}
 
