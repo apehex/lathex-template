@@ -10,24 +10,32 @@
 \setlength{\titlenumbermajoroffset}{-17mm}
 \setlength{\titlenumberminoroffset}{-12mm}
 \newcommand{\titlenumberfontsize}{14}
+\newcommand{\majorheadnumbercolor}{bg}
+\newcommand{\majorheadnumbersize}{\titlenumberfontsize}
+\newcommand{\minorheadnumbercolor}{fg}
+\newcommand{\chapterminorheadnumbersize}{24}
+\newcommand{\sectionminorheadnumbersize}{16}
+\newcommand{\subsectionminorheadnumbersize}{12}
+\newcommand{\subsubsectionminorheadnumbersize}{10}
 \makeatletter
-\newcommand*{\formatheadnumber}[1]{\textcolor{fg}{\fontsize{\titlenumberfontsize}{\titlenumberfontsize}\selectfont\headingfontfamily\bfseries\selectfont#1}}
+\NewDocumentCommand{\formatheadnumber}{O{fg} O{\titlenumberfontsize} m}{\textcolor{#1}{\fontsize{#2}{#2}\selectfont\headingfontfamily\bfseries\selectfont#3}}
 \newcommand*{\majorheadnumber}[1]{%
-  \makebox[0pt][l]{\hspace*{\titlenumbermajoroffset}\formatheadnumber{#1\autodot}}%
+  \makebox[0pt][l]{\hspace*{\titlenumbermajoroffset}\formatheadnumber[\majorheadnumbercolor][\majorheadnumbersize]{#1\autodot}}%
 }
-\newcommand*{\minorheadnumber}[1]{%
+\newcommand*{\minorheadnumber}[2]{%
   \if\relax\detokenize{#1}\relax
   \else
-    \makebox[0pt][l]{\hspace*{\titlenumberminoroffset}\formatheadnumber{#1}}%
+    \makebox[0pt][l]{\hspace*{\titlenumberminoroffset}\formatheadnumber[\minorheadnumbercolor][#2]{#1}}%
   \fi
 }
-\newcommand*{\splitheadnumber}[1]{%
+\newcommand*{\splitheadnumber}[2]{%
+  \def\headnumberminorsize{#2}%
   \edef\headnumberexpanded{#1}%
   \expandafter\splitheadnumberparts\headnumberexpanded.\@nil
 }
 \def\splitheadnumberparts#1.#2\@nil{%
   \majorheadnumber{#1}%
-  \minorheadnumber{#2}%
+  \minorheadnumber{#2}{\headnumberminorsize}%
 }
 \makeatother
 
@@ -45,25 +53,25 @@
 
 \titleformat{\chapter}[hang]
   {\normalfont\huge\headingfontfamily\bfseries\selectfont\color{accent}}
-  {\splitheadnumber{\thechapter}}
+  {\splitheadnumber{\thechapter}{\chapterminorheadnumbersize}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\section}
   {\normalfont\large\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\splitheadnumber{\thesection}}
+  {\splitheadnumber{\thesection}{\sectionminorheadnumbersize}}
   {0pt}
   {\MakeUppercase}
 
 \titleformat{\subsection}
   {\normalfont\normalsize\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\splitheadnumber{\thesubsection}}
+  {\splitheadnumber{\thesubsection}{\subsectionminorheadnumbersize}}
   {0pt}
   {}
 
 \titleformat{\subsubsection}
   {\normalfont\small\headingfontfamily\bfseries\selectfont\color{fg}}
-  {\splitheadnumber{\thesubsubsection}}
+  {\splitheadnumber{\thesubsubsection}{\subsubsectionminorheadnumbersize}}
   {0pt}
   {}
 
