@@ -8,15 +8,15 @@
 \newlength{\titlenumbermajoroffset}
 \newlength{\titlenumberminoroffset}
 \setlength{\titlenumbermajoroffset}{-17mm}
-\setlength{\titlenumberminoroffset}{-12mm}
-\newcommand{\titlenumberfontsize}{14}
+\setlength{\titlenumberminoroffset}{-11mm}
+\newcommand{\titlenumberfontsize}{16}
 \newcommand{\majorheadnumbercolor}{bg}
 \newcommand{\majorheadnumbersize}{\titlenumberfontsize}
 \newcommand{\minorheadnumbercolor}{fg}
-\newcommand{\chapterminorheadnumbersize}{24}
-\newcommand{\sectionminorheadnumbersize}{16}
-\newcommand{\subsectionminorheadnumbersize}{12}
-\newcommand{\subsubsectionminorheadnumbersize}{10}
+\newcommand{\chapterminorheadnumbersize}{16}
+\newcommand{\sectionminorheadnumbersize}{14}
+\newcommand{\subsectionminorheadnumbersize}{10}
+\newcommand{\subsubsectionminorheadnumbersize}{8}
 \makeatletter
 \NewDocumentCommand{\formatheadnumber}{O{fg} O{\titlenumberfontsize} m}{\textcolor{#1}{\fontsize{#2}{#2}\headingfontfamily\bfseries\selectfont#3}}
 \newcommand*{\majorheadnumber}[1]{%
