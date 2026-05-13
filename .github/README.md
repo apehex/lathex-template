@@ -2,16 +2,16 @@
 
 > A sober, hassle-free, LaTeX template for reports and books.
 
-You can preview the template on a [real world report][forta-evasion-report].
+You can preview the template on a [real world report][apehex-evasion-report].
 
 ## Preview
 
 ### Book
 
-| Dark Theme                                                   | Light Theme                                                     | Forta Theme                                                     |
+| Dark Theme                                                   | Light Theme                                                     | ApeHex Theme                                                    |
 | :----------------------------------------------------------: | :-------------------------------------------------------------: | :-------------------------------------------------------------: |
-| [![Dark title page][demo-book-dark-title]][demo-book-dark]   | [![Light title page][demo-book-light-title]][demo-book-light]   | [![Forta title page][demo-book-forta-title]][demo-book-forta]   |
-| [![Dark page][demo-book-dark-page]][demo-book-dark]          | [![Light page][demo-book-light-page]][demo-book-light]          | [![Forta page][demo-book-forta-page]][demo-book-forta]          |
+| [![Dark title page][demo-book-dark-title]][demo-book-dark]   | [![Light title page][demo-book-light-title]][demo-book-light]   | [![ApeHex title page][demo-book-apehex-title]][demo-book-apehex]|
+| [![Dark page][demo-book-dark-page]][demo-book-dark]          | [![Light page][demo-book-light-page]][demo-book-light]          | [![ApeHex page][demo-book-apehex-page]][demo-book-apehex]       |
 
 ### Resume
 
@@ -90,14 +90,14 @@ This work is licensed under the GNU [aGPL v3](LICENSE).
 
 ---
 
+[demo-book-apehex]: ../build/book/apehex.pdf
 [demo-book-dark]: ../build/book/dark.pdf
-[demo-book-forta]: ../build/book/forta.pdf
 [demo-book-light]: ../build/book/light.pdf
+[demo-book-apehex-page]: images/book/apehex-page.png
+[demo-book-apehex-title]: images/book/apehex-title.png
 [demo-book-dark-page]: images/book/dark-page.png
-[demo-book-forta-page]: images/book/forta-page.png
-[demo-book-light-page]: images/book/light-page.png
 [demo-book-dark-title]: images/book/dark-title.png
-[demo-book-forta-title]: images/book/forta-title.png
+[demo-book-light-page]: images/book/light-page.png
 [demo-book-light-title]: images/book/light-title.png
 [demo-letter-dark]: ../build/letter/dark.pdf
 [demo-letter-light]: ../build/letter/light.pdf
@@ -107,7 +107,7 @@ This work is licensed under the GNU [aGPL v3](LICENSE).
 [demo-resume-light]: ../build/resume/light.pdf
 [demo-resume-dark-image]: images/resume/dark.png
 [demo-resume-light-image]: images/resume/light.png
-[forta-evasion-report]: https://github.com/apehex/web3-evasion-techniques/blob/main/report/forta.pdf
+[apehex-evasion-report]: https://github.com/apehex/web3-evasion-techniques/blob/main/report/apehex.pdf
 [latexdraw-cover-pages]: https://latexdraw.com/tikz-cover-pages-gallery/
 [legrand-orange-book]: https://www.latextemplates.com/template/legrand-orange-book
 [solidity-syntax-highlighting]: https://github.com/s-tikhomirov/solidity-latex-highlighting
