@@ -18,7 +18,7 @@
 \newcommand{\subsectionminorheadnumbersize}{12}
 \newcommand{\subsubsectionminorheadnumbersize}{10}
 \makeatletter
-\NewDocumentCommand{\formatheadnumber}{O{fg} O{\titlenumberfontsize} m}{\textcolor{#1}{\fontsize{#2}{#2}\selectfont\headingfontfamily\bfseries\selectfont#3}}
+\NewDocumentCommand{\formatheadnumber}{O{fg} O{\titlenumberfontsize} m}{\textcolor{#1}{\fontsize{#2}{#2}\headingfontfamily\bfseries\selectfont#3}}
 \newcommand*{\majorheadnumber}[1]{%
   \makebox[0pt][l]{\hspace*{\titlenumbermajoroffset}\formatheadnumber[\majorheadnumbercolor][\majorheadnumbersize]{#1\autodot}}%
 }
