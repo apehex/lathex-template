@@ -25,11 +25,11 @@
 \newcommand{\entryheader}{\@ifstar{\entryheader@star}{\entryheader@nostar}}
 
 \newcommand{\entryheader@star}[3][muted]{% left content, right content
-    \entryline@star{#2\hfill{\textcolor{#1}{#3}}}%
+    \entryline@star{\textcolor{ink1}{#2}\hfill{\textcolor{#1}{#3}}}%
 }
 
 \newcommand{\entryheader@nostar}[3][muted]{% left content, right content
-    \entryline@nostar{#2\hfill{\textcolor{#1}{#3}}}%
+    \entryline@nostar{\textcolor{ink1}{#2}\hfill{\textcolor{#1}{#3}}}%
 }
 
 % COLUMNS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,11 +37,11 @@
 \newcommand{\entrycolumns}{\@ifstar{\entrycolumns@star}{\entrycolumns@nostar}}
 
 \newcommand{\entrycolumns@star}[3][4em]{% left width, left content, right content
-    \entryline@star{\makebox[#1][l]{#2}\hspace{0.6em}#3}%
+    \entryline@star{\makebox[#1][l]{\textcolor{ink1}{#2}}\hspace{0.6em}#3}%
 }
 
 \newcommand{\entrycolumns@nostar}[3][4em]{% left width, left content, right content
-    \entryline@nostar{\makebox[#1][l]{#2}\hspace{0.6em}#3}%
+    \entryline@nostar{\makebox[#1][l]{\textcolor{ink1}{#2}}\hspace{0.6em}#3}%
 }
 
 % ENTRY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
