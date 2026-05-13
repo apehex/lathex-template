@@ -8,28 +8,33 @@
 \usepackage{microtype}
 
 %----------------------------------------------------------------------------------------
-%   ADD BOLD + ITALIC
+%   MAIN
 %----------------------------------------------------------------------------------------
 
-\newfontfamily\inconsolatafontfamily[
+\setmainfont{TeX Gyre Heros}
+\setsansfont{TeX Gyre Heros}
+
+%----------------------------------------------------------------------------------------
+%   CODE
+%----------------------------------------------------------------------------------------
+
+\setmonofont[
     Path=template/generic/fonts/inconsolata/,
-    Ligatures=TeX,
-    Scale=MatchUppercase,
-    UprightFont = *.otf,
-    BoldFont = *-Bold.otf,
-    ItalicFont = *-Italic.otf,
-    BoldItalicFont = *-BoldItalic.otf
+    Extension=.otf,
+    UprightFont=Inconsolata-LGC,
+    BoldFont=Inconsolata-LGC-Bold,
+    ItalicFont=Inconsolata-LGC-Italic,
+    BoldItalicFont=Inconsolata-LGC-BoldItalic,
+    Scale=MatchLowercase
 ]{Inconsolata-LGC}
-
-%----------------------------------------------------------------------------------------
-%   FAMILY DEFAULTS
-%----------------------------------------------------------------------------------------
-
-% \setmonofont{\inconsolatafontfamily}
-% \renewcommand*{\familydefault}{\ttdefault}
 
 %----------------------------------------------------------------------------------------
 %   HEADINGS
 %----------------------------------------------------------------------------------------
 
-\let\headingfontfamily\inconsolatafontfamily
+\newfontfamily\herosfontfamily[
+  Ligatures=TeX,
+  Scale=MatchUppercase
+]{TeX Gyre Heros}
+
+\let\headingfontfamily\herosfontfamily
